@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string name="LOGIN">
+    <en>LOGIN</en>
+    <kr>로그인</kr>
+    <jp>ログイン</jp>
+  </string>
+  <string name="SIGN_UP">
+    <en>SIGN UP</en>
+    <kr>회원가입</kr>
+    <jp>サインアップ</jp>
+  </string>
+  <string name="EMAIL_ID">
+    <en>Your E-Mail ID...</en>
+    <kr>이메일 아이디</kr>
+    <jp>E-メール ID...</jp>
+  </string>
+  <string name="PASSWORD">
+    <en>Your password...</en>
+    <kr>비밀번호</kr>
+    <jp>パスワード...</jp>
+  </string>
+  <string name="NICKNAME">
+    <en>Your nickname</en>
+    <kr>닉네임</kr>
+    <jp>ニックネーム</jp>
+  </string>
+  <string name="THIS_IS_NOT_EMAIL_FORMAT">
+    <en>This is not E-mail</en>
+    <kr>올바른 이메일 형식을 입력해주세요.</kr>
+    <jp>E-メールの 形式が ありません。</jp>
+  </string>
+  <string name="THIS_IS_NOT_PASSWORD_FORMAT">
+    <en>Password can not include spaces.</en>
+    <kr>비밀번호에는 공백을 입력할 수 없습니다.</kr>
+    <jp>パスワードには 空白を 入力できません。</jp>
+  </string>
+  <string name="THIS_IS_NOT_NICKNAME_FORMAT">
+    <en>Nickname can not include special characters or spaces.</en>
+    <kr>닉네임에는 특수문자나 공백을 입력할 수 없습니다.</kr>
+    <jp>ニックネームには、特殊文字や空白を 入力できません。</jp>
+  </string>
+  <string name="REMEMBER_ME">
+    <en>Remember me</en>
+    <kr>자동 로그인</kr>
+    <jp>自動ログオン</jp>
+  </string>
+  <string name="LOGIN_WITH_FACEBOOK">
+    <en>LOGIN with Facebook</en>
+    <kr>페이스북으로 로그인</kr>
+    <jp>Facebookで ログイン</jp>
+  </string>
+  <string name="SIGN_UP_WITH_FACEBOOK">
+    <en>SIGN UP with Facebook</en>
+    <kr>페이스북으로 회원가입</kr>
+    <jp>Facebookで かにゅう</jp>
+  </string>
+  <string name="LOGIN_FAILED">
+    <en>Login failed... Please check your E-mail and password.</en>
+    <kr>로그인 실패... 이메일과 비밀번호를 확인해주세요.</kr>
+    <jp>ログイン 失敗。。。E-メールと パスワードを 確認してください。</jp>
+  </string>
+  <string name="SIGN_UP_SUCCESS">
+    <en>Sign up success! Please login.</en>
+    <kr>회원가입 성공! 방금 가입한 이메일로 로그인 해주세요.</kr>
+    <jp>会員加入 成功! 今、加入した E-メールで ログインして ください。</jp>
+  </string>
+  <string name="SIGN_UP_FAILED">
+    <en>Sign up failed... Please check your E-mail and nickname.</en>
+    <kr>회원가입 실패... 이메일과 닉네임을 확인해주세요.</kr>
+    <jp>会員加入 失敗。。。E-メールと ニックネームを 確認してください。</jp>
+  </string>
+  <string name="PLEASE_ENTER_A_MESSAGE">
+    <en>Please enter a message.</en>
+    <kr>메시지를 입력해주세요.</kr>
+    <jp>メッセージを 入力してください。</jp>
+  </string>
+  <string name="SEND">
+    <en>Send</en>
+    <kr>전 송</kr>
+    <jp>伝 送</jp>
+  </string>
+  <string name="PLEASE_ENTER_A_GAME_TITLE">
+    <en>Please enter a game title.</en>
+    <kr>방 제목을 입력하여 주세요.</kr>
+    <jp>ゲームの タイトルを 入力してください.</jp>
+  </string>
+  <string name="CLASSIC">
+    <en>Classic</en>
+    <kr>클래식</kr>
+    <jp>クラシック</jp>
+  </string>
+  <string name="SKILL">
+    <en>Skill</en>
+    <kr>스킬 모드</kr>
+    <jp>スキル モード</jp>
+  </string>
+  <string name="CREATE">
+    <en>Create</en>
+    <kr>만들기</kr>
+    <jp>づくり</jp>
+  </string>
+  <string name="PLEASE_SELECT_GAME_MODE">
+    <en>Please select game mode.</en>
+    <kr>게임모드를 반드시 선택해주세요.</kr>
+    <jp>ゲームモードを 必ず選択して ください.</jp>
+  </string>
+  <string name="TITLE_LENGTH_CAN_NOT_EXCEED_25_CHARACTERS">
+    <en>Title length can not exceed 25 characters.</en>
+    <kr>방 제목의 길이는 25자를 초과할 수 없습니다.</kr>
+    <jp>タイトルの 長さは 25文字を 超えることは できません.</jp>
+  </string>
+  <string name="WAITING_FOR_THE_OTHER_SIDE">
+    <en>Waiting for the other side. One moment, please...</en>
+    <kr>상대방을 기다리고 있습니다. 잠시만 기다려주세요...</kr>
+    <jp>相手を 待っています. 少々お 待ちください...</jp>
+  </string>
+</resources>

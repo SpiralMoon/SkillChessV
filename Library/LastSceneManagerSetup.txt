@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scene/LobbyPage.unity
+  isLoaded: 1
+  isActive: 1
