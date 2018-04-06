@@ -244,7 +244,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Moon/Desktop/SkillChessV-old/user.keystore
+  AndroidKeystoreName: C:/Users/Moon/Desktop/SkillChessV-deprecated/user.keystore
   AndroidKeyaliasName: spiralmoon
   AndroidTVCompatibility: 1
   AndroidIsGame: 1

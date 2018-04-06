@@ -253,6 +253,8 @@ public class LoginPage : MonoBehaviour, IPage
 
     public void NextPage(string pageName)
     {
-        SceneManager.LoadSceneAsync(pageName);
+        // LobbyPage에서는 로딩이 완전히 끝난 후 방 목록을 호출하기 때문에
+        // LoadSceneAsync가 아닌 LoadScene을 사용한다.
+        SceneManager.LoadScene(pageName);
     }
 }

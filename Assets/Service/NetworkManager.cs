@@ -35,6 +35,8 @@ namespace Assets.Service
 
         public EventHandler<RoomForm> OnCreateRoom;
 
+        public EventHandler<RoomForm> OnCloseRoom;
+
         public EventHandler<List<RoomForm>> OnLoadRoomList;
 
         public EventHandler<MatchForm> OnMatchBattle;
@@ -90,7 +92,12 @@ namespace Assets.Service
                 });
                 _io.On(SocketEvent.CLOSE, (data) =>
                 {
-                    // TODO
+                    if (data != null)
+                    {
+                        data = JsonConvert.DeserializeObject<RoomForm>(data.ToString());
+                    }
+
+                    OnCreateRoom?.Invoke(this, data as RoomForm);
                 });
                 _io.On(SocketEvent.MATCH, (data) =>
                 {

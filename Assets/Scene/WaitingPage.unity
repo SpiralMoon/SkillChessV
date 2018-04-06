@@ -180,7 +180,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b6cabcaae96362c499ed71c00cd74f25, type: 3}
+    m_Font: {fileID: 12800000, guid: d0fede5885b402c40a15164572e7d694, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -503,7 +503,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f36c1d3ba1fa33944905ceb4c131e4c5, type: 3}
+    m_Font: {fileID: 12800000, guid: 36dd20716b537734ea92158d0b88983d, type: 3}
     m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
@@ -962,9 +962,14 @@ MonoBehaviour:
   BtnBack: {fileID: 1835077255}
   ImgGameMode: {fileID: 805776518}
   TxtGameMode: {fileID: 1249224803}
-  TxtTime: {fileID: 647658649}
+  TxtDescription: {fileID: 861630173}
+  TxtWaiting: {fileID: 495811623}
+  TxtGameMatched: {fileID: 666901106}
+  TxtGameStart: {fileID: 361350769}
+  TxtMatchTime: {fileID: 1408161133}
+  TxtWaitTime: {fileID: 647658649}
   PnlWaiting: {fileID: 1895120903}
-  PnlMatch: {fileID: 1891630608}
+  PnlMatching: {fileID: 1891630608}
 --- !u!1 &1408161130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1037,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 892bc807265b6604ab081fa192d983f5, type: 3}
+    m_Font: {fileID: 12800000, guid: 2ba5821a1e19249458ecb65495f3a0b1, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0

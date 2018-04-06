@@ -150,13 +150,24 @@ public class LobbyPage : MonoBehaviour, IPage, ISocketPage
 
             // TODO : 혹시 닉네임이 Setting에 필요해지면 넣도록 하자
         }
+        
+        StartCoroutine(LoadRoomList());
+        //_networkManager.LoadRoomList();
+        //_roomListLoader.Interval = Time.deltaTime * 1000 * 600;
+        //_roomListLoader.Elapsed += (s, e) => {
+        //    _networkManager.LoadRoomList();
+        //};
+        //_roomListLoader.Start();
+    }
 
-        _networkManager.LoadRoomList();
-        _roomListLoader.Interval = Time.deltaTime * 1000 * 600;
-        _roomListLoader.Elapsed += (s, e) => {
+    private IEnumerator LoadRoomList()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(2);
             _networkManager.LoadRoomList();
-        };
-        _roomListLoader.Start();
+            yield return new WaitForSeconds(8);
+        }
     }
 
     public void OnClickBtnShop()
@@ -299,6 +310,10 @@ public class LobbyPage : MonoBehaviour, IPage, ISocketPage
     {
         if (room != null)
         {
+            PageParameterDispatcher.Instance().SetPageParameter(new WaitingPageParameter
+            {
+                RoomForm = room
+            });
             Invoke(() => NextPage("WaitingPage"));
         }
         else

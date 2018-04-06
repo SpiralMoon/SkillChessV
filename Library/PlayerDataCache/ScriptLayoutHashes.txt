@@ -154,4 +154,5 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 5b4e61376eb094675780a75b3821d9c2 Assembly-CSharp.dll:.RankPage
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Service.PageParameterDispatcher
 752de4854ee314e458fa2818f9e26498 Assembly-CSharp.dll:.WaitingPage
