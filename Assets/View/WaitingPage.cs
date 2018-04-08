@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 using Assets.Animation;
+using Assets.Model;
 using Assets.Model.Bean;
 using Assets.Model.Impl;
 using Assets.Model.SceneParameter;
@@ -18,6 +19,8 @@ using Assets.Service;
 public class WaitingPage : MonoBehaviour, IPage, ISocketPage
 {
     private NetworkManager _networkManager;
+
+    private Setting _setting;
 
     private TextFadeInOutAnimation _textFadeInOutAnimation;
 
@@ -61,6 +64,7 @@ public class WaitingPage : MonoBehaviour, IPage, ISocketPage
 
     private void Awake()
     {
+        _setting = Setting.GetInstance();
         _networkManager = NetworkManager.GetInstance();
         _textResource = TextResource.GetInstance();
         _textFadeInOutAnimation = new TextFadeInOutAnimation();
@@ -147,7 +151,15 @@ public class WaitingPage : MonoBehaviour, IPage, ISocketPage
 
             if (TimeCount == 0)
             {
-                // TODO : BattlePageParameter 넣기
+                PageParameterDispatcher.Instance().SetPageParameter(new BattlePageParameter
+                {
+                    MyRank = new Rank
+                    {
+                        Nickname = _setting.Nickname,
+                        Score = _setting.Score
+                    },
+                    MatchForm = _match
+                });
                 NextPage("BattlePage");
             }
 
@@ -229,12 +241,12 @@ public class WaitingPage : MonoBehaviour, IPage, ISocketPage
 
             PnlMatching.SetActive(true);
             PnlWaiting.SetActive(false);
+
+            TimeCount = 5;
+
+            StopCoroutine("WaitTimeCount");
+            StartCoroutine(MatchTimeCount());
         });
-
-        TimeCount = 5;
-
-        StopCoroutine("WaitTimeCount");
-        StartCoroutine(MatchTimeCount());
     }
 
     public void OnCloseRoom(object sender, RoomForm roomForm)

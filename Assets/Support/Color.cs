@@ -9,6 +9,6 @@ namespace Assets.Support
     public static class Color
     {
         public const string BLACK = "Black";
-        public const string White = "White";
+        public const string WHITE = "White";
     }
 }

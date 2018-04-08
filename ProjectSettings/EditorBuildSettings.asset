@@ -26,3 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/WaitingPage.unity
     guid: 1f5d86b40a6c3de4f84a3b18c1da4e9d
+  - enabled: 1
+    path: Assets/Scene/BattlePage.unity
+    guid: de95b041244561f48abed8a548647e3f

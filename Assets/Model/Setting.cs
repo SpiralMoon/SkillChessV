@@ -22,6 +22,10 @@ namespace Assets.Model
 
         private string _password;
 
+        private string _nickname;
+
+        private int _score;
+
         private static Setting _instance;
 
         /// <summary>
@@ -105,6 +109,48 @@ namespace Assets.Model
             {
                 _password = value;
                 PlayerPrefs.SetString("Password", _password);
+            }
+        }
+
+        /// <summary>
+        /// 닉네임.
+        /// </summary>
+        public string Nickname
+        {
+            get
+            {
+                if (PlayerPrefs.HasKey("Nickname"))
+                {
+                    _nickname = PlayerPrefs.GetString("Nickname");
+                }
+
+                return _nickname;
+            }
+            set
+            {
+                _nickname = value;
+                PlayerPrefs.SetString("Nickname", _nickname);
+            }
+        }
+
+        /// <summary>
+        /// 레이팅.
+        /// </summary>
+        public int Score
+        {
+            get
+            {
+                if (PlayerPrefs.HasKey("Score"))
+                {
+                    _score = PlayerPrefs.GetInt("Score");
+                }
+
+                return _score;
+            }
+            set
+            {
+                _score = value;
+                PlayerPrefs.SetInt("Score", _score);
             }
         }
 

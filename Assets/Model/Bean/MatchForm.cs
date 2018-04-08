@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 
+using Assets.Support;
+
 namespace Assets.Model.Bean
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class MatchForm
     {
+        [JsonProperty("gameMode")]
+        public GameMode GameMode;
+
         [JsonProperty("enemy")]
         public Rank Enemy;
 
@@ -18,9 +23,9 @@ namespace Assets.Model.Bean
         public string Color;
 
         [JsonProperty("enemyLineUp")]
-        public object EnemyLineUp;
+        public LineUp EnemyLineUp;
 
         [JsonProperty("myLineUp")]
-        public object MyLineUp;
+        public LineUp MyLineUp;
     }
 }

@@ -2,46 +2,69 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
+using Assets.Model;
 using Assets.Model.Impl;
-using Assets.Model.Bean;
+using Assets.Model.SceneParameter;
+using Assets.Support;
+using Assets.Support.Language;
 using Assets.Service;
 
-public class BattlePage : MonoBehaviour, IPage, ISocketPage
+namespace Assets.View
 {
-    private NetworkManager _networkManager;
-
-    private void Awake()
+    public class BattlePage : MonoBehaviour, IPage, ISocketPage
     {
-        SetTextSize();
-        SetTextValue();
-        SetSocketEvents(_networkManager);
-    }
+        protected NetworkManager _networkManager;
 
-    public void SetSocketEvents(NetworkManager networkManager)
-    {
-        
-    }
+        protected Setting _setting;
 
-    public void Invoke(Action action)
-    {
-        UnityMainThreadDispatcher.Instance().Enqueue(action);
-    }
+        protected TextResource _textResource;
 
-    public void SetTextSize()
-    {
+        protected List<Board[]> _board;
 
-    }
+        protected string _myColor;
 
-    public void SetTextValue()
-    {
+        public GameObject SkillBattle;
 
-    }
+        public GameObject ClassicBattle;
 
-    public void NextPage(string pageName)
-    {
-        SceneManager.LoadSceneAsync(pageName);
+        private void Awake()
+        {
+            var param = PageParameterDispatcher.Instance().GetPageParameter() as BattlePageParameter;
+
+            if (param.MatchForm.GameMode == GameMode.NORMAL)
+            {
+                SkillBattle.SetActive(true);
+            }
+            if (param.MatchForm.GameMode == GameMode.SKILL)
+            {
+                ClassicBattle.SetActive(true);
+            }
+        }
+
+        public void SetSocketEvents(NetworkManager networkManager)
+        {
+            throw new NotImplementedException("");
+        }
+
+        public void Invoke(Action action)
+        {
+            throw new NotImplementedException("");
+        }
+
+        public void SetTextSize()
+        {
+            throw new NotImplementedException("");
+        }
+
+        public void SetTextValue()
+        {
+            throw new NotImplementedException("");
+        }
+
+        public void NextPage(string pageName)
+        {
+            throw new NotImplementedException("");
+        }
     }
 }

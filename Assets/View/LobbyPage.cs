@@ -148,6 +148,8 @@ public class LobbyPage : MonoBehaviour, IPage, ISocketPage
             TxtNickname.text = me.Nickname;
             TxtScore.text = me.Score + "";
 
+            _setting.Nickname = me.Nickname;
+            _setting.Score = me.Score;
             // TODO : 혹시 닉네임이 Setting에 필요해지면 넣도록 하자
         }
         
