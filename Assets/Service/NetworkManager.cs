@@ -108,6 +108,10 @@ namespace Assets.Service
 
                     OnMatchBattle?.Invoke(this, data as MatchForm);
                 });
+                _io.On(SocketEvent.START, (data) =>
+                {
+                    OnStartBattle?.Invoke(this, null);
+                });
                 _io.On(SocketEvent.CHATTING, (data) =>
                 {
                     if (data != null)
@@ -292,6 +296,14 @@ namespace Assets.Service
         public void LoadRoomList()
         {
             _io.Emit(SocketEvent.LIST);
+        }
+
+        /// <summary>
+        /// 게임화면 로딩이 완료(시작준비)되었음을 알림.
+        /// </summary>
+        public void ReadyGame()
+        {
+            _io.Emit(SocketEvent.READY);
         }
 
         /// <summary>

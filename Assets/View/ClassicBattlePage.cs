@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 using Assets.Model;
 using Assets.Model.Impl;
@@ -20,6 +22,9 @@ namespace Assets.View
     {
         private void Awake()
         {
+            var param = PageParameterDispatcher.Instance().GetPageParameter() as BattlePageParameter;
+
+            _matchForm = param.MatchForm;
             _networkManager = NetworkManager.GetInstance();
             _setting = Setting.GetInstance();
             _textResource = TextResource.GetInstance();
@@ -30,6 +35,17 @@ namespace Assets.View
             SetSocketEvents(_networkManager);
             SetTextSize();
             SetTextValue();
+            SetImageValue();
+
+            _networkManager.ReadyGame();
+        }
+
+        private void Update()
+        {
+            if (!_gameStarted)
+            {
+                return;
+            }
         }
 
         protected void SetBoard()
@@ -137,27 +153,41 @@ namespace Assets.View
     
         public void SetSocketEvents(NetworkManager networkManager)
         {
-            throw new NotImplementedException("");
+            networkManager.OnStartBattle -= OnStartBattle;
+
+            networkManager.OnStartBattle += OnStartBattle;
         }
 
         public void Invoke(Action action)
         {
-            throw new NotImplementedException("");
+           
         }
 
         public void SetTextSize()
         {
-            throw new NotImplementedException("");
+            
         }
 
         public void SetTextValue()
         {
-            throw new NotImplementedException("");
+            MyFrame.transform.Find("TXT_Nickname").GetComponent<Text>().text = _setting.Nickname;
+            EnemyFrame.transform.Find("TXT_Nickname").GetComponent<Text>().text = _matchForm.Enemy.Nickname;
+        }
+
+        public void SetImageValue()
+        {
+            SetRankIcon(MyFrame.transform.Find("IMG_Rank").GetComponent<Image>(), _setting.Score);
+            SetRankIcon(EnemyFrame.transform.Find("IMG_Rank").GetComponent<Image>(), _matchForm.Enemy.Score);
         }
 
         public void NextPage(string pageName)
         {
-            throw new NotImplementedException("");
+            SceneManager.LoadSceneAsync(pageName);
+        }
+
+        protected void OnStartBattle(object sender, EventArgs e)
+        {
+            _gameStarted = true;
         }
     }
 }

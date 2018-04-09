@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 using Assets.Model.ChessPiece;
 using Assets.Support;
+using Assets.Support.Language;
 
 namespace Assets.Model.SkillChessPiece
 {
     public class SkillPiece : Piece
     {
+        private TextResource _textResource;
+
         public int Power;
 
         public int MaxHp;
@@ -33,11 +36,35 @@ namespace Assets.Model.SkillChessPiece
 
         public int StatusCount;
 
+        public int ClassCode;
+
         public Element Element;
+
+        public string ClassName;
+
+        public string ClassDescription;
 
         public SkillPiece(string color) : base(color)
         {
+            _textResource = TextResource.GetInstance();
 
+            this.Color = color;
+
+            this.Level = 1;
+
+            this.Status = Status.NONE;
+            this.StatusCount = 0;
+        }
+
+        protected void Init()
+        {
+            this.CurrentHp = MaxHp;
+            this.CurrentMp = MaxMp;
+            this.CurrentExp = 0;
+
+            // TODO
+            // this.ClassName;
+            // this.ClassDescription;
         }
     }
 }

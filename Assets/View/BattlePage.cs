@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 using Assets.Model;
+using Assets.Model.Bean;
 using Assets.Model.Impl;
 using Assets.Model.SceneParameter;
 using Assets.Support;
@@ -24,9 +26,19 @@ namespace Assets.View
 
         protected string _myColor;
 
+        protected MatchForm _matchForm;
+
+        protected bool _gameStarted;
+
         public GameObject SkillBattle;
 
         public GameObject ClassicBattle;
+
+        public GameObject MyFrame;
+
+        public GameObject EnemyFrame;
+
+
 
         private void Awake()
         {
@@ -63,6 +75,27 @@ namespace Assets.View
         }
 
         public void NextPage(string pageName)
+        {
+            throw new NotImplementedException("");
+        }
+
+        protected void SetRankIcon(Image rankIcon, int score)
+        {
+            if (score > 2000)
+                rankIcon.sprite = Resources.Load<Sprite>("UI/Icon/IMG_King");
+            else if (score > 1800)
+                rankIcon.sprite = Resources.Load<Sprite>("UI/Icon/IMG_Queen");
+            else if (score > 1600)
+                rankIcon.sprite = Resources.Load<Sprite>("UI/Icon/IMG_Knight");
+            else if (score > 1400)
+                rankIcon.sprite = Resources.Load<Sprite>("UI/Icon/IMG_Bishop");
+            else if (score > 1200)
+                rankIcon.sprite = Resources.Load<Sprite>("UI/Icon/IMG_Rook");
+            else
+                rankIcon.sprite = Resources.Load<Sprite>("UI/Icon/IMG_Pawn");
+        }
+
+        protected void OnStartBattle(object sender, EventArgs e)
         {
             throw new NotImplementedException("");
         }
