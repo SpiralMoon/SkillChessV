@@ -18,6 +18,8 @@ namespace Assets.View
     {
         protected NetworkManager _networkManager;
 
+        protected CameraManager _cameraManager;
+
         protected Setting _setting;
 
         protected TextResource _textResource;
@@ -38,7 +40,7 @@ namespace Assets.View
 
         public GameObject EnemyFrame;
 
-
+        public GameObject CameraService;
 
         private void Awake()
         {

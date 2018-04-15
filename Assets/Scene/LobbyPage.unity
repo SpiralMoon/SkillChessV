@@ -2212,7 +2212,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_Spacing: 10
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -2392,7 +2392,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.000019044446}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &900512319
@@ -2870,7 +2870,7 @@ MonoBehaviour:
   BtnShowCreateRoomClose: {fileID: 724213921}
   BtnBack: {fileID: 129462377}
   ScrRoomList: {fileID: 1204118302}
-  ScrChatList: {fileID: 1905081981}
+  ScrChatList: {fileID: 759822958}
   InpChatting: {fileID: 596345262}
   TxtNickname: {fileID: 1840074728}
   TxtScore: {fileID: 1299820332}
@@ -3202,7 +3202,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000388379, y: 0.000009794119}
+  m_AnchoredPosition: {x: 0.000016098962, y: -0.000038154354}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1204118304
@@ -4809,7 +4809,7 @@ MonoBehaviour:
   m_Script: {fileID: 1367256648, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Content: {fileID: 0}
+  m_Content: {fileID: 900512318}
   m_Horizontal: 1
   m_Vertical: 1
   m_MovementType: 1

@@ -301,9 +301,9 @@ namespace Assets.Service
         /// <summary>
         /// 게임화면 로딩이 완료(시작준비)되었음을 알림.
         /// </summary>
-        public void ReadyGame()
+        public void ReadyGame(string roomId)
         {
-            _io.Emit(SocketEvent.READY);
+            _io.Emit(SocketEvent.READY, roomId);
         }
 
         /// <summary>

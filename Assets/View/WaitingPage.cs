@@ -244,6 +244,8 @@ public class WaitingPage : MonoBehaviour, IPage, ISocketPage
 
             TimeCount = 5;
 
+            _match = matchForm;
+
             StopCoroutine("WaitTimeCount");
             StartCoroutine(MatchTimeCount());
         });

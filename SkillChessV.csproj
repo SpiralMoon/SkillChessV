@@ -352,6 +352,7 @@
     <Compile Include="Assets\Model\SceneParameter\PageParameter.cs" />
     <Compile Include="Assets\Model\SceneParameter\WaitingPageParameter.cs" />
     <Compile Include="Assets\Model\Setting.cs" />
+    <Compile Include="Assets\Service\CameraManager.cs" />
     <Compile Include="Assets\Service\NetworkManager.cs" />
     <Compile Include="Assets\Service\PageParameterDispatcher.cs" />
     <Compile Include="Assets\Service\UnityMainThreadDispatcher.cs" />

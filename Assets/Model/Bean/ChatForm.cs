@@ -11,6 +11,9 @@ namespace Assets.Model.Bean
     [JsonObject(MemberSerialization.OptIn)]
     public class ChatForm
     {
+        [JsonProperty("email")]
+        public string Email { get; set; }
+
         [JsonProperty("nickname")]
         public string Nickname { get; set; }
 

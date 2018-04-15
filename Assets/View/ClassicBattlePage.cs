@@ -25,7 +25,9 @@ namespace Assets.View
             var param = PageParameterDispatcher.Instance().GetPageParameter() as BattlePageParameter;
 
             _matchForm = param.MatchForm;
+            _myColor = param.MatchForm.Color;
             _networkManager = NetworkManager.GetInstance();
+            _cameraManager = CameraManager.GetInstance();
             _setting = Setting.GetInstance();
             _textResource = TextResource.GetInstance();
             _board = new List<Board[]>();
@@ -37,7 +39,8 @@ namespace Assets.View
             SetTextValue();
             SetImageValue();
 
-            _networkManager.ReadyGame();
+            _cameraManager.Run(CameraService, _myColor);
+            _networkManager.ReadyGame(_matchForm.Id);
         }
 
         private void Update()

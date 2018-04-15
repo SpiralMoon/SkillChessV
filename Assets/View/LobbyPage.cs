@@ -191,7 +191,8 @@ public class LobbyPage : MonoBehaviour, IPage, ISocketPage
     {
         _networkManager.Chat(new ChatForm
         {
-            Nickname = "test", // TODO : 닉네임 불러오기
+            Email = _setting.Email,
+            Nickname = _setting.Nickname,
             Message  = NewChatMessage
         });
     }
@@ -382,8 +383,16 @@ public class LobbyPage : MonoBehaviour, IPage, ISocketPage
 
     public void OnChat(object sender, ChatForm chat)
     {
-        Debug.Log(chat.Nickname);
-        Debug.Log(chat.Message);
+        Invoke(() =>
+        {
+            // 채팅 목록을 화면에 추가함
+            var chatPrefab = Instantiate(Resources.Load("UI/LobbyPage/PRF_Chat") as GameObject);
+                chatPrefab.GetComponentInChildren<Text>().text = "[" + chat.Nickname + "] : " + chat.Message;
+
+            // 리스트에 연결
+            chatPrefab.transform.parent = ScrChatList.transform;
+
+        });
     }
 
     /// <summary>

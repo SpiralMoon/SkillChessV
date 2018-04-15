@@ -13,6 +13,9 @@ namespace Assets.Model.Bean
     [JsonObject(MemberSerialization.OptIn)]
     public class MatchForm
     {
+        [JsonProperty("id")]
+        public string Id;
+
         [JsonProperty("gameMode")]
         public GameMode GameMode;
 
