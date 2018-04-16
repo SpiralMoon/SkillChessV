@@ -26,6 +26,7 @@ namespace Assets.View
 
             _matchForm = param.MatchForm;
             _myColor = param.MatchForm.Color;
+            _isMyTurn = (_myColor == Support.Color.WHITE) ? true : false;
             _networkManager = NetworkManager.GetInstance();
             _cameraManager = CameraManager.GetInstance();
             _setting = Setting.GetInstance();

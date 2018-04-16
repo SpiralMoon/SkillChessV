@@ -70,7 +70,10 @@ namespace Assets.Service
         {
             if (_io == null)
             {
-                _io = IO.Socket("ws://localhost:21214/");
+                _io = IO.Socket("ws://localhost:21214/", new IO.Options
+                {
+                    Timeout = 1000 * 60 * 60
+                });
 
                 _io.On(SocketEvent.LIST, (data) =>
                 {
@@ -108,9 +111,9 @@ namespace Assets.Service
 
                     OnMatchBattle?.Invoke(this, data as MatchForm);
                 });
-                _io.On(SocketEvent.START, (data) =>
+                _io.On(SocketEvent.START, () =>
                 {
-                    OnStartBattle?.Invoke(this, null);
+                    OnStartBattle?.Invoke(this, EventArgs.Empty);
                 });
                 _io.On(SocketEvent.CHATTING, (data) =>
                 {

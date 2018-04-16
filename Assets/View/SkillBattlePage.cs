@@ -27,6 +27,7 @@ namespace Assets.View
 
             _matchForm = param.MatchForm;
             _myColor = param.MatchForm.Color;
+            _isMyTurn = (_myColor == Support.Color.WHITE) ? true : false;
             _networkManager = NetworkManager.GetInstance();
             _cameraManager = CameraManager.GetInstance();
             _setting = Setting.GetInstance();
@@ -50,6 +51,8 @@ namespace Assets.View
             {
                 return;
             }
+
+            Debug.Log("게임이 시작되었습니다.");
         }
 
         protected void SetBoard()
@@ -296,6 +299,7 @@ namespace Assets.View
         protected void OnStartBattle(object sender, EventArgs e)
         {
             _gameStarted = true;
+            Debug.Log("이벤트 발생");
         }
     }
 }

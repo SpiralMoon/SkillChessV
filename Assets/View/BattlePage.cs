@@ -26,11 +26,13 @@ namespace Assets.View
 
         protected List<Board[]> _board;
 
-        protected string _myColor;
-
         protected MatchForm _matchForm;
 
+        protected string _myColor;
+        
         protected bool _gameStarted;
+
+        protected bool _isMyTurn;
 
         public GameObject SkillBattle;
 
@@ -48,11 +50,11 @@ namespace Assets.View
 
             if (param.MatchForm.GameMode == GameMode.NORMAL)
             {
-                SkillBattle.SetActive(true);
+                ClassicBattle.SetActive(true);
             }
             if (param.MatchForm.GameMode == GameMode.SKILL)
             {
-                ClassicBattle.SetActive(true);
+                SkillBattle.SetActive(true);
             }
         }
 

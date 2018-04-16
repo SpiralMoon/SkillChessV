@@ -12,15 +12,12 @@
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.3.0f3</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
@@ -324,6 +321,19 @@
     <Compile Include="Assets\Model\Bean\RelayForm.cs" />
     <Compile Include="Assets\Model\Bean\RoomForm.cs" />
     <Compile Include="Assets\Model\Board.cs" />
+    <Compile Include="Assets\Model\ChessPiece\Bishop.cs" />
+    <Compile Include="Assets\Model\ChessPiece\King.cs" />
+    <Compile Include="Assets\Model\ChessPiece\Knight.cs" />
+    <Compile Include="Assets\Model\ChessPiece\Pawn.cs" />
+    <Compile Include="Assets\Model\ChessPiece\Piece.cs" />
+    <Compile Include="Assets\Model\ChessPiece\Queen.cs" />
+    <Compile Include="Assets\Model\ChessPiece\Rook.cs" />
+    <Compile Include="Assets\Model\Impl\IPage.cs" />
+    <Compile Include="Assets\Model\Impl\ISocketPage.cs" />
+    <Compile Include="Assets\Model\SceneParameter\BattlePageParameter.cs" />
+    <Compile Include="Assets\Model\SceneParameter\PageParameter.cs" />
+    <Compile Include="Assets\Model\SceneParameter\WaitingPageParameter.cs" />
+    <Compile Include="Assets\Model\Setting.cs" />
     <Compile Include="Assets\Model\SkillChessPiece\Angel.cs" />
     <Compile Include="Assets\Model\SkillChessPiece\Archer.cs" />
     <Compile Include="Assets\Model\SkillChessPiece\Archmage.cs" />
@@ -339,19 +349,6 @@
     <Compile Include="Assets\Model\SkillChessPiece\Paladin.cs" />
     <Compile Include="Assets\Model\SkillChessPiece\Priest.cs" />
     <Compile Include="Assets\Model\SkillChessPiece\SkillPiece.cs" />
-    <Compile Include="Assets\Model\Impl\IPage.cs" />
-    <Compile Include="Assets\Model\Impl\ISocketPage.cs" />
-    <Compile Include="Assets\Model\ChessPiece\Bishop.cs" />
-    <Compile Include="Assets\Model\ChessPiece\King.cs" />
-    <Compile Include="Assets\Model\ChessPiece\Knight.cs" />
-    <Compile Include="Assets\Model\ChessPiece\Pawn.cs" />
-    <Compile Include="Assets\Model\ChessPiece\Piece.cs" />
-    <Compile Include="Assets\Model\ChessPiece\Queen.cs" />
-    <Compile Include="Assets\Model\ChessPiece\Rook.cs" />
-    <Compile Include="Assets\Model\SceneParameter\BattlePageParameter.cs" />
-    <Compile Include="Assets\Model\SceneParameter\PageParameter.cs" />
-    <Compile Include="Assets\Model\SceneParameter\WaitingPageParameter.cs" />
-    <Compile Include="Assets\Model\Setting.cs" />
     <Compile Include="Assets\Service\CameraManager.cs" />
     <Compile Include="Assets\Service\NetworkManager.cs" />
     <Compile Include="Assets\Service\PageParameterDispatcher.cs" />
