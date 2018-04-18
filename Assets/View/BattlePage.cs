@@ -34,6 +34,14 @@ namespace Assets.View
 
         protected bool _isMyTurn;
 
+        protected bool _selectedMyPiece;
+
+        protected GameObject _selectedObject;
+
+        protected Location _startLocation;
+
+        protected Location _endLocation;
+
         public GameObject SkillBattle;
 
         public GameObject ClassicBattle;
@@ -97,6 +105,59 @@ namespace Assets.View
                 rankIcon.sprite = Resources.Load<Sprite>("UI/Icon/IMG_Rook");
             else
                 rankIcon.sprite = Resources.Load<Sprite>("UI/Icon/IMG_Pawn");
+        }
+
+        /// <summary>
+        /// 객체 터치 인식.
+        /// </summary>
+        /// <returns>터치한 객체</returns>
+        protected GameObject Touch()
+        {
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit raycastHit;
+            Physics.Raycast(ray.origin, ray.direction * 200, out raycastHit);
+
+            return raycastHit.collider.gameObject ?? null;
+        }
+
+        /// <summary>
+        /// 선택한 기물의 위치를 반환.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns>기물의 위치</returns>
+        protected Location GetLocation(GameObject obj)
+        {
+            Location location = null;
+
+            for (int i = 0; i < _board.Count; i++)
+            {
+                for (int j = 0; j < _board[i].Length; j++)
+                {
+                    if (_board[i][j].BoardObj == obj ||
+                        (_board[i][j].PieceObj != null && _board[i][j].PieceObj == obj))
+                    {
+                        location = new Location(i, j);
+                        break;
+                    }
+                }
+            }
+
+            return location;
+        }
+
+        /// <summary>
+        /// 모든 발판의 IsPossibleMove를 초기화.
+        /// Piece 클래스에도 정의되어 있음.
+        /// </summary>
+        protected void CleanMoveStatus()
+        {
+            foreach(var line in _board)
+            {
+                foreach(var cell in line)
+                {
+                    cell.IsPossibleMove = false;
+                }
+            }
         }
 
         protected void OnStartBattle(object sender, EventArgs e)

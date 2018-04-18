@@ -52,5 +52,10 @@ namespace Assets.Support
         /// 게임 내용 진행
         /// </summary>
         public const string RELAY = "relay";
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string DISCONNECT = "disconnect";
     }
 }

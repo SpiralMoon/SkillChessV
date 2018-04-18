@@ -12,5 +12,10 @@ namespace Assets.Model.SkillChessPiece
         {
 
         }
+
+        protected override void SetMoveStatus(List<Board[]> board)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

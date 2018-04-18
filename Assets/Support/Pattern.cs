@@ -11,6 +11,10 @@ namespace Assets.Support
     /// </summary>
     public enum Pattern
     {
-
+        MOVE,
+        PROMOTION,
+        CASTLING,
+        ENPASSANT,
+        SKILL
     }
 }

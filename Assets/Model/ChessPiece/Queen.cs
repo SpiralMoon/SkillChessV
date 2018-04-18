@@ -1,4 +1,6 @@
-﻿namespace Assets.Model.ChessPiece
+﻿using System.Collections.Generic;
+
+namespace Assets.Model.ChessPiece
 {
     /// <summary>
     /// Queen의 모델.
@@ -11,6 +13,11 @@
             this.Color = color;
             this.IsPossibleCastling = false;
             this.IsPossibleFirstChance = false;
+        }
+
+        protected override void SetMoveStatus(List<Board[]> board)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -10,7 +10,7 @@ using Assets.Support.Language;
 
 namespace Assets.Model.SkillChessPiece
 {
-    public class SkillPiece : Piece
+    public abstract class SkillPiece : Piece
     {
         private TextResource _textResource;
 

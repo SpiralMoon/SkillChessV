@@ -47,6 +47,8 @@ namespace Assets.Service
 
         public EventHandler<ChatForm> OnChat;
 
+        public EventHandler OnDisconnect;
+
         public NetworkManager()
         {
             _baseUrl = "http://192.168.0.185:21214";
@@ -70,11 +72,10 @@ namespace Assets.Service
         {
             if (_io == null)
             {
-                _io = IO.Socket("ws://localhost:21214/", new IO.Options
+                _io = IO.Socket("ws://192.168.0.185:21214/", new IO.Options
                 {
-                    Timeout = 1000 * 60 * 60
-                });
 
+                });
                 _io.On(SocketEvent.LIST, (data) =>
                 {
                     if (data != null)
@@ -123,6 +124,10 @@ namespace Assets.Service
                     }
 
                     OnChat?.Invoke(this, data as ChatForm);
+                });
+                _io.On(SocketEvent.DISCONNECT, (data) =>
+                {
+                    OnDisconnect?.Invoke(this, EventArgs.Empty);
                 });
             }
         }
@@ -318,6 +323,17 @@ namespace Assets.Service
             var json = JsonConvert.SerializeObject(chat);
 
             _io.Emit(SocketEvent.CHATTING, json);
+        }
+
+        /// <summary>
+        /// 게임 진행 내용 보내기
+        /// </summary>
+        /// <param name="relay"></param>
+        public void Relay(RelayForm relay)
+        {
+            var json = JsonConvert.SerializeObject(relay);
+
+            _io.Emit(SocketEvent.RELAY, json);
         }
     }
 }

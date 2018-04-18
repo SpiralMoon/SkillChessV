@@ -50,6 +50,136 @@ namespace Assets.View
             {
                 return;
             }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                // 마커정리
+
+                _selectedObject = Touch();
+
+                // 이전터치가 적 기물이거나 첫 터치인경우
+                if (!_selectedMyPiece)
+                {
+                    _startLocation = GetLocation(_selectedObject);
+
+                    // 마커표시
+                }
+                // 이전터치가 내 기물인 경우
+                else
+                {
+                    _endLocation = GetLocation(_selectedObject);
+                }
+
+                if (_isMyTurn)
+                {
+                    // 이전터치가 적 기물이거나 첫 터치인경우
+                    if (!_selectedMyPiece)
+                    {
+                        var piece = _board[_startLocation.X][_startLocation.Y].Piece;
+
+                        if (piece.Color == _myColor)
+                        {
+                            piece.ResetMoveStatus(_board);
+                            // 이동범위 표시
+                            _selectedMyPiece = true;
+                        }
+                    }
+                    // 이전터치가 내 기물인 경우
+                    else
+                    {
+                        var piece = _board[_endLocation.X][_endLocation.Y].Piece;
+
+                        // 이번터치가 이동 가능한 곳인 경우
+                        if (_board[_endLocation.X][_endLocation.Y].IsPossibleMove)
+                        {
+                            // 프로모션이 가능한 턴
+                            if (piece is Pawn && (_endLocation.Y == 0 || _endLocation.Y == 7))
+                            {
+                                _networkManager.Relay(new RelayForm
+                                {
+                                    Pattern = Pattern.MOVE,
+                                    StartLocation = _startLocation,
+                                    EndLocation = _endLocation,
+                                    Color = _myColor,
+                                    TurnFinished = false
+                                });
+                                // TODO : 프로모션 창 진입
+                            }
+                            // 캐슬링이 가능한 턴
+                            else if (piece is King && piece.IsPossibleCastling)
+                            {
+                                int? tempStartX = null;
+                                int? tempEndX = null;
+
+                                // 왼쪽 캐슬링을 선택한 경우
+                                if (_endLocation.X == 2)
+                                {
+                                    tempStartX = 0;
+                                    tempEndX = 3;
+                                }
+                                // 오른쪽 캐슬링을 선택한 경우
+                                if (_endLocation.X == 6)
+                                {
+                                    tempStartX = 7;
+                                    tempEndX = 5;
+                                }
+
+                                // 캐슬링 이동 턴
+                                if (tempStartX.HasValue && tempEndX.HasValue)
+                                {
+                                    _networkManager.Relay(new RelayForm
+                                    {
+                                        Pattern = Pattern.PROMOTION,
+                                        StartLocation = _startLocation,
+                                        EndLocation = _endLocation,
+                                        CastlingStartLocation = new Location(tempStartX.Value, _startLocation.Y),
+                                        CastlingEndLocation = new Location(tempEndX.Value, _endLocation.Y),
+                                        Color = _myColor,
+                                        TurnFinished = true
+                                    });
+                                }
+                                // 평범한 이동 턴
+                                else
+                                {
+                                    _networkManager.Relay(new RelayForm
+                                    {
+                                        Pattern = Pattern.MOVE,
+                                        StartLocation = _startLocation,
+                                        EndLocation = _endLocation,
+                                        Color = _myColor,
+                                        TurnFinished = true
+                                    });
+                                }
+                            }
+                            // 평범한 이동 턴
+                            else
+                            {
+                                _networkManager.Relay(new RelayForm
+                                {
+                                    Pattern = Pattern.MOVE,
+                                    StartLocation = _startLocation,
+                                    EndLocation = _endLocation,
+                                    Color = _myColor,
+                                    TurnFinished = true
+                                });
+                            }
+                        }
+                        // 이번터치가 내 기물인 경우
+                        else if (piece.Color == _myColor)
+                        {
+                            piece.ResetMoveStatus(_board);
+                            // 이동범위 표시
+                            _startLocation = _endLocation;
+                        }
+                        // 이번터치가 이동 불가능한 곳인 경우
+                        else
+                        {
+                            CleanMoveStatus();
+                            _selectedMyPiece = false;
+                        }
+                    }
+                }
+            }
         }
 
         protected void SetBoard()
