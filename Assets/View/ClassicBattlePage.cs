@@ -28,6 +28,7 @@ namespace Assets.View
             _myColor = param.MatchForm.Color;
             _isMyTurn = (_myColor == Support.Color.WHITE) ? true : false;
             _networkManager = NetworkManager.GetInstance();
+            _effectManager = EffectManager.GetInstance();
             _cameraManager = CameraManager.GetInstance();
             _setting = Setting.GetInstance();
             _textResource = TextResource.GetInstance();
@@ -53,16 +54,18 @@ namespace Assets.View
 
             if (Input.GetMouseButtonDown(0))
             {
-                // 마커정리
-
-                _selectedObject = Touch();
+                _effectManager.Clear();
+                
+                if ((_selectedObject = Touch()) == null)
+                {
+                    return;
+                }
 
                 // 이전터치가 적 기물이거나 첫 터치인경우
                 if (!_selectedMyPiece)
                 {
                     _startLocation = GetLocation(_selectedObject);
-
-                    // 마커표시
+                    _effectManager.Select(_board, _startLocation, _myColor);
                 }
                 // 이전터치가 내 기물인 경우
                 else
@@ -77,10 +80,11 @@ namespace Assets.View
                     {
                         var piece = _board[_startLocation.X][_startLocation.Y].Piece;
 
-                        if (piece.Color == _myColor)
+                        if (piece?.Color == _myColor)
                         {
-                            piece.ResetMoveStatus(_board);
-                            // 이동범위 표시
+                            CleanMoveStatus();
+                            piece.SetMoveStatus(_board, _startLocation);
+                            _effectManager.MoveScope(_board, _startLocation);
                             _selectedMyPiece = true;
                         }
                     }
@@ -165,15 +169,20 @@ namespace Assets.View
                             }
                         }
                         // 이번터치가 내 기물인 경우
-                        else if (piece.Color == _myColor)
+                        else if (piece?.Color == _myColor)
                         {
-                            piece.ResetMoveStatus(_board);
-                            // 이동범위 표시
                             _startLocation = _endLocation;
+
+                            _effectManager.Select(_board, _endLocation, _myColor);
+                            CleanMoveStatus();
+                            piece.SetMoveStatus(_board, _endLocation);
+                            piece.ShowMoveScope(_board, _endLocation);
+                            // 이동범위 표시
                         }
                         // 이번터치가 이동 불가능한 곳인 경우
                         else
                         {
+                            _effectManager.Select(_board, _endLocation, _myColor);
                             CleanMoveStatus();
                             _selectedMyPiece = false;
                         }

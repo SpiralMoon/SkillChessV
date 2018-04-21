@@ -20,6 +20,8 @@ namespace Assets.View
 
         protected CameraManager _cameraManager;
 
+        protected EffectManager _effectManager;
+
         protected Setting _setting;
 
         protected TextResource _textResource;
@@ -117,7 +119,7 @@ namespace Assets.View
             RaycastHit raycastHit;
             Physics.Raycast(ray.origin, ray.direction * 200, out raycastHit);
 
-            return raycastHit.collider.gameObject ?? null;
+            return raycastHit.collider?.gameObject ?? null;
         }
 
         /// <summary>

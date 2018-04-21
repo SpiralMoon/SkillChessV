@@ -24,39 +24,22 @@ namespace Assets.Model.ChessPiece
         /// </summary>
         public bool IsPossibleFirstChance;
 
-        public delegate void MoveStatusDelegate(List<Board[]> board);
-
-        /// <summary>
-        /// 발판의 상태를 초기화하고,
-        /// 이 기물이 이동할 수 있는 지역까지 한 번에 표시하는 체인
-        /// </summary>
-        public MoveStatusDelegate ResetMoveStatus;
-
         public Piece(string color)
         {
-            ResetMoveStatus += CleanMoveStatus;
-            ResetMoveStatus += SetMoveStatus;
-        }
 
-        /// <summary>
-        /// 모든 발판의 IsPossibleMove를 초기화
-        /// </summary>
-        /// <param name="board"></param>
-        private void CleanMoveStatus(List<Board[]> board)
-        {
-            foreach (var line in board)
-            {
-                foreach (var cell in line)
-                {
-                    cell.IsPossibleMove = false;
-                }
-            }
         }
 
         /// <summary>
         /// 기물이 이동할 수 있는 발판의 IsPossibleMove를 true로 변경
         /// </summary>
         /// <param name="board"></param>
-        protected abstract void SetMoveStatus(List<Board[]> board);
+        public abstract void SetMoveStatus(List<Board[]> board, Location location);
+
+        /// <summary>
+        /// 기물이 이동할 수 있는 발판과 이동할 수 없는 발판 표시
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="location"></param>
+        public abstract void ShowMoveScope(List<Board[]> board, Location location);
     }
 }

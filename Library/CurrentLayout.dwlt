@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 3}
-  m_MinSize: {x: 950, y: 521}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -131,10 +131,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 987
-  m_MinSize: {x: 811, y: 471}
-  m_MaxSize: {x: 22006, y: 14021}
+  m_MinSize: {x: 811, y: 492}
+  m_MaxSize: {x: 22006, y: 14042}
   vertical: 1
-  controlID: 151
+  controlID: 134
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -156,10 +156,10 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 987
-  m_MinSize: {x: 811, y: 471}
-  m_MaxSize: {x: 22006, y: 14021}
+  m_MinSize: {x: 811, y: 492}
+  m_MaxSize: {x: 22006, y: 14042}
   vertical: 0
-  controlID: 152
+  controlID: 135
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -180,10 +180,10 @@ MonoBehaviour:
     y: 0
     width: 1435
     height: 987
-  m_MinSize: {x: 332, y: 471}
-  m_MaxSize: {x: 14002, y: 14021}
+  m_MinSize: {x: 332, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
-  controlID: 11
+  controlID: 100
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_MinSize: {x: 332, y: 271}
   m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
-  controlID: 96
+  controlID: 101
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -501,19 +501,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Model/SkillChessPiece
+    - Assets/Resources/Origin
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Model/SkillChessPiece
+  - Assets/Resources/Origin
   m_LastFoldersGridSize: 64
   m_LastProjectPath: C:\Users\Moon\Desktop\SkillChessV
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 95}
-    m_SelectedIDs: 18290000
-    m_LastClickedID: 10520
-    m_ExpandedIDs: 00000000082800000c280000e2280000182a0000502a0000542a00008a2a00008e2a0000ffffff7f
+    scrollPos: {x: 0, y: 140}
+    m_SelectedIDs: 982f0000
+    m_LastClickedID: 12184
+    m_ExpandedIDs: 00000000ee270000f2270000c8280000fe290000362a00003a2a0000702a0000742a0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -541,7 +541,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000082800000c280000e2280000182a0000502a0000542a00008a2a00008e2a0000
+    m_ExpandedIDs: 00000000ee270000f2270000c8280000fe290000362a00003a2a0000702a0000742a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -654,7 +654,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 84fbffff00000000
+    m_ExpandedIDs: ce0dfdff540efdffd810fdffe210fdffec10fdfff410fdff0211fdff0811fdff1611fdff2a11fdff4457fdffca57fdff4e5afdff585afdff625afdff6a5afdff785afdff7e5afdff8c5afdffa05afdff1271fdff9871fdff1c74fdff2674fdff3074fdff3874fdff4674fdff4c74fdff5a74fdff6e74fdffd87ffdfff686fdff7c87fdff008afdff0a8afdff148afdff1c8afdff2a8afdff308afdff3e8afdff528afdff6e21fefff421feff7824feff8224feff8c24feff9424feffa224feffa824feffb624feffca24feffac5cfeff5065feffd665feff5a68feff6468feff6e68feff7668feff8468feff8a68feff9868feffac68feffbab6feff82ddfeff74e8feff02e9feff86ebfeff90ebfeff9aebfeffa2ebfeffb0ebfeffb6ebfeffc4ebfeffd8ebfeff58effeffdeeffeff62f2feff6cf2feff76f2feff7ef2feff8cf2feff92f2feffa0f2feffb4f2feff0072fffff878ffff8a79ffff0a7cffff147cffff1e7cffff2a7cffff387cffff3e7cffff4c7cffff607cffff8682ffff1883ffff9885ffffa285ffffac85ffffb485ffffc285ffffc885ffffd685ffffea85ffff0e8effff7695ffff0896ffff8898ffff9298ffff9c98ffffa498ffffb298ffffb898ffffc698ffffda98ffff9efbffff000000006eb10000b6280100b2da01005e910200842c0300
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
