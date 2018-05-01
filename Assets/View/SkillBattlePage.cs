@@ -31,6 +31,7 @@ namespace Assets.View
             _networkManager = NetworkManager.GetInstance();
             _effectManager = EffectManager.GetInstance();
             _cameraManager = CameraManager.GetInstance();
+            _objectMoveManager = ObjectMoveManager.GetInstance();
             _setting = Setting.GetInstance();
             _textResource = TextResource.GetInstance();
             _board = new List<Board[]>();
@@ -41,7 +42,7 @@ namespace Assets.View
             SetTextSize();
             SetTextValue();
             SetImageValue();
-
+            
             _cameraManager.Run(CameraService, _myColor);
             _networkManager.ReadyGame(_matchForm.Id);
         }
@@ -394,13 +395,10 @@ namespace Assets.View
         public void SetSocketEvents(NetworkManager networkManager)
         {
             networkManager.OnStartBattle -= OnStartBattle;
+            networkManager.OnRelayBattle -= OnRelayBattle;
 
             networkManager.OnStartBattle += OnStartBattle;
-        }
-
-        public void Invoke(Action action)
-        {
-            throw new NotImplementedException("");
+            networkManager.OnRelayBattle += OnRelayBattle;
         }
 
         public void SetTextSize()
@@ -420,14 +418,9 @@ namespace Assets.View
             SetRankIcon(EnemyFrame.transform.Find("IMG_Rank").GetComponent<Image>(), _matchForm.Enemy.Score);
         }
 
-        public void NextPage(string pageName)
+        protected void OnRelayBattle(object sender, RelayForm relayForm)
         {
-            SceneManager.LoadSceneAsync(pageName);
-        }
-
-        protected void OnStartBattle(object sender, EventArgs e)
-        {
-            _gameStarted = true;
+            throw new NotImplementedException("");
         }
     }
 }

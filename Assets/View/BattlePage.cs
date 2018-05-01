@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 using Assets.Model;
 using Assets.Model.Bean;
@@ -21,6 +22,8 @@ namespace Assets.View
         protected CameraManager _cameraManager;
 
         protected EffectManager _effectManager;
+
+        protected ObjectMoveManager _objectMoveManager;
 
         protected Setting _setting;
 
@@ -75,7 +78,7 @@ namespace Assets.View
 
         public void Invoke(Action action)
         {
-            throw new NotImplementedException("");
+            UnityMainThreadDispatcher.Instance().Enqueue(action);
         }
 
         public void SetTextSize()
@@ -90,7 +93,7 @@ namespace Assets.View
 
         public void NextPage(string pageName)
         {
-            throw new NotImplementedException("");
+            SceneManager.LoadSceneAsync(pageName);
         }
 
         protected void SetRankIcon(Image rankIcon, int score)
@@ -163,6 +166,11 @@ namespace Assets.View
         }
 
         protected void OnStartBattle(object sender, EventArgs e)
+        {
+            _gameStarted = true;
+        }
+
+        protected void OnRelayBattle(object sender, EventArgs e)
         {
             throw new NotImplementedException("");
         }

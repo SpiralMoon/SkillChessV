@@ -116,6 +116,15 @@ namespace Assets.Service
                 {
                     OnStartBattle?.Invoke(this, EventArgs.Empty);
                 });
+                _io.On(SocketEvent.RELAY, (data) =>
+                {
+                    if (data != null)
+                    {
+                        data = JsonConvert.DeserializeObject<RelayForm>(data.ToString());
+                    }
+
+                    OnRelayBattle?.Invoke(this, data as RelayForm);
+                });
                 _io.On(SocketEvent.CHATTING, (data) =>
                 {
                     if (data != null)
