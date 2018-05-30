@@ -325,6 +325,7 @@ namespace Assets.View
         {
             Invoke(() =>
             {
+                TxtDebug.text += relayForm.Color + ", " + relayForm.StartLocation.ToString() + "," + relayForm.EndLocation.ToString() + "\n";//"\n";
                 switch (relayForm.Pattern)
                 {
                     case Pattern.MOVE:

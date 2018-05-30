@@ -57,6 +57,8 @@ namespace Assets.View
 
         public GameObject CameraService;
 
+        public Text TxtDebug;
+
         private void Awake()
         {
             var param = PageParameterDispatcher.Instance().GetPageParameter() as BattlePageParameter;
