@@ -15,6 +15,8 @@ namespace Assets.Support
         PROMOTION,
         CASTLING,
         ENPASSANT,
-        SKILL
+        SKILL,
+        SURRENDER,
+        FINISH
     }
 }

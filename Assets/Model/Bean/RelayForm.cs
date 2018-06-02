@@ -43,6 +43,12 @@ public class RelayForm
     public Location CastlingEndLocation;
 
     /// <summary>
+    /// 프로모션으로 선택한 기물 종류
+    /// </summary>
+    [JsonProperty("promotionType")]
+    public string PromotionType;
+
+    /// <summary>
     /// 턴이 종료되었는가?
     /// </summary>
     [JsonProperty("turnFinished")]

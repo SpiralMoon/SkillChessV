@@ -2083,6 +2083,11 @@ MonoBehaviour:
   EnemyFrame: {fileID: 887354123}
   CameraService: {fileID: 1844574723}
   TxtDebug: {fileID: 895774821}
+  PromotionFrame: {fileID: 1743658053}
+  BtnPromotionRook: {fileID: 1164268582}
+  BtnPromotionKnight: {fileID: 298237220}
+  BtnPromotionBishop: {fileID: 638522677}
+  BtnPromotionQueen: {fileID: 1138976790}
 --- !u!1 &43145579
 GameObject:
   m_ObjectHideFlags: 0
@@ -3022,7 +3027,7 @@ GameObject:
   - component: {fileID: 79247620}
   - component: {fileID: 79247622}
   - component: {fileID: 79247621}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Rank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4200,7 +4205,7 @@ GameObject:
   - component: {fileID: 112777429}
   - component: {fileID: 112777431}
   - component: {fileID: 112777430}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5722,7 +5727,7 @@ GameObject:
   - component: {fileID: 142428729}
   - component: {fileID: 142428728}
   - component: {fileID: 142428727}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: TXT_Nickname
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6416,7 +6421,7 @@ GameObject:
   - component: {fileID: 156053343}
   - component: {fileID: 156053345}
   - component: {fileID: 156053344}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10870,7 +10875,7 @@ GameObject:
   - component: {fileID: 298237222}
   - component: {fileID: 298237221}
   - component: {fileID: 298237220}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: BTN_PromotionKnight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10967,7 +10972,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3c66e7751319ed94a82f893d90030804, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68aee95e306065d408c6521aec2c18fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15978,7 +15983,7 @@ GameObject:
   - component: {fileID: 478836835}
   - component: {fileID: 478836837}
   - component: {fileID: 478836836}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16913,7 +16918,7 @@ GameObject:
   - component: {fileID: 511068754}
   - component: {fileID: 511068756}
   - component: {fileID: 511068755}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Rook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16957,7 +16962,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a031c639a0beb2d4aa3fdc3f41ee9b4c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b370a0e663c636942b5ba7c458bc8868, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -34330,7 +34335,7 @@ GameObject:
   - component: {fileID: 638522679}
   - component: {fileID: 638522678}
   - component: {fileID: 638522677}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: BTN_PromotionBishop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34427,7 +34432,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3c66e7751319ed94a82f893d90030804, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68aee95e306065d408c6521aec2c18fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -34944,7 +34949,7 @@ GameObject:
   - component: {fileID: 661484027}
   - component: {fileID: 661484029}
   - component: {fileID: 661484028}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Rank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38002,7 +38007,7 @@ GameObject:
   - component: {fileID: 744085544}
   - component: {fileID: 744085543}
   - component: {fileID: 744085542}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: TXT_PromotionChance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38058,7 +38063,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f36c1d3ba1fa33944905ceb4c131e4c5, type: 3}
+    m_Font: {fileID: 12800000, guid: 36dd20716b537734ea92158d0b88983d, type: 3}
     m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
@@ -41563,7 +41568,7 @@ GameObject:
   - component: {fileID: 837792253}
   - component: {fileID: 837792255}
   - component: {fileID: 837792254}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42302,7 +42307,7 @@ GameObject:
   - component: {fileID: 887354124}
   - component: {fileID: 887354126}
   - component: {fileID: 887354125}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_EnemyFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43630,7 +43635,7 @@ GameObject:
   - component: {fileID: 908132821}
   - component: {fileID: 908132823}
   - component: {fileID: 908132822}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43674,7 +43679,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 900a64b4d882b304aa84fdd70defb151, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 446009805b36424468cef5a5c7fc055f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -50425,7 +50430,7 @@ GameObject:
   - component: {fileID: 1138976792}
   - component: {fileID: 1138976791}
   - component: {fileID: 1138976790}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: BTN_PromotionQueen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50522,7 +50527,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3c66e7751319ed94a82f893d90030804, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68aee95e306065d408c6521aec2c18fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -50996,7 +51001,7 @@ GameObject:
   - component: {fileID: 1163535733}
   - component: {fileID: 1163535732}
   - component: {fileID: 1163535731}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: TXT_Nickname
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51082,7 +51087,7 @@ GameObject:
   - component: {fileID: 1164268584}
   - component: {fileID: 1164268583}
   - component: {fileID: 1164268582}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: BTN_PromotionRook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51179,7 +51184,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3c66e7751319ed94a82f893d90030804, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68aee95e306065d408c6521aec2c18fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -63112,7 +63117,7 @@ GameObject:
   - component: {fileID: 1438694173}
   - component: {fileID: 1438694175}
   - component: {fileID: 1438694174}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64301,7 +64306,7 @@ GameObject:
   - component: {fileID: 1476619895}
   - component: {fileID: 1476619897}
   - component: {fileID: 1476619896}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_MyFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69387,7 +69392,7 @@ GameObject:
   - component: {fileID: 1653276633}
   - component: {fileID: 1653276635}
   - component: {fileID: 1653276634}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Bishop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69431,7 +69436,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6b59dc9e87e150147b996e1ab787c8b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d354ae8b30cc4d04c985ed682a5e4fa5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -72589,7 +72594,7 @@ GameObject:
   - component: {fileID: 1743658054}
   - component: {fileID: 1743658056}
   - component: {fileID: 1743658055}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Promotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72638,7 +72643,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 14e03b9ed36e4444f85e01068fa8a034, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd8fd0c93c64df541b5c9e59e24804fe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -79666,7 +79671,7 @@ GameObject:
   - component: {fileID: 1986293933}
   - component: {fileID: 1986293935}
   - component: {fileID: 1986293934}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Queen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79710,7 +79715,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: dcbeeadc69c75404ba95db604d9c840b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2086a6241617cae40bed24044c5cdd0f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -80070,7 +80075,7 @@ GameObject:
   - component: {fileID: 1998037230}
   - component: {fileID: 1998037232}
   - component: {fileID: 1998037231}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

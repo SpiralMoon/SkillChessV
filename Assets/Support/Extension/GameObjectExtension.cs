@@ -19,13 +19,25 @@ namespace Assets.Support.Extension
         /// <param name="boardLocation">board의 좌표</param>
         public static void SetPosition(this GameObject gameObject, List<Board[]> board, Location boardLocation)
         {
+            gameObject.SetPosition(board, boardLocation, 1);
+        }
+
+        /// <summary>
+        /// 객체의 위치를 발판 바로 위로 설정.
+        /// </summary>
+        /// <param name="gameObject">위치를 설정할 객체</param>
+        /// <param name="board"></param>
+        /// <param name="boardLocation">board의 좌표</param>
+        /// <param name="yAxis">높이</param>
+        public static void SetPosition(this GameObject gameObject, List<Board[]> board, Location boardLocation, int yAxis)
+        {
             var x = boardLocation.X;
             var y = boardLocation.Y;
 
             var target = new
             {
                 x = board[x][y].BoardObj.transform.position.x,
-                y = board[x][y].BoardObj.transform.position.y + 1,
+                y = board[x][y].BoardObj.transform.position.y + yAxis,
                 z = board[x][y].BoardObj.transform.position.z
             };
 

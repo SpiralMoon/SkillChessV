@@ -129,7 +129,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9396c0f9a5639f16a06a19eecacad493 Assembly-CSharp.dll:.csLegacyEffectEditor
 9fd1e7b34dae249a6a18892d6f93b98c Assembly-CSharp.dll:Assets.View.BattlePage
-9fd1e7b34dae249a6a18892d6f93b98c Assembly-CSharp.dll:Assets.View.ClassicBattlePage
+21a61e59102806536460ba6d0ad96c02 Assembly-CSharp.dll:Assets.View.ClassicBattlePage
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.csLegacyEffectChanger
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour

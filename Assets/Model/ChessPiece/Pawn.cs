@@ -118,7 +118,7 @@ namespace Assets.Model.ChessPiece
                     effectManager.MoveScope(board, x + 1, y - 1);
                 }
 
-                if (board[x][y - 2].Piece == null && IsPossibleFirstChance)
+                if (board[x][y - 1].Piece == null && IsPossibleFirstChance)
                 {
                     effectManager.MoveScope(board, x, y - 2);
                 }

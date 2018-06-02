@@ -45,6 +45,8 @@ namespace Assets.Service
 
         public EventHandler<RelayForm> OnRelayBattle;
 
+        public EventHandler<ResultForm> OnResultBattle;
+
         public EventHandler<ChatForm> OnChat;
 
         public EventHandler OnDisconnect;
@@ -124,6 +126,15 @@ namespace Assets.Service
                     }
 
                     OnRelayBattle?.Invoke(this, data as RelayForm);
+                });
+                _io.On(SocketEvent.RESULT, (data) =>
+                {
+                    if (data != null)
+                    {
+                        data = JsonConvert.DeserializeObject<ResultForm>(data.ToString());
+                    }
+
+                    OnResultBattle?.Invoke(this, data as ResultForm);
                 });
                 _io.On(SocketEvent.CHATTING, (data) =>
                 {

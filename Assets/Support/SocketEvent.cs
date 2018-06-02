@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Assets.Support
+﻿namespace Assets.Support
 {
     public class SocketEvent
     {
@@ -52,6 +46,11 @@ namespace Assets.Support
         /// 게임 내용 진행
         /// </summary>
         public const string RELAY = "relay";
+
+        /// <summary>
+        /// 게임이 종료되었을 때 (winn
+        /// </summary>
+        public const string RESULT = "result";
 
         /// <summary>
         /// 

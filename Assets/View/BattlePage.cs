@@ -185,12 +185,6 @@ namespace Assets.View
             {
                 piece.Piece.IsPossibleCastling = false;
             }
-            
-            // 기물 모델이 있으면 제거
-            //if (_board[endLocation.X][endLocation.Y].PieceObj != null)
-            //{
-                Destroy(_board[endLocation.X][endLocation.Y].PieceObj);
-            //}
 
             _board[endLocation.X][endLocation.Y].PieceObj = piece.PieceObj;
             _board[endLocation.X][endLocation.Y].Piece = piece.Piece;
@@ -204,7 +198,12 @@ namespace Assets.View
             _gameStarted = true;
         }
 
-        protected void OnRelayBattle(object sender, EventArgs e)
+        protected void OnRelayBattle(object sender, RelayForm e)
+        {
+            throw new NotImplementedException("");
+        }
+
+        protected void OnResultBattle(object sender, ResultForm e)
         {
             throw new NotImplementedException("");
         }

@@ -68,8 +68,8 @@ namespace Assets.Service
                     // 기물이 도착했을 때
                     if (IsArrived(_pieces[i].transform.position, _boardPositions[i]))
                     {
-                        _pieces.Remove(_pieces[i]);
-                        _boardPositions.Remove(_boardPositions[i]);
+                        _pieces.RemoveAt(i);
+                        _boardPositions.RemoveAt(i);
                         i--;
                     }
                 }

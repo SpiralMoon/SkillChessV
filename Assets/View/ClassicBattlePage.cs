@@ -13,6 +13,7 @@ using Assets.Model.Bean;
 using Assets.Model.SceneParameter;
 using Assets.Model.ChessPiece;
 using Assets.Support;
+using Assets.Support.Extension;
 using Assets.Support.Language;
 using Assets.Service;
 
@@ -20,6 +21,16 @@ namespace Assets.View
 {
     public class ClassicBattlePage : BattlePage
     {
+        public GameObject PromotionFrame;
+
+        public Button BtnPromotionRook;
+
+        public Button BtnPromotionKnight;
+
+        public Button BtnPromotionBishop;
+
+        public Button BtnPromotionQueen;
+
         private void Awake()
         {
             var param = PageParameterDispatcher.Instance().GetPageParameter() as BattlePageParameter;
@@ -34,6 +45,11 @@ namespace Assets.View
             _setting = Setting.GetInstance();
             _textResource = TextResource.GetInstance();
             _board = new List<Board[]>();
+
+            BtnPromotionRook.onClick.AddListener(delegate { OnClickPromotion("Rook"); });
+            BtnPromotionKnight.onClick.AddListener(delegate { OnClickPromotion("Knight"); });
+            BtnPromotionBishop.onClick.AddListener(delegate { OnClickPromotion("Bishop"); });
+            BtnPromotionQueen.onClick.AddListener(delegate { OnClickPromotion("Queen"); });
 
             SetBoard();
 
@@ -109,7 +125,9 @@ namespace Assets.View
                                     Color = _myColor,
                                     TurnFinished = false
                                 });
-                                // TODO : 프로모션 창 진입
+
+                                // 프로모션 창 진입
+                                PromotionFrame.SetActive(true);
                             }
                             // 캐슬링이 가능한 턴
                             else if (piece is King && piece.IsPossibleCastling)
@@ -169,6 +187,8 @@ namespace Assets.View
                                     TurnFinished = true
                                 });
                             }
+
+                            _selectedMyPiece = false;
                         }
                         // 이번터치가 내 기물인 경우
                         else if (target?.Color == _myColor)
@@ -300,9 +320,11 @@ namespace Assets.View
         {
             networkManager.OnStartBattle -= OnStartBattle;
             networkManager.OnRelayBattle -= OnRelayBattle;
+            networkManager.OnResultBattle -= OnResultBattle;
 
             networkManager.OnStartBattle += OnStartBattle;
             networkManager.OnRelayBattle += OnRelayBattle;
+            networkManager.OnResultBattle += OnResultBattle;
         }
 
         public void SetTextSize()
@@ -336,13 +358,50 @@ namespace Assets.View
                         _board[pieceLocation.X][pieceLocation.Y].PieceObj,
                         _board[boardLocation.X][boardLocation.Y].BoardObj);
 
+                    // 기물 모델이 있으면 제거
+                    if (_board[boardLocation.X][boardLocation.Y].Piece != null)
+                    {
+                        Destroy(_board[boardLocation.X][boardLocation.Y].PieceObj);
+                        _effectManager.Kill(_board, boardLocation);
+                    }
+
                     MovePieceData(pieceLocation, boardLocation);
 
                     CleanMoveStatus();
                 }
                 else if (relayForm.Pattern == Pattern.PROMOTION)
                 {
+                    var pieceLocation = relayForm.EndLocation;
+                    var colorAndPiece = relayForm.Color + relayForm.PromotionType;
 
+                    Piece newPiece = null;
+
+                    switch (relayForm.PromotionType)
+                    {
+                        case "Rook":
+                            newPiece = new Rook(relayForm.Color);
+                            newPiece.IsPossibleCastling = false;
+                            break;
+                        case "Knight":
+                            newPiece = new Knight(relayForm.Color);
+                            break;
+                        case "Bishop":
+                            newPiece = new Bishop(relayForm.Color);
+                            break;
+                        case "Queen":
+                            newPiece = new Queen(relayForm.Color);
+                            break;
+                    }
+
+                    Destroy(_board[pieceLocation.X][pieceLocation.Y].PieceObj);
+
+                    var newPieceObj = Instantiate(Resources.Load<GameObject>("3D/Piece/" + colorAndPiece));
+                        newPieceObj.SetPosition(_board, pieceLocation);
+
+                    _board[pieceLocation.X][pieceLocation.Y].Piece = newPiece;
+                    _board[pieceLocation.X][pieceLocation.Y].PieceObj = newPieceObj;
+                    
+                    _effectManager.Promotion(_board, pieceLocation);
                 }
                 else if (relayForm.Pattern == Pattern.CASTLING)
                 {
@@ -374,6 +433,37 @@ namespace Assets.View
                     _isMyTurn = !_isMyTurn;
                 }
             });
+        }
+
+        protected void OnResultBattle(object sender, ResultForm resultForm)
+        {
+            Invoke(() =>
+            {
+                // 정상적인 게임 종료
+                if (resultForm.Pattern == Pattern.FINISH)
+                {
+                    // TODO
+                }
+                // 항복을 통한 게임 종료
+                else if (resultForm.Pattern == Pattern.SURRENDER)
+                {
+                    // TODO
+                }
+            });
+        }
+
+        private void OnClickPromotion(string pieceType)
+        {
+            _networkManager.Relay(new RelayForm
+            {
+                Pattern = Pattern.PROMOTION,
+                EndLocation = _endLocation,
+                PromotionType = pieceType,
+                Color = _myColor,
+                TurnFinished = true
+            });
+
+            PromotionFrame.SetActive(false);
         }
     }
 }

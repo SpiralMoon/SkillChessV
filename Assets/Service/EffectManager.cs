@@ -84,12 +84,40 @@ namespace Assets.Service
             _selectMyPiece.SetPosition(board, location);
         }
 
-       /// <summary>
-       /// 
-       /// </summary>
-       /// <param name="board"></param>
-       /// <param name="x"></param>
-       /// <param name="y"></param>
+        /// <summary>
+        /// 사망 이펙트 표시
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="location"></param>
+        public void Kill(List<Board[]> board, Location location)
+        {
+            var kill = Instantiate(Resources.Load<GameObject>("Effect/Kill"));
+
+            kill.SetPosition(board, location, 3);
+
+            Destroy(kill, 5);
+        }
+
+        /// <summary>
+        /// 프로모션 이펙트 표시
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="location"></param>
+        public void Promotion(List<Board[]> board, Location location)
+        {
+            var promotion = Instantiate(Resources.Load<GameObject>("Effect/Promotion"));
+
+            promotion.SetPosition(board, location, 5);
+
+            Destroy(promotion, 7);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         public void MoveScope(List<Board[]> board, int x ,int y)
         {
             GameObject scope = null;
