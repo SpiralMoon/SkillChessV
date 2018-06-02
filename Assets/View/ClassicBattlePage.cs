@@ -92,7 +92,8 @@ namespace Assets.View
                     // 이전터치가 내 기물인 경우
                     else
                     {
-                        var piece = _board[_endLocation.X][_endLocation.Y].Piece;
+                        var piece = _board[_startLocation.X][_startLocation.Y].Piece;
+                        var target = _board[_endLocation.X][_endLocation.Y].Piece;
 
                         // 이번터치가 이동 가능한 곳인 경우
                         if (_board[_endLocation.X][_endLocation.Y].IsPossibleMove)
@@ -134,7 +135,7 @@ namespace Assets.View
                                 {
                                     _networkManager.Relay(new RelayForm
                                     {
-                                        Pattern = Pattern.PROMOTION,
+                                        Pattern = Pattern.CASTLING,
                                         StartLocation = _startLocation,
                                         EndLocation = _endLocation,
                                         CastlingStartLocation = new Location(tempStartX.Value, _startLocation.Y),
@@ -170,14 +171,14 @@ namespace Assets.View
                             }
                         }
                         // 이번터치가 내 기물인 경우
-                        else if (piece?.Color == _myColor)
+                        else if (target?.Color == _myColor)
                         {
                             _startLocation = _endLocation;
 
                             _effectManager.Select(_board, _endLocation, _myColor);
                             CleanMoveStatus();
-                            piece.SetMoveStatus(_board, _endLocation);
-                            piece.ShowMoveScope(_board, _endLocation);
+                            target.SetMoveStatus(_board, _endLocation);
+                            target.ShowMoveScope(_board, _endLocation);
                             // 이동범위 표시
                         }
                         // 이번터치가 이동 불가능한 곳인 경우
@@ -325,26 +326,47 @@ namespace Assets.View
         {
             Invoke(() =>
             {
-                TxtDebug.text += relayForm.Color + ", " + relayForm.StartLocation.ToString() + "," + relayForm.EndLocation.ToString() + "\n";//"\n";
-                switch (relayForm.Pattern)
+                //TxtDebug.text += relayForm.Color + ", " + relayForm.StartLocation.ToString() + "," + relayForm.EndLocation.ToString() + "\n";
+                if (relayForm.Pattern == Pattern.MOVE)
                 {
-                    case Pattern.MOVE:
-                        var pieceLocation = relayForm.StartLocation;
-                        var boardLocation = relayForm.EndLocation;
+                    var pieceLocation = relayForm.StartLocation;
+                    var boardLocation = relayForm.EndLocation;
 
-
-                        _objectMoveManager.Move(
+                    _objectMoveManager.Move(
                         _board[pieceLocation.X][pieceLocation.Y].PieceObj,
                         _board[boardLocation.X][boardLocation.Y].BoardObj);
-                        break;
-                    case Pattern.PROMOTION:
-                        break;
-                    case Pattern.CASTLING:
-                        break;
-                    case Pattern.ENPASSANT:
-                        break;
-                    default:
-                        break;
+
+                    MovePieceData(pieceLocation, boardLocation);
+
+                    CleanMoveStatus();
+                }
+                else if (relayForm.Pattern == Pattern.PROMOTION)
+                {
+
+                }
+                else if (relayForm.Pattern == Pattern.CASTLING)
+                {
+                    var pieceLocation = relayForm.StartLocation;
+                    var boardLocation = relayForm.EndLocation;
+                    var castlingPieceLocation = relayForm.CastlingStartLocation;
+                    var castlingBoardLocation = relayForm.CastlingEndLocation;
+
+                    _objectMoveManager.Move(
+                        _board[pieceLocation.X][pieceLocation.Y].PieceObj,
+                        _board[boardLocation.X][boardLocation.Y].BoardObj);
+
+                    _objectMoveManager.Move(
+                        _board[castlingPieceLocation.X][castlingPieceLocation.Y].PieceObj,
+                        _board[castlingBoardLocation.X][castlingBoardLocation.Y].BoardObj);
+
+                    MovePieceData(pieceLocation, boardLocation);
+                    MovePieceData(castlingPieceLocation, castlingBoardLocation);
+
+                    CleanMoveStatus();
+                }
+                else if (relayForm.Pattern == Pattern.ENPASSANT)
+                {
+
                 }
 
                 if (relayForm.TurnFinished)

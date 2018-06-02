@@ -90,7 +90,6 @@ namespace Assets.Service
        /// <param name="board"></param>
        /// <param name="x"></param>
        /// <param name="y"></param>
-       /// <param name="IsPossibleMove"></param>
         public void MoveScope(List<Board[]> board, int x ,int y)
         {
             GameObject scope = null;

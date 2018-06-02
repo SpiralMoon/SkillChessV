@@ -64,6 +64,14 @@ namespace Assets.Service
                         _pieces[i].transform.position,
                         _boardPositions[i],
                         _moveSpeed);
+
+                    // 기물이 도착했을 때
+                    if (IsArrived(_pieces[i].transform.position, _boardPositions[i]))
+                    {
+                        _pieces.Remove(_pieces[i]);
+                        _boardPositions.Remove(_boardPositions[i]);
+                        i--;
+                    }
                 }
             }
         }
@@ -80,6 +88,27 @@ namespace Assets.Service
                 boardObj.transform.position.x,
                 boardObj.transform.position.y + 1,
                 boardObj.transform.position.z));
+        }
+
+        /// <summary>
+        /// 객체가 목적지에 도착했는지 판단
+        /// </summary>
+        /// <param name="pieceObjPosition"></param>
+        /// <param name="boardObjPosition"></param>
+        public bool IsArrived(Vector3 pieceObjPosition, Vector3 boardObjPosition)
+        {
+            var isArrived = false;
+            var distance = pieceObjPosition - boardObjPosition;
+
+            // 각 좌표의 오차가 0.2 이하이면 도착으로 간주
+            if (Math.Abs(distance.x) <= 0.2 &&
+                Math.Abs(distance.y) <= 0.2 &&
+                Math.Abs(distance.z) <= 0.2)
+            {
+                isArrived = true;
+            }
+
+            return isArrived;
         }
 
         public static ObjectMoveManager GetInstance()

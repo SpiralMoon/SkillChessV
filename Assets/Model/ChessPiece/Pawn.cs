@@ -11,7 +11,7 @@ namespace Assets.Model.ChessPiece
     {
         public Pawn(string color) : base(color)
         {
-            this.PieceName = "Bishop";
+            this.PieceName = "Pawn";
             this.Color = color;
             this.IsPossibleCastling = false;
             this.IsPossibleFirstChance = true;

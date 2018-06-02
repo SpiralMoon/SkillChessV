@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using Assets.Model;
 using Assets.Model.Bean;
 using Assets.Model.Impl;
+using Assets.Model.ChessPiece;
 using Assets.Model.SceneParameter;
 using Assets.Support;
 using Assets.Support.Language;
@@ -165,6 +166,37 @@ namespace Assets.View
                     cell.IsPossibleMove = false;
                 }
             }
+        }
+
+       /// <summary>
+       /// 기물의 데이터를 이동.
+       /// </summary>
+       /// <param name="startLocation"></param>
+       /// <param name="endLocation"></param>
+        protected void MovePieceData(Location startLocation, Location endLocation)
+        {
+            var piece = _board[startLocation.X][startLocation.Y];
+
+            if (piece.Piece is Pawn)
+            {
+                piece.Piece.IsPossibleFirstChance = false;
+            }
+            else if (piece.Piece is King || piece.Piece is Rook)
+            {
+                piece.Piece.IsPossibleCastling = false;
+            }
+            
+            // 기물 모델이 있으면 제거
+            //if (_board[endLocation.X][endLocation.Y].PieceObj != null)
+            //{
+                Destroy(_board[endLocation.X][endLocation.Y].PieceObj);
+            //}
+
+            _board[endLocation.X][endLocation.Y].PieceObj = piece.PieceObj;
+            _board[endLocation.X][endLocation.Y].Piece = piece.Piece;
+
+            piece.PieceObj = null;
+            piece.Piece = null;
         }
 
         protected void OnStartBattle(object sender, EventArgs e)

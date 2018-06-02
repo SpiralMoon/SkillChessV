@@ -100,7 +100,7 @@ namespace Assets.Model.ChessPiece
             if (board[x][y].Piece.IsPossibleCastling)
             {
                 // King과 Rook 사이에 장애물이 있는가?
-                bool obstacles = true;
+                bool obstacles = false;
 
                 // 왼쪽 Rook과 캐슬링을 할 수 있는 경우
                 if (board[0][y].Piece.IsPossibleCastling)
@@ -113,28 +113,29 @@ namespace Assets.Model.ChessPiece
                             obstacles = true;
                             break;
                         }
-
-                        if (!obstacles)
-                        {
-                            board[2][y].IsPossibleMove = true;
-                        }
+                    }
+                    if (!obstacles)
+                    {
+                        board[2][y].IsPossibleMove = true;
                     }
                 }
+
+                obstacles = false;
 
                 // 오른쪽 Rook과 캐슬링을 할 수 있는 경우
                 if (board[7][y].Piece.IsPossibleCastling)
                 {
-                    for (int i = x + 1; i < 8; i++)
+                    for (int i = x + 1; i < 7; i++)
                     {
                         if (board[i][y].Piece != null)
                         {
                             obstacles = true;
                             break;
                         }
-                        if (!obstacles)
-                        {
-                            board[6][y].IsPossibleMove = true;
-                        }
+                    }
+                    if (!obstacles)
+                    {
+                        board[6][y].IsPossibleMove = true;
                     }
                 }
             }
@@ -188,7 +189,7 @@ namespace Assets.Model.ChessPiece
 
             if (board[x][y].Piece.IsPossibleCastling)
             {
-                bool obstacles = true;
+                bool obstacles = false;
                 
                 if (board[0][y].Piece.IsPossibleCastling)
                 {
@@ -199,27 +200,28 @@ namespace Assets.Model.ChessPiece
                             obstacles = true;
                             break;
                         }
-
-                        if (!obstacles)
-                        {
-                            effectManager.MoveScope(board, 2, y);
-                        }
+                    }
+                    if (!obstacles)
+                    {
+                        effectManager.MoveScope(board, 2, y);
                     }
                 }
-                
+
+                obstacles = false;
+
                 if (board[7][y].Piece.IsPossibleCastling)
                 {
-                    for (int i = x + 1; i < 8; i++)
+                    for (int i = x + 1; i < 7; i++)
                     {
                         if (board[i][y].Piece != null)
                         {
                             obstacles = true;
                             break;
                         }
-                        if (!obstacles)
-                        {
-                            effectManager.MoveScope(board, 6, y);
-                        }
+                    }
+                    if (!obstacles)
+                    {
+                        effectManager.MoveScope(board, 6, y);
                     }
                 }
             }
