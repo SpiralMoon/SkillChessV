@@ -103,7 +103,7 @@ namespace Assets.Service
                         data = JsonConvert.DeserializeObject<RoomForm>(data.ToString());
                     }
 
-                    OnCreateRoom?.Invoke(this, data as RoomForm);
+                    OnCloseRoom?.Invoke(this, data as RoomForm);
                 });
                 _io.On(SocketEvent.MATCH, (data) =>
                 {
@@ -354,6 +354,17 @@ namespace Assets.Service
             var json = JsonConvert.SerializeObject(relay);
 
             _io.Emit(SocketEvent.RELAY, json);
+        }
+
+        /// <summary>
+        /// 게임 결과 내용 보내기
+        /// </summary>
+        /// <param name="result"></param>
+        public void Result(ResultForm result)
+        {
+            var json = JsonConvert.SerializeObject(result);
+
+            _io.Emit(SocketEvent.RESULT, json);
         }
     }
 }

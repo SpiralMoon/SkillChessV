@@ -332,6 +332,7 @@
     <Compile Include="Assets\View\LobbyPage.cs" />
     <Compile Include="Assets\View\LoginPage.cs" />
     <Compile Include="Assets\View\RankPage.cs" />
+    <Compile Include="Assets\View\ResultPage.cs" />
     <Compile Include="Assets\View\SettingPage.cs" />
     <Compile Include="Assets\View\SkillBattlePage.cs" />
     <Compile Include="Assets\View\TitlePage.cs" />

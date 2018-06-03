@@ -45,6 +45,9 @@ namespace Assets.View
             
             _cameraManager.Run(CameraService, _myColor);
             _networkManager.ReadyGame(_matchForm.Id);
+
+            StartCoroutine(CheckGameOver());
+            StartCoroutine(CheckTimeOver());
         }
 
         private void Update()
@@ -396,9 +399,11 @@ namespace Assets.View
         {
             networkManager.OnStartBattle -= OnStartBattle;
             networkManager.OnRelayBattle -= OnRelayBattle;
+            networkManager.OnResultBattle -= OnResultBattle;
 
             networkManager.OnStartBattle += OnStartBattle;
             networkManager.OnRelayBattle += OnRelayBattle;
+            networkManager.OnResultBattle += OnResultBattle;
         }
 
         public void SetTextSize()
@@ -419,6 +424,11 @@ namespace Assets.View
         }
 
         protected void OnRelayBattle(object sender, RelayForm relayForm)
+        {
+            throw new NotImplementedException("");
+        }
+
+        protected void OnResultBattle(object sender, ResultForm resultForm)
         {
             throw new NotImplementedException("");
         }

@@ -207,5 +207,84 @@ namespace Assets.View
         {
             throw new NotImplementedException("");
         }
+
+        /// <summary>
+        /// 게임오버를 검사하는 함수.
+        /// </summary>
+        /// <returns></returns>
+        protected IEnumerator CheckGameOver()
+        {
+            string winColor = null;
+
+            // 1. King이 사망한 경우
+            // 2. King 이외의 모든 기물이 사망한 경우            
+            while (true)
+            {
+                EXIT:
+                yield return new WaitForSeconds(3);
+
+                var existWhiteKing = false;
+                var existWhitePieces = false;
+                var existBlackKing = false;
+                var existBlackPieces = false;
+
+                for (int i = 0; i < 8; i++)
+                    for (int j = 0; j < 8; j++)
+                        if (_board[i][j].Piece != null)
+                        {
+                            var piece = _board[i][j].Piece;
+
+                            if (piece is King)
+                            {
+                                var temp = (piece.Color == Support.Color.WHITE)
+                                    ? (existWhiteKing = true)
+                                    : (existBlackKing = true);
+                            }
+                            else
+                            {
+                                var temp = (piece.Color == Support.Color.WHITE)
+                                    ? (existWhitePieces = true)
+                                    : (existBlackPieces = true);
+                            }
+
+                            if (existWhiteKing && existWhitePieces && existBlackKing && existBlackPieces)
+                            {
+                                goto EXIT;
+                            }
+                        }
+                
+                if (existWhiteKing && existBlackKing)
+                {
+                    continue;
+                }
+
+                if (existWhiteKing || !existBlackPieces)
+                {
+                    winColor = Support.Color.WHITE;
+                }
+                else if (existBlackKing || !existWhitePieces)
+                {
+                    winColor = Support.Color.BLACK;
+                }
+
+                if (winColor == _myColor)
+                {
+                    _networkManager.Result(new ResultForm
+                    {
+                        Pattern = Pattern.FINISH,
+                        Id = _setting.Email,
+                        Color = winColor
+                    });
+                }
+
+                break;
+                StopCoroutine("CheckGameOver");
+            }
+        }
+
+        protected IEnumerator CheckTimeOver()
+        {
+            throw new NotImplementedException("");
+        }
     }
 }

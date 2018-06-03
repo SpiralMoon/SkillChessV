@@ -16,6 +16,7 @@ using Assets.Support;
 using Assets.Support.Extension;
 using Assets.Support.Language;
 using Assets.Service;
+using System.Collections;
 
 namespace Assets.View
 {
@@ -60,6 +61,9 @@ namespace Assets.View
 
             _cameraManager.Run(CameraService, _myColor);
             _networkManager.ReadyGame(_matchForm.Id);
+
+            StartCoroutine(CheckGameOver());
+            StartCoroutine(CheckTimeOver());
         }
 
         private void Update()
@@ -114,8 +118,8 @@ namespace Assets.View
                         // 이번터치가 이동 가능한 곳인 경우
                         if (_board[_endLocation.X][_endLocation.Y].IsPossibleMove)
                         {
-                            // 프로모션이 가능한 턴
-                            if (piece is Pawn && (_endLocation.Y == 0 || _endLocation.Y == 7))
+                            // 프로모션이 가능한 턴 (King을 죽인 경우는 제외)
+                            if (piece is Pawn && (_endLocation.Y == 0 || _endLocation.Y == 7) && !(target is King))
                             {
                                 _networkManager.Relay(new RelayForm
                                 {
@@ -443,11 +447,14 @@ namespace Assets.View
                 if (resultForm.Pattern == Pattern.FINISH)
                 {
                     // TODO
+                    TxtDebug.text += "game over\n";
+                    NextPage("ResultPage");
                 }
                 // 항복을 통한 게임 종료
                 else if (resultForm.Pattern == Pattern.SURRENDER)
                 {
                     // TODO
+                    NextPage("ResultPage");
                 }
             });
         }

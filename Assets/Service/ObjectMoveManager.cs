@@ -51,22 +51,31 @@ namespace Assets.Service
             {
                 for(int i = 0; i < _pieces.Count; i++)
                 {
-                    _distanceX = _boardPositions[i].x - _pieces[i].transform.position.x;
-                    _distanceZ = _boardPositions[i].z - _pieces[i].transform.position.z;
+                    try
+                    {
+                        _distanceX = _boardPositions[i].x - _pieces[i].transform.position.x;
+                        _distanceZ = _boardPositions[i].z - _pieces[i].transform.position.z;
 
-                    if (_distanceX < 0) _distanceX = _distanceX - _distanceX * 2;
-                    if (_distanceZ < 0) _distanceZ = _distanceZ - _distanceZ * 2;
+                        if (_distanceX < 0) _distanceX = _distanceX - _distanceX * 2;
+                        if (_distanceZ < 0) _distanceZ = _distanceZ - _distanceZ * 2;
 
-                    _moveSpeed = (_distanceX >= _distanceZ) ? _distanceX : _distanceZ;
-                    _moveSpeed = _moveSpeed * 5 * Time.deltaTime;
+                        _moveSpeed = (_distanceX >= _distanceZ) ? _distanceX : _distanceZ;
+                        _moveSpeed = _moveSpeed * 5 * Time.deltaTime;
 
-                    _pieces[i].transform.position = Vector3.MoveTowards(
-                        _pieces[i].transform.position,
-                        _boardPositions[i],
-                        _moveSpeed);
+                        _pieces[i].transform.position = Vector3.MoveTowards(
+                            _pieces[i].transform.position,
+                            _boardPositions[i],
+                            _moveSpeed);
 
-                    // 기물이 도착했을 때
-                    if (IsArrived(_pieces[i].transform.position, _boardPositions[i]))
+                        // 기물이 도착했을 때
+                        if (IsArrived(_pieces[i].transform.position, _boardPositions[i]))
+                        {
+                            _pieces.RemoveAt(i);
+                            _boardPositions.RemoveAt(i);
+                            i--;
+                        }
+                    }
+                    catch
                     {
                         _pieces.RemoveAt(i);
                         _boardPositions.RemoveAt(i);

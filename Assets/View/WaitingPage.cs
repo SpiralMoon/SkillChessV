@@ -230,7 +230,6 @@ public class WaitingPage : MonoBehaviour, IPage, ISocketPage
     {
         // TODO : 진짜 방 정보로 바꾸기
         _networkManager.CloseRoom(_room);
-        NextPage("LobbyPage");
     }
 
     public void OnMatchBattle(object sender, MatchForm matchForm)
@@ -253,7 +252,7 @@ public class WaitingPage : MonoBehaviour, IPage, ISocketPage
 
     public void OnCloseRoom(object sender, RoomForm roomForm)
     {
-
+        Invoke(() => NextPage("LobbyPage"));
     }
 
     public void NextPage(string pageName)
