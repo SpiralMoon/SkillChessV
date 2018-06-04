@@ -48,6 +48,10 @@ namespace Assets.View
 
         protected Location _endLocation;
 
+        protected DashBoard _whiteDashBoard;
+
+        protected DashBoard _blackDashBoard;
+
         public GameObject SkillBattle;
 
         public GameObject ClassicBattle;
@@ -284,7 +288,9 @@ namespace Assets.View
 
         protected IEnumerator CheckTimeOver()
         {
-            throw new NotImplementedException("");
+            // TODO
+            yield return null;
+            //throw new NotImplementedException("");
         }
     }
 }

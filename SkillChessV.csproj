@@ -281,11 +281,13 @@
     <Compile Include="Assets\Model\ChessPiece\Piece.cs" />
     <Compile Include="Assets\Model\ChessPiece\Queen.cs" />
     <Compile Include="Assets\Model\ChessPiece\Rook.cs" />
+    <Compile Include="Assets\Model\DashBoard.cs" />
     <Compile Include="Assets\Model\Impl\IPage.cs" />
     <Compile Include="Assets\Model\Impl\ISocketPage.cs" />
     <Compile Include="Assets\Model\Location.cs" />
     <Compile Include="Assets\Model\SceneParameter\BattlePageParameter.cs" />
     <Compile Include="Assets\Model\SceneParameter\PageParameter.cs" />
+    <Compile Include="Assets\Model\SceneParameter\ResultPageParameter.cs" />
     <Compile Include="Assets\Model\SceneParameter\WaitingPageParameter.cs" />
     <Compile Include="Assets\Model\Setting.cs" />
     <Compile Include="Assets\Model\SkillChessPiece\Angel.cs" />

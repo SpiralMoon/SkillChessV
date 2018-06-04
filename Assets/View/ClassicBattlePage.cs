@@ -46,6 +46,8 @@ namespace Assets.View
             _setting = Setting.GetInstance();
             _textResource = TextResource.GetInstance();
             _board = new List<Board[]>();
+            _whiteDashBoard = new DashBoard();
+            _blackDashBoard = new DashBoard();
 
             BtnPromotionRook.onClick.AddListener(delegate { OnClickPromotion("Rook"); });
             BtnPromotionKnight.onClick.AddListener(delegate { OnClickPromotion("Knight"); });
@@ -443,17 +445,24 @@ namespace Assets.View
         {
             Invoke(() =>
             {
+                var param = new ResultPageParameter
+                {
+                    WhiteDashBoard = _whiteDashBoard,
+                    BlackDashBoard = _blackDashBoard
+                };
+
                 // 정상적인 게임 종료
                 if (resultForm.Pattern == Pattern.FINISH)
                 {
                     // TODO
-                    TxtDebug.text += "game over\n";
+                    PageParameterDispatcher.Instance().SetPageParameter(param);
                     NextPage("ResultPage");
                 }
                 // 항복을 통한 게임 종료
                 else if (resultForm.Pattern == Pattern.SURRENDER)
                 {
                     // TODO
+                    PageParameterDispatcher.Instance().SetPageParameter(param);
                     NextPage("ResultPage");
                 }
             });

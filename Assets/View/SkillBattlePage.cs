@@ -35,6 +35,8 @@ namespace Assets.View
             _setting = Setting.GetInstance();
             _textResource = TextResource.GetInstance();
             _board = new List<Board[]>();
+            _whiteDashBoard = new DashBoard();
+            _blackDashBoard = new DashBoard();
 
             SetBoard();
 

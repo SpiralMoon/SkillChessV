@@ -81,7 +81,6 @@ public class LobbyPage : MonoBehaviour, IPage, ISocketPage
         }
     }
     
-
     public string TotalChatMessage;
 
     public string Title
@@ -218,7 +217,7 @@ public class LobbyPage : MonoBehaviour, IPage, ISocketPage
 
     }
 
-    public async void OnClickBtnCreateRoom()
+    public void OnClickBtnCreateRoom()
     {
         if (Title.Trim() == null || Title.Trim() == "")
         {

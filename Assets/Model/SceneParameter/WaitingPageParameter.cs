@@ -1,5 +1,4 @@
-﻿
-using Assets.Model.Bean;
+﻿using Assets.Model.Bean;
 
 namespace Assets.Model.SceneParameter
 {

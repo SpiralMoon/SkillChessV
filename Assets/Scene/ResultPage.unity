@@ -658,6 +658,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &315074145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 315074146}
+  - component: {fileID: 315074147}
+  m_Layer: 0
+  m_Name: View
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &315074146
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 315074145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &315074147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 315074145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e73a698375d08048a6425cf58d83498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnGoToHome: {fileID: 1532528186}
+  TxtMessage: {fileID: 0}
+  TxtWhiteMoving: {fileID: 2023487474}
+  TxtWhiteMovingCount: {fileID: 1552151068}
+  TxtWhiteKill: {fileID: 1444027333}
+  TxtWhiteKillCount: {fileID: 2095588451}
+  TxtWhiteDeath: {fileID: 971782365}
+  TxtWhiteDeathCount: {fileID: 1035480303}
+  TxtWhiteDamage: {fileID: 438550425}
+  TxtWhiteDamageCount: {fileID: 64339652}
+  TxtBlackMoving: {fileID: 908667871}
+  TxtBlackMovingCount: {fileID: 1972023837}
+  TxtBlackKill: {fileID: 104724131}
+  TxtBlackKillCount: {fileID: 798557120}
+  TxtBlackDeath: {fileID: 581002627}
+  TxtBlackDeathCount: {fileID: 1563019836}
+  TxtBlackDamage: {fileID: 170995762}
+  TxtBlackDamageCount: {fileID: 1674598935}
 --- !u!1 &383755017
 GameObject:
   m_ObjectHideFlags: 0

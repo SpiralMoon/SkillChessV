@@ -10,6 +10,7 @@ Assets/Scene/LobbyPage.unity
 Assets/Scene/RankPage.unity
 Assets/Scene/WaitingPage.unity
 Assets/Scene/BattlePage.unity
+Assets/Scene/ResultPage.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 4b12dd839b2293f8457cd67cc3610b85 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -130,6 +131,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 9396c0f9a5639f16a06a19eecacad493 Assembly-CSharp.dll:.csLegacyEffectEditor
 9fd1e7b34dae249a6a18892d6f93b98c Assembly-CSharp.dll:Assets.View.BattlePage
 21a61e59102806536460ba6d0ad96c02 Assembly-CSharp.dll:Assets.View.ClassicBattlePage
+eab9914e22f9cc5a95c1b3fa145d1de1 Assembly-CSharp.dll:Assets.View.ResultPage
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.csLegacyEffectChanger
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
