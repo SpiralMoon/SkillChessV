@@ -342,6 +342,8 @@ namespace Assets.View
         {
             MyFrame.transform.Find("TXT_Nickname").GetComponent<Text>().text = _setting.Nickname;
             EnemyFrame.transform.Find("TXT_Nickname").GetComponent<Text>().text = _matchForm.Enemy.Nickname;
+
+            PromotionFrame.transform.Find("TXT_PromotionChance").GetComponent<Text>().text = _textResource.GetText(TextCode.PROMOTION_CHANCE);
         }
 
         public void SetImageValue()
@@ -364,11 +366,33 @@ namespace Assets.View
                         _board[pieceLocation.X][pieceLocation.Y].PieceObj,
                         _board[boardLocation.X][boardLocation.Y].BoardObj);
 
+                    // move counting
+                    if (relayForm.Color == Support.Color.WHITE)
+                    {
+                        _whiteDashBoard.MovingCount++;
+                    }
+                    else
+                    {
+                        _blackDashBoard.MovingCount++;
+                    }
+
                     // 기물 모델이 있으면 제거
                     if (_board[boardLocation.X][boardLocation.Y].Piece != null)
                     {
                         Destroy(_board[boardLocation.X][boardLocation.Y].PieceObj);
                         _effectManager.Kill(_board, boardLocation);
+
+                        // Kill and Death counting
+                        if (relayForm.Color == Support.Color.WHITE)
+                        {
+                            _whiteDashBoard.KillCount++;
+                            _blackDashBoard.DeathCount++;
+                        }
+                        else
+                        {
+                            _blackDashBoard.KillCount++;
+                            _whiteDashBoard.DeathCount++;
+                        }
                     }
 
                     MovePieceData(pieceLocation, boardLocation);

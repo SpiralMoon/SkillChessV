@@ -700,22 +700,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BtnGoToHome: {fileID: 1532528186}
   TxtMessage: {fileID: 0}
-  TxtWhiteMoving: {fileID: 2023487474}
-  TxtWhiteMovingCount: {fileID: 1552151068}
-  TxtWhiteKill: {fileID: 1444027333}
-  TxtWhiteKillCount: {fileID: 2095588451}
-  TxtWhiteDeath: {fileID: 971782365}
-  TxtWhiteDeathCount: {fileID: 1035480303}
-  TxtWhiteDamage: {fileID: 438550425}
-  TxtWhiteDamageCount: {fileID: 64339652}
-  TxtBlackMoving: {fileID: 908667871}
-  TxtBlackMovingCount: {fileID: 1972023837}
-  TxtBlackKill: {fileID: 104724131}
-  TxtBlackKillCount: {fileID: 798557120}
-  TxtBlackDeath: {fileID: 581002627}
-  TxtBlackDeathCount: {fileID: 1563019836}
-  TxtBlackDamage: {fileID: 170995762}
-  TxtBlackDamageCount: {fileID: 1674598935}
+  TxtWhiteMoving: {fileID: 1882634925}
+  TxtWhiteKill: {fileID: 748476146}
+  TxtWhiteDeath: {fileID: 1712912777}
+  TxtWhiteDamage: {fileID: 1481353467}
+  TxtBlackMoving: {fileID: 2106832377}
+  TxtBlackKill: {fileID: 70467038}
+  TxtBlackDeath: {fileID: 1014130192}
+  TxtBlackDamage: {fileID: 1209140104}
 --- !u!1 &383755017
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,7 +1084,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Go to Home
+  m_Text: Go to Lobby
 --- !u!222 &584587878
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2521,7 +2513,7 @@ GameObject:
   - component: {fileID: 1532528186}
   - component: {fileID: 1532528189}
   m_Layer: 5
-  m_Name: BTN_GoToHome
+  m_Name: BTN_GoToLobby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

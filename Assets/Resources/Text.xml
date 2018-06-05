@@ -141,6 +141,36 @@ All pieces have unique skills and you can enjoy dynamic battles.</en>
     <kr>곧 게임이 시작됩니다.</kr>
     <jp>ゲームは 今 すぐ 開始 しようとしています。</jp>
   </string>
+  <string name="PROMOTION_CHANCE">
+    <en>Promotion chance</en>
+    <kr>프로모션 기회</kr>
+    <jp>プロモーション チャンス</jp>
+  </string>
+  <string name="SUM_MOVE_COUNT">
+    <en>Sum move count</en>
+    <kr>총 이동 횟수</kr>
+    <jp>いどう かいすう</jp>
+  </string>
+  <string name="SUM_KILL_COUNT">
+    <en>Sum kill count</en>
+    <kr>총 킬 횟수</kr>
+    <jp>キル かいすう</jp>
+  </string>
+  <string name="SUM_DEATH_COUNT">
+    <en>Sum death count</en>
+    <kr>총 사망 횟수</kr>
+    <jp>死亡 かいすう</jp>
+  </string>
+  <string name="SUM_DAMAGE">
+    <en>Sum damage</en>
+    <kr>입힌 데미지</kr>
+    <jp>スキル ダメージ</jp>
+  </string>
+  <string name="GO_TO_LOBBY">
+    <en>Go to lobby</en>
+    <kr>로비로 돌아가기</kr>
+    <jp>メインに</jp>
+  </string>
 </resources>
 
 <!-- 줄 정렬 금지!!! -->

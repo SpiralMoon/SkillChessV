@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Assets.Support.Language
+﻿namespace Assets.Support.Language
 {
     /// <summary>
     /// 텍스트 리소스 번호.
@@ -37,6 +31,12 @@ namespace Assets.Support.Language
         DESCRIPTION_CLASSIC_MODE,
         DESCRIPTION_SKILL_MODE,
         MATCHING_COMPLETE,
-        THE_GAME_IS_ABOUT_TO_START_RIGHT_NOW
+        THE_GAME_IS_ABOUT_TO_START_RIGHT_NOW,
+        PROMOTION_CHANCE,
+        SUM_MOVE_COUNT,
+        SUM_KILL_COUNT,
+        SUM_DEATH_COUNT,
+        SUM_DAMAGE,
+        GO_TO_LOBBY
     }
 }

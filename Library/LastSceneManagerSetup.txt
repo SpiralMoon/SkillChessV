@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/ResultPage.unity
+- path: Assets/Scene/BattlePage.unity
   isLoaded: 1
   isActive: 1

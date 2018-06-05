@@ -6,49 +6,38 @@ using UnityEngine.SceneManagement;
 using Assets.Model.Impl;
 using Assets.Model.SceneParameter;
 using Assets.Service;
+using Assets.Support.Language;
 
 namespace Assets.View
 {
     public class ResultPage : MonoBehaviour, IPage
     {
+        private TextResource _textResource;
+
         public Button BtnGoToHome;
 
         public Text TxtMessage;
 
-        public Text TxtWhiteMoving;
+        public GameObject TxtWhiteMoving;
 
-        public Text TxtWhiteMovingCount;
+        public GameObject TxtWhiteKill;
 
-        public Text TxtWhiteKill;
+        public GameObject TxtWhiteDeath;
 
-        public Text TxtWhiteKillCount;
+        public GameObject TxtWhiteDamage;
 
-        public Text TxtWhiteDeath;
+        public GameObject TxtBlackMoving;
 
-        public Text TxtWhiteDeathCount;
+        public GameObject TxtBlackKill;
 
-        public Text TxtWhiteDamage;
+        public GameObject TxtBlackDeath;
 
-        public Text TxtWhiteDamageCount;
-
-        public Text TxtBlackMoving;
-
-        public Text TxtBlackMovingCount;
-
-        public Text TxtBlackKill;
-
-        public Text TxtBlackKillCount;
-
-        public Text TxtBlackDeath;
-
-        public Text TxtBlackDeathCount;
-
-        public Text TxtBlackDamage;
-
-        public Text TxtBlackDamageCount;
+        public GameObject TxtBlackDamage;
 
         private void Awake()
         {
+            _textResource = TextResource.GetInstance();
+
             BtnGoToHome.onClick.AddListener(OnClickGoToHome);
 
             SetTextSize();
@@ -71,23 +60,25 @@ namespace Assets.View
             var whiteDashBoard = param.WhiteDashBoard;
             var blackDashBoard = param.BlackDashBoard;
 
-            /*TxtWhiteMoving;
-            TxtWhiteKill;
-            TxtWhiteDeath;
-            TxtWhiteDamage;
-            TxtBlackMoving;
-            TxtBlackKill;
-            TxtBlackDeath;
-            TxtBlackDamage;*/
+            BtnGoToHome.GetComponentInChildren<Text>().text = _textResource.GetText(TextCode.GO_TO_LOBBY);
 
-            TxtWhiteMovingCount.text = whiteDashBoard.MovingCount + "";
-            TxtWhiteKillCount.text = whiteDashBoard.KillCount + "";
-            TxtWhiteDeathCount.text = whiteDashBoard.DeathCount + "";
-            TxtWhiteDamageCount.text = whiteDashBoard.Damage + "";
-            TxtBlackMovingCount.text = blackDashBoard.MovingCount + "";
-            TxtBlackKillCount.text = blackDashBoard.KillCount + "";
-            TxtBlackDeathCount.text = blackDashBoard.DeathCount + "";
-            TxtBlackDamageCount.text = blackDashBoard.Damage + "";
+            TxtWhiteMoving.transform.Find("TXT_MovingCount").GetComponent<Text>().text = _textResource.GetText(TextCode.SUM_MOVE_COUNT);
+            TxtWhiteKill.transform.Find("TXT_KillCount").GetComponent<Text>().text = _textResource.GetText(TextCode.SUM_KILL_COUNT);
+            TxtWhiteDeath.transform.Find("TXT_DeathCount").GetComponent<Text>().text = _textResource.GetText(TextCode.SUM_DEATH_COUNT);
+            TxtWhiteDamage.transform.Find("TXT_Damage").GetComponent<Text>().text = _textResource.GetText(TextCode.SUM_DAMAGE);
+            TxtBlackMoving.transform.Find("TXT_MovingCount").GetComponent<Text>().text = _textResource.GetText(TextCode.SUM_MOVE_COUNT);
+            TxtBlackKill.transform.Find("TXT_KillCount").GetComponent<Text>().text = _textResource.GetText(TextCode.SUM_KILL_COUNT);
+            TxtBlackDeath.transform.Find("TXT_DeathCount").GetComponent<Text>().text = _textResource.GetText(TextCode.SUM_DEATH_COUNT);
+            TxtBlackDamage.transform.Find("TXT_Damage").GetComponent<Text>().text = _textResource.GetText(TextCode.SUM_DAMAGE);
+
+            TxtWhiteMoving.transform.Find("TXT_Count").GetComponent<Text>().text = whiteDashBoard.MovingCount + "";
+            TxtWhiteKill.transform.Find("TXT_Count").GetComponent<Text>().text = whiteDashBoard.KillCount + "";
+            TxtWhiteDeath.transform.Find("TXT_Count").GetComponent<Text>().text = whiteDashBoard.DeathCount + "";
+            TxtWhiteDamage.transform.Find("TXT_Count").GetComponent<Text>().text = whiteDashBoard.Damage + "";
+            TxtBlackMoving.transform.Find("TXT_Count").GetComponent<Text>().text = blackDashBoard.MovingCount + "";
+            TxtBlackKill.transform.Find("TXT_Count").GetComponent<Text>().text = blackDashBoard.KillCount + "";
+            TxtBlackDeath.transform.Find("TXT_Count").GetComponent<Text>().text = blackDashBoard.DeathCount + "";
+            TxtBlackDamage.transform.Find("TXT_Count").GetComponent<Text>().text = blackDashBoard.Damage + "";
         }
 
         private void OnClickGoToHome()

@@ -21,6 +21,26 @@ namespace Assets.View
 {
     public class SkillBattlePage : BattlePage
     {
+        public GameObject SelectedClass;
+
+        public GameObject SelectedType;
+
+        public GameObject SelectedJob;
+
+        public Text TxtSelectedJobName;
+
+        public Text TxtSelectedLevel;
+
+        public Text TxtSelectedStatus;
+
+        public Text TxtSelectedStatusTurn;
+
+        public Slider SldSelectedHp;
+
+        public Slider SldSelectedMp;
+
+        public Slider SldSelectedExp;
+
         private void Awake()
         {
             var param = PageParameterDispatcher.Instance().GetPageParameter() as BattlePageParameter;

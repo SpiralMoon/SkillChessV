@@ -2082,6 +2082,9 @@ MonoBehaviour:
   MyFrame: {fileID: 1476619894}
   EnemyFrame: {fileID: 887354123}
   CameraService: {fileID: 1844574723}
+  TxtTimeCount: {fileID: 1996181276}
+  MyTimeLife: {fileID: 1726684670}
+  EnemyTimeLife: {fileID: 1579464829}
   TxtDebug: {fileID: 895774821}
   PromotionFrame: {fileID: 1743658053}
   BtnPromotionRook: {fileID: 1164268582}
@@ -2368,7 +2371,20 @@ MonoBehaviour:
   MyFrame: {fileID: 1476619894}
   EnemyFrame: {fileID: 887354123}
   CameraService: {fileID: 1844574723}
+  TxtTimeCount: {fileID: 1996181276}
+  MyTimeLife: {fileID: 1726684670}
+  EnemyTimeLife: {fileID: 1579464829}
   TxtDebug: {fileID: 895774821}
+  SelectedClass: {fileID: 0}
+  SelectedType: {fileID: 0}
+  SelectedJob: {fileID: 0}
+  TxtSelectedJobName: {fileID: 0}
+  TxtSelectedLevel: {fileID: 0}
+  TxtSelectedStatus: {fileID: 0}
+  TxtSelectedStatusTurn: {fileID: 0}
+  SldSelectedHp: {fileID: 0}
+  SldSelectedMp: {fileID: 0}
+  SldSelectedExp: {fileID: 0}
 --- !u!1 &56012480
 GameObject:
   m_ObjectHideFlags: 0
@@ -3217,7 +3233,7 @@ GameObject:
   - component: {fileID: 82747713}
   - component: {fileID: 82747715}
   - component: {fileID: 82747714}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3261,7 +3277,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 12823c2fcbf354340ad4febf99a49968, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a28bf33a014f5224b9295f64ea127c19, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6821,7 +6837,7 @@ GameObject:
   - component: {fileID: 164466076}
   - component: {fileID: 164466078}
   - component: {fileID: 164466077}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7367,7 +7383,7 @@ GameObject:
   - component: {fileID: 176089657}
   - component: {fileID: 176089659}
   - component: {fileID: 176089658}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_PieceType
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7411,7 +7427,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9aac9b3d18d198e418f830655693c92e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a059ec8bcdaeb9c40bb8436a35446262, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7939,7 +7955,7 @@ GameObject:
   - component: {fileID: 194325507}
   - component: {fileID: 194325509}
   - component: {fileID: 194325508}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7983,7 +7999,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d751cc0c076d23d4fad8c505e6071e21, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f89b78edad220934ab7eee31e76c7a86, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8545,7 +8561,7 @@ GameObject:
   - component: {fileID: 221708638}
   - component: {fileID: 221708637}
   - component: {fileID: 221708636}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: TXT_PieceJob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8601,7 +8617,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 892bc807265b6604ab081fa192d983f5, type: 3}
+    m_Font: {fileID: 12800000, guid: 2ba5821a1e19249458ecb65495f3a0b1, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -8880,7 +8896,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 240494799}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8977,7 +8993,7 @@ GameObject:
   - component: {fileID: 243124500}
   - component: {fileID: 243124502}
   - component: {fileID: 243124501}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_PieceStatus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9029,7 +9045,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: bcc70f7274862d246a3df7fb6ecb87a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ca549ce3233dbb47b19a1614ff50407, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9529,7 +9545,7 @@ GameObject:
   - component: {fileID: 253013932}
   - component: {fileID: 253013934}
   - component: {fileID: 253013933}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9573,7 +9589,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9f6acdc27fadb1f48b7d195ff189a02d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c5429e77ddc40c4c90c15ffb9024930, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9792,7 +9808,7 @@ GameObject:
   - component: {fileID: 259602631}
   - component: {fileID: 259602633}
   - component: {fileID: 259602632}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_SkillButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10292,7 +10308,7 @@ GameObject:
   - component: {fileID: 275721665}
   - component: {fileID: 275721664}
   - component: {fileID: 275721663}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: TXT_SkillDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10348,7 +10364,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b6cabcaae96362c499ed71c00cd74f25, type: 3}
+    m_Font: {fileID: 12800000, guid: d0fede5885b402c40a15164572e7d694, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -12946,7 +12962,7 @@ GameObject:
   - component: {fileID: 360183669}
   - component: {fileID: 360183668}
   - component: {fileID: 360183666}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: TXT_StatusTurn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13002,7 +13018,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 892bc807265b6604ab081fa192d983f5, type: 3}
+    m_Font: {fileID: 12800000, guid: 2ba5821a1e19249458ecb65495f3a0b1, type: 3}
     m_FontSize: 9
     m_FontStyle: 0
     m_BestFit: 0
@@ -14314,7 +14330,7 @@ GameObject:
   - component: {fileID: 413442965}
   - component: {fileID: 413442967}
   - component: {fileID: 413442966}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14358,7 +14374,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 862c42209f10d314f9f281d8ba44a744, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 43c259d70b98a034c944456ef800b718, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15396,7 +15412,7 @@ GameObject:
   - component: {fileID: 453441993}
   - component: {fileID: 453441995}
   - component: {fileID: 453441994}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15417,7 +15433,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15440,7 +15456,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3a75a915c7b26e049b734634ded2ec76, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 226c354166c95d74f8250f9bb8edb60c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16387,7 +16403,7 @@ GameObject:
   - component: {fileID: 494954066}
   - component: {fileID: 494954068}
   - component: {fileID: 494954067}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_PieceJob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16431,7 +16447,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: fdf3d0c7eb10dfd4ab4eecd86289fd09, type: 3}
+  m_Sprite: {fileID: 21300000, guid: facc178d856ff2942a87a8a0c7c5c8d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -31523,7 +31539,7 @@ GameObject:
   - component: {fileID: 535291037}
   - component: {fileID: 535291039}
   - component: {fileID: 535291038}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_PieceIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31567,7 +31583,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d9fe244baec5aae42aa35f2e2719adca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 79107f8146cf02e41ae088200f5c7b35, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -32828,7 +32844,7 @@ GameObject:
   - component: {fileID: 581541725}
   - component: {fileID: 581541727}
   - component: {fileID: 581541726}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32872,7 +32888,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9f6acdc27fadb1f48b7d195ff189a02d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c5429e77ddc40c4c90c15ffb9024930, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -36398,7 +36414,7 @@ GameObject:
   - component: {fileID: 695025770}
   - component: {fileID: 695025772}
   - component: {fileID: 695025771}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36443,7 +36459,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f2ca3eecd6d27ff42a955a820fb7099f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d8cf3b734e5e1be47bef5bb9ead5e06e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -38092,7 +38108,7 @@ GameObject:
   - component: {fileID: 744622895}
   - component: {fileID: 744622897}
   - component: {fileID: 744622896}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_SkillNameField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38138,7 +38154,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 447c51d0ed457524fb37b6baeee10613, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3ec2a8879a0cd094ca823f2be0ef46af, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -39055,7 +39071,7 @@ GameObject:
   - component: {fileID: 769811056}
   - component: {fileID: 769811058}
   - component: {fileID: 769811057}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39099,7 +39115,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0aef9f394f85f31429661022a4c813cd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2635c47faaf0f3a4ab2e8ee013f53ca7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -39542,7 +39558,7 @@ GameObject:
   - component: {fileID: 781930330}
   - component: {fileID: 781930332}
   - component: {fileID: 781930331}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40381,7 +40397,7 @@ GameObject:
   - component: {fileID: 808072838}
   - component: {fileID: 808072840}
   - component: {fileID: 808072839}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40539,7 +40555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 809762628}
   - component: {fileID: 809762629}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: SLD_HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44956,7 +44972,7 @@ GameObject:
   - component: {fileID: 949890950}
   - component: {fileID: 949890952}
   - component: {fileID: 949890951}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45001,7 +45017,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1d32f4f8b9d2dfb4c87b05c85102a492, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad2f54c396660234a8bde59163d0df09, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -45911,7 +45927,7 @@ GameObject:
   - component: {fileID: 986177623}
   - component: {fileID: 986177625}
   - component: {fileID: 986177624}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45955,7 +45971,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3b6f9e7f8cc8f934eb1cff647636c28b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 479c78d63837f614e9d133d366a68859, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -46065,7 +46081,7 @@ GameObject:
   - component: {fileID: 994943369}
   - component: {fileID: 994943371}
   - component: {fileID: 994943370}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46592,7 +46608,7 @@ GameObject:
   - component: {fileID: 1018825337}
   - component: {fileID: 1018825339}
   - component: {fileID: 1018825338}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47857,7 +47873,7 @@ GameObject:
   - component: {fileID: 1054103393}
   - component: {fileID: 1054103395}
   - component: {fileID: 1054103394}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47878,7 +47894,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -47901,7 +47917,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d94ea8635a496364dbf7c0bc96bf034b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b2971b1d59b078741b98ba3647b22bdf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -48359,7 +48375,7 @@ GameObject:
   - component: {fileID: 1063249325}
   - component: {fileID: 1063249327}
   - component: {fileID: 1063249326}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48403,7 +48419,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9f6acdc27fadb1f48b7d195ff189a02d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c5429e77ddc40c4c90c15ffb9024930, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -49223,7 +49239,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1088668152}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49382,7 +49398,7 @@ GameObject:
   - component: {fileID: 1104814478}
   - component: {fileID: 1104814480}
   - component: {fileID: 1104814479}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Layout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49426,7 +49442,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 793f79f541cc5e2408a89a39ffa9a78f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3597f5d952884724a8be8660a3cccdc6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -50159,7 +50175,7 @@ GameObject:
   - component: {fileID: 1127907565}
   - component: {fileID: 1127907564}
   - component: {fileID: 1127907563}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: TXT_Status
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50215,7 +50231,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 892bc807265b6604ab081fa192d983f5, type: 3}
+    m_Font: {fileID: 12800000, guid: 2ba5821a1e19249458ecb65495f3a0b1, type: 3}
     m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
@@ -57564,7 +57580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1276385002}
   - component: {fileID: 1276385003}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: SLD_EXP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57771,7 +57787,7 @@ GameObject:
   - component: {fileID: 1280621198}
   - component: {fileID: 1280621201}
   - component: {fileID: 1280621199}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: BTN_Skill_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58567,7 +58583,7 @@ GameObject:
   - component: {fileID: 1298990843}
   - component: {fileID: 1298990845}
   - component: {fileID: 1298990844}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_PieceFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58613,7 +58629,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 77cf0fedfd214a149adc64c7139a251d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ff0b082c818b1da46bc509aa3f95ca9d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -60607,7 +60623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1356509280}
   - component: {fileID: 1356509282}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_SkillDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60650,7 +60666,7 @@ GameObject:
   - component: {fileID: 1357326173}
   - component: {fileID: 1357326175}
   - component: {fileID: 1357326174}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60671,7 +60687,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -60694,7 +60710,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: c8219ab8939cb5a4aa2ebcadc63a3bcc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df02bea587b165542b07737018c622c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -62750,7 +62766,7 @@ GameObject:
   - component: {fileID: 1426758027}
   - component: {fileID: 1426758030}
   - component: {fileID: 1426758028}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: BTN_Surrender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65278,7 +65294,7 @@ GameObject:
   - component: {fileID: 1511582773}
   - component: {fileID: 1511582776}
   - component: {fileID: 1511582774}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: BTN_Skill_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65769,7 +65785,7 @@ GameObject:
   - component: {fileID: 1520705231}
   - component: {fileID: 1520705233}
   - component: {fileID: 1520705232}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65813,7 +65829,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9f6acdc27fadb1f48b7d195ff189a02d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c5429e77ddc40c4c90c15ffb9024930, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -66019,7 +66035,7 @@ GameObject:
   - component: {fileID: 1531555611}
   - component: {fileID: 1531555613}
   - component: {fileID: 1531555612}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66596,7 +66612,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1551885559}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68214,7 +68230,7 @@ GameObject:
   - component: {fileID: 1626312927}
   - component: {fileID: 1626312926}
   - component: {fileID: 1626312925}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: TXT_Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68270,7 +68286,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 892bc807265b6604ab081fa192d983f5, type: 3}
+    m_Font: {fileID: 12800000, guid: 2ba5821a1e19249458ecb65495f3a0b1, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -69041,7 +69057,7 @@ GameObject:
   - component: {fileID: 1640734572}
   - component: {fileID: 1640734571}
   - component: {fileID: 1640734573}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: TXT_MP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69546,7 +69562,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ad59713e58babce4f91a2b3e90347bb6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b55129eb622a0984685aa203ee11ef91, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -70207,7 +70223,7 @@ GameObject:
   - component: {fileID: 1673394229}
   - component: {fileID: 1673394231}
   - component: {fileID: 1673394230}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70396,7 +70412,7 @@ GameObject:
   - component: {fileID: 1677745942}
   - component: {fileID: 1677745944}
   - component: {fileID: 1677745943}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70440,7 +70456,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9f6acdc27fadb1f48b7d195ff189a02d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c5429e77ddc40c4c90c15ffb9024930, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -70554,13 +70570,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1683877955}
   - component: {fileID: 1683877956}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_SkillModeFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1683877955
 RectTransform:
   m_ObjectHideFlags: 0
@@ -72508,7 +72524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1742389448}
   - component: {fileID: 1742389449}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: SLD_MP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73798,7 +73814,7 @@ GameObject:
   - component: {fileID: 1781378439}
   - component: {fileID: 1781378441}
   - component: {fileID: 1781378440}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75154,7 +75170,7 @@ GameObject:
   - component: {fileID: 1821833366}
   - component: {fileID: 1821833369}
   - component: {fileID: 1821833367}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: BTN_Skill_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78201,7 +78217,7 @@ GameObject:
   - component: {fileID: 1932102156}
   - component: {fileID: 1932102158}
   - component: {fileID: 1932102157}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78291,6 +78307,9 @@ MonoBehaviour:
   MyFrame: {fileID: 0}
   EnemyFrame: {fileID: 0}
   CameraService: {fileID: 0}
+  TxtTimeCount: {fileID: 0}
+  MyTimeLife: {fileID: 0}
+  EnemyTimeLife: {fileID: 0}
   TxtDebug: {fileID: 0}
 --- !u!4 &1932436982
 Transform:
@@ -79206,7 +79225,7 @@ GameObject:
   - component: {fileID: 1972079863}
   - component: {fileID: 1972079866}
   - component: {fileID: 1972079864}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: BTN_Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80431,7 +80450,7 @@ GameObject:
   - component: {fileID: 2005110408}
   - component: {fileID: 2005110410}
   - component: {fileID: 2005110409}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_SkillType
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83732,7 +83751,7 @@ GameObject:
   - component: {fileID: 2087657802}
   - component: {fileID: 2087657804}
   - component: {fileID: 2087657803}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_PieceStatus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83836,7 +83855,7 @@ GameObject:
   - component: {fileID: 2090430868}
   - component: {fileID: 2090430867}
   - component: {fileID: 2090430869}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: TXT_SkillName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83881,7 +83900,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f36c1d3ba1fa33944905ceb4c131e4c5, type: 3}
+    m_Font: {fileID: 12800000, guid: 36dd20716b537734ea92158d0b88983d, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -85157,7 +85176,7 @@ GameObject:
   - component: {fileID: 2138121361}
   - component: {fileID: 2138121360}
   - component: {fileID: 2138121362}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: TXT_HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}

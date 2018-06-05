@@ -62,6 +62,12 @@ namespace Assets.View
 
         public GameObject CameraService;
 
+        public Text TxtTimeCount;
+
+        public GameObject MyTimeLife;
+
+        public GameObject EnemyTimeLife;
+
         public Text TxtDebug;
 
         private void Awake()
