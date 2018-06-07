@@ -281,6 +281,7 @@
     <Compile Include="Assets\Model\ChessPiece\Piece.cs" />
     <Compile Include="Assets\Model\ChessPiece\Queen.cs" />
     <Compile Include="Assets\Model\ChessPiece\Rook.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Skill.cs" />
     <Compile Include="Assets\Model\DashBoard.cs" />
     <Compile Include="Assets\Model\Impl\IPage.cs" />
     <Compile Include="Assets\Model\Impl\ISocketPage.cs" />
@@ -304,7 +305,13 @@
     <Compile Include="Assets\Model\SkillChessPiece\Lich.cs" />
     <Compile Include="Assets\Model\SkillChessPiece\Paladin.cs" />
     <Compile Include="Assets\Model\SkillChessPiece\Priest.cs" />
+    <Compile Include="Assets\Model\SkillChessPiece\SkillBishop.cs" />
+    <Compile Include="Assets\Model\SkillChessPiece\SkillKing.cs" />
+    <Compile Include="Assets\Model\SkillChessPiece\SkillKnight.cs" />
+    <Compile Include="Assets\Model\SkillChessPiece\SkillPawn.cs" />
     <Compile Include="Assets\Model\SkillChessPiece\SkillPiece.cs" />
+    <Compile Include="Assets\Model\SkillChessPiece\SkillQueen.cs" />
+    <Compile Include="Assets\Model\SkillChessPiece\SkillRook.cs" />
     <Compile Include="Assets\Resources\Origin\Effect1\EffectEditor\Legacy Effect Editor\csLegacyEffectChanger.cs" />
     <Compile Include="Assets\Resources\Origin\Effect1\EffectEditor\Legacy Effect Editor\csLegacyEffectEditor.cs" />
     <Compile Include="Assets\Service\CameraManager.cs" />

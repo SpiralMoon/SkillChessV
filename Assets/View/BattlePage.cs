@@ -10,6 +10,7 @@ using Assets.Model.Bean;
 using Assets.Model.Impl;
 using Assets.Model.ChessPiece;
 using Assets.Model.SceneParameter;
+using Assets.Model.SkillChessPiece;
 using Assets.Support;
 using Assets.Support.Language;
 using Assets.Service;
@@ -213,9 +214,31 @@ namespace Assets.View
             throw new NotImplementedException("");
         }
 
-        protected void OnResultBattle(object sender, ResultForm e)
+        protected void OnResultBattle(object sender, ResultForm resultForm)
         {
-            throw new NotImplementedException("");
+            Invoke(() =>
+            {
+                var param = new ResultPageParameter
+                {
+                    WhiteDashBoard = _whiteDashBoard,
+                    BlackDashBoard = _blackDashBoard
+                };
+
+                // 정상적인 게임 종료
+                if (resultForm.Pattern == Pattern.FINISH)
+                {
+                    // TODO
+                    PageParameterDispatcher.Instance().SetPageParameter(param);
+                    NextPage("ResultPage");
+                }
+                // 항복을 통한 게임 종료
+                else if (resultForm.Pattern == Pattern.SURRENDER)
+                {
+                    // TODO
+                    PageParameterDispatcher.Instance().SetPageParameter(param);
+                    NextPage("ResultPage");
+                }
+            });
         }
 
         /// <summary>
@@ -244,7 +267,7 @@ namespace Assets.View
                         {
                             var piece = _board[i][j].Piece;
 
-                            if (piece is King)
+                            if (piece is King || piece is SkillKing)
                             {
                                 var temp = (piece.Color == Support.Color.WHITE)
                                     ? (existWhiteKing = true)

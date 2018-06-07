@@ -4,23 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Assets.Model.ChessPiece;
+using Assets.Model.ChessSkill;
+using Assets.Support;
+
 namespace Assets.Model.SkillChessPiece
 {
-    public class Iuppiter : SkillPiece
+    public class Iuppiter : SkillKing
     {
         public Iuppiter(string color) : base(color)
         {
+            this.Power = 175;
+            this.Exp = 200;
 
-        }
+            this.MaxHp = 680;
+            this.MaxMp = 1000;
+            this.MaxExp = new int[] { 200, 300 };
 
-        public override void SetMoveStatus(List<Board[]> board, Location location)
-        {
-            throw new NotImplementedException();
-        }
+            this.ClassCode = Support.ClassCode.IUPPITER;
+            this.Element = Element.LIGHNING;
 
-        public override void ShowMoveScope(List<Board[]> board, Location location)
-        {
+            this.Skill = new Skill[]
+            {
+                // TODO
+            };
 
+            Init();
         }
     }
 }

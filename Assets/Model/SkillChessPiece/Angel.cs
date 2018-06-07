@@ -5,15 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Assets.Model.ChessPiece;
+using Assets.Model.ChessSkill;
 using Assets.Support;
 
 namespace Assets.Model.SkillChessPiece
 {
-    public class Angel : SkillPiece
+    public class Angel : SkillKing
     {
         public Angel(string color) : base(color)
         {
             this.Power = 200;
+            this.Exp = 200;
 
             this.MaxHp = 800;
             this.MaxMp = 800;
@@ -21,24 +23,13 @@ namespace Assets.Model.SkillChessPiece
 
             this.ClassCode = Support.ClassCode.ANGEL;
             this.Element = Element.HOLY;
+
+            this.Skill = new Skill[]
+            {
+                // TODO
+            };
             
             Init();
-        }
-
-        public override void SetMoveStatus(List<Board[]> board, Location location)
-        {
-            var normal = this as Piece;
-            var king = normal as King;
-
-            king.SetMoveStatus(board, location);
-        }
-
-        public override void ShowMoveScope(List<Board[]> board, Location location)
-        {
-            var normal = this as Piece;
-            var king = normal as King;
-
-            king.SetMoveStatus(board, location);
         }
     }
 }

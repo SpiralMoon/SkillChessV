@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 8352453}
   - component: {fileID: 8352452}
   m_Layer: 0
-  m_Name: ice
+  m_Name: Ice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 974557751d4bf924e83834eab7799d4f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9bbdd53022f5104b8b2c4c5a59148ee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1353,7 +1353,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: c11492b68af0656419968daee5193db9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f20947ca534fd048826d36d05942231, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1451,7 +1451,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: fdf3d0c7eb10dfd4ab4eecd86289fd09, type: 3}
+  m_Sprite: {fileID: 21300000, guid: facc178d856ff2942a87a8a0c7c5c8d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2375,16 +2375,22 @@ MonoBehaviour:
   MyTimeLife: {fileID: 1726684670}
   EnemyTimeLife: {fileID: 1579464829}
   TxtDebug: {fileID: 895774821}
-  SelectedClass: {fileID: 0}
-  SelectedType: {fileID: 0}
-  SelectedJob: {fileID: 0}
-  TxtSelectedJobName: {fileID: 0}
-  TxtSelectedLevel: {fileID: 0}
-  TxtSelectedStatus: {fileID: 0}
-  TxtSelectedStatusTurn: {fileID: 0}
-  SldSelectedHp: {fileID: 0}
-  SldSelectedMp: {fileID: 0}
-  SldSelectedExp: {fileID: 0}
+  TypeSprites: {fileID: 1976164585}
+  PieceSprites: {fileID: 1345525812}
+  ClassSprites: {fileID: 1804786185}
+  SkillFrame: {fileID: 1683877954}
+  SelectedClass: {fileID: 494954065}
+  SelectedType: {fileID: 176089656}
+  SelectedPiece: {fileID: 535291036}
+  TxtSelectedJobName: {fileID: 221708637}
+  TxtSelectedLevel: {fileID: 1626312926}
+  TxtSelectedStatus: {fileID: 1127907564}
+  TxtSelectedStatusTurn: {fileID: 360183668}
+  SldSelectedHp: {fileID: 809762629}
+  SldSelectedMp: {fileID: 1742389449}
+  SldSelectedExp: {fileID: 1276385003}
+  TxtSelectedHp: {fileID: 2138121360}
+  TxtSelectedMp: {fileID: 1640734571}
 --- !u!1 &56012480
 GameObject:
   m_ObjectHideFlags: 0
@@ -3362,7 +3368,7 @@ GameObject:
   - component: {fileID: 85079235}
   - component: {fileID: 85079237}
   - component: {fileID: 85079236}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Life_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3847,7 +3853,7 @@ GameObject:
   - component: {fileID: 96410233}
   - component: {fileID: 96410235}
   - component: {fileID: 96410234}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Life_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6126,7 +6132,7 @@ GameObject:
   - component: {fileID: 147384360}
   - component: {fileID: 147384362}
   - component: {fileID: 147384361}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Life_3_Dead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7617,7 +7623,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 914a4f5904bea77469024d460a44e793, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bb1a35503e9ff346b8a41f4b34d7f9c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7931,7 +7937,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8ae7e66f3a1c4d44a9a96a139f916fea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c803d60cfca38744a82ac45524a2f76b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9631,7 +9637,7 @@ Transform:
   - {fileID: 1844574724}
   - {fileID: 732357160}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &254888461
 GameObject:
@@ -14970,7 +14976,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3f7ce308edfe011448489d1b661c450f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1becaf6d9f0cce845a393bf77dff19ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16683,7 +16689,7 @@ GameObject:
   - component: {fileID: 502774126}
   - component: {fileID: 502774128}
   - component: {fileID: 502774127}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Life_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17002,7 +17008,7 @@ GameObject:
   - component: {fileID: 511245679}
   - component: {fileID: 511245681}
   - component: {fileID: 511245680}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_TimerFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31327,7 +31333,7 @@ GameObject:
   - component: {fileID: 523158194}
   - component: {fileID: 523158196}
   - component: {fileID: 523158195}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Life_3_Dead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33187,7 +33193,7 @@ GameObject:
   - component: {fileID: 590681372}
   - component: {fileID: 590681374}
   - component: {fileID: 590681373}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Life_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33766,7 +33772,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: af0f0afe5ac16bc4bb33e42389976ffc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64013b38aba741c4e9cf913515bf7927, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -33821,7 +33827,7 @@ GameObject:
   - component: {fileID: 622868239}
   - component: {fileID: 622868238}
   m_Layer: 0
-  m_Name: dark
+  m_Name: Dark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33864,7 +33870,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: bb92c6bff6f57324ea9fbdf390631ac1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef90e6faf8ce12d429e45fb8231bf7d9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -33993,7 +33999,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7885ebc635076d8459a7691bda595ad7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b4d3d51c88d91f4da8be36b435bffc3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -35982,7 +35988,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: dcbeeadc69c75404ba95db604d9c840b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2086a6241617cae40bed24044c5cdd0f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -36543,7 +36549,7 @@ GameObject:
   - component: {fileID: 698057077}
   - component: {fileID: 698057079}
   - component: {fileID: 698057078}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Life_1_Dead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36701,7 +36707,7 @@ GameObject:
   - component: {fileID: 702671884}
   - component: {fileID: 702671886}
   - component: {fileID: 702671885}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Life_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40968,7 +40974,7 @@ GameObject:
   - component: {fileID: 823394274}
   - component: {fileID: 823394273}
   m_Layer: 0
-  m_Name: fire
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41011,7 +41017,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9aac9b3d18d198e418f830655693c92e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a059ec8bcdaeb9c40bb8436a35446262, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -41120,7 +41126,7 @@ GameObject:
   - component: {fileID: 825757287}
   - component: {fileID: 825757286}
   m_Layer: 0
-  m_Name: normal
+  m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41163,7 +41169,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8320abb2826da0e4497acc3b05a59dd8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a8b6bdf75af3c549837c9e9019ead21, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -43914,7 +43920,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a031c639a0beb2d4aa3fdc3f41ee9b4c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b370a0e663c636942b5ba7c458bc8868, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -47094,7 +47100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1030565846}
   - component: {fileID: 1030565847}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_MyTimeLifeDead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47182,7 +47188,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: c271ba658ec2e1c4db26f9312141704a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f159f2fe49532eb48a69a3c35abd0f16, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -47205,7 +47211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1032569434}
   - component: {fileID: 1032569435}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48838,7 +48844,7 @@ GameObject:
   - component: {fileID: 1076466323}
   - component: {fileID: 1076466322}
   m_Layer: 0
-  m_Name: holy
+  m_Name: Holy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48881,7 +48887,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0d33bc7c31d05fc44838412d37bd1d11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 91701f23bfc4ac544949704a73a3494d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -49753,7 +49759,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4f013131ea22e2c4ebd9cc3626e91168, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08546175d3cc1f94fb6c783070a13a7f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -52347,7 +52353,7 @@ GameObject:
   - component: {fileID: 1220155646}
   - component: {fileID: 1220155648}
   - component: {fileID: 1220155647}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Life_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56955,7 +56961,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d9fe244baec5aae42aa35f2e2719adca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 79107f8146cf02e41ae088200f5c7b35, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -60090,7 +60096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1345525813}
   m_Layer: 0
-  m_Name: Class
+  m_Name: Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60306,7 +60312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1349026124}
   - component: {fileID: 1349026125}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_EnemyTimeLifeDead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62987,7 +62993,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a4fb1ed82d92f814fb6d6309e52a8cf9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4bc1c044fffa2e7439fb7d5fb7b2ffba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -67380,7 +67386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1579464830}
   - component: {fileID: 1579464832}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_EnemyTimeLife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69102,7 +69108,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b6cabcaae96362c499ed71c00cd74f25, type: 3}
+    m_Font: {fileID: 12800000, guid: d0fede5885b402c40a15164572e7d694, type: 3}
     m_FontSize: 9
     m_FontStyle: 0
     m_BestFit: 0
@@ -69114,7 +69120,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 0 / 0
 --- !u!222 &1640734572
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -69477,7 +69483,7 @@ GameObject:
   - component: {fileID: 1655026122}
   - component: {fileID: 1655026121}
   - component: {fileID: 1655026120}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: BTN_SkillDescriptionOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69873,7 +69879,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9599a6e3db7b01d4cb36d8eac5c32191, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a9f0190387a24b488ace5a6bc3e7508, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -71561,7 +71567,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d3e696b481ee0bb44a55ceb279881763, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 635285675a3f1104aa0f3533e402086e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -72160,7 +72166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1726684671}
   - component: {fileID: 1726684673}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_MyTimeLife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72274,7 +72280,7 @@ GameObject:
   - component: {fileID: 1727177380}
   - component: {fileID: 1727177382}
   - component: {fileID: 1727177381}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Life_2_Dead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73051,7 +73057,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6b59dc9e87e150147b996e1ab787c8b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d354ae8b30cc4d04c985ed682a5e4fa5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -73395,7 +73401,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e3304580db473c04a99749e569b8544e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 087d618721548454bba834055ca14cce, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -74573,7 +74579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1804786186}
   m_Layer: 0
-  m_Name: Job
+  m_Name: Class
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74950,7 +74956,7 @@ GameObject:
   - component: {fileID: 1815780430}
   - component: {fileID: 1815780432}
   - component: {fileID: 1815780431}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Life_2_Dead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75062,7 +75068,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 900a64b4d882b304aa84fdd70defb151, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 446009805b36424468cef5a5c7fc055f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -75742,7 +75748,7 @@ GameObject:
   - component: {fileID: 1836001563}
   - component: {fileID: 1836001562}
   m_Layer: 0
-  m_Name: lightning
+  m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75785,7 +75791,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 01aeab5f8812c4843b1af2da3ad628d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a8cbb9281b49f14f804e94b0f145e10, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -76604,7 +76610,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ece45f236be46be458e2819e7e134359, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17b471b278331464c98513765ba19599, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -78324,7 +78330,7 @@ Transform:
   - {fileID: 54360272}
   - {fileID: 42843647}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1932474632
 GameObject:
@@ -78701,7 +78707,7 @@ GameObject:
   - component: {fileID: 1950757979}
   - component: {fileID: 1950757981}
   - component: {fileID: 1950757980}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: IMG_Life_1_Dead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79841,7 +79847,7 @@ GameObject:
   - component: {fileID: 1996181277}
   - component: {fileID: 1996181276}
   - component: {fileID: 1996181278}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: TXT_TimeCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80519,7 +80525,7 @@ GameObject:
   - component: {fileID: 2007190495}
   - component: {fileID: 2007190494}
   m_Layer: 0
-  m_Name: water
+  m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80562,7 +80568,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5f70b7474754b2e48acc8e7b2a07522d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4f3af8b7aaf5c614f9ca77a75bb69875, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -80630,7 +80636,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 55d8b380750aa4943a61866cd1cedd83, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f1ce6633a1079842a68c0d10ddbf10f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -84508,7 +84514,7 @@ GameObject:
   - component: {fileID: 2103950910}
   - component: {fileID: 2103950909}
   m_Layer: 0
-  m_Name: poison
+  m_Name: Poison
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84551,7 +84557,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 30e7f4adc16b48349b1ac6a845a0b989, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62d89bad721d0f544bc6ceedb757387d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -85221,7 +85227,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b6cabcaae96362c499ed71c00cd74f25, type: 3}
+    m_Font: {fileID: 12800000, guid: d0fede5885b402c40a15164572e7d694, type: 3}
     m_FontSize: 9
     m_FontStyle: 0
     m_BestFit: 0
@@ -85233,7 +85239,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 0 / 0
 --- !u!222 &2138121361
 CanvasRenderer:
   m_ObjectHideFlags: 0

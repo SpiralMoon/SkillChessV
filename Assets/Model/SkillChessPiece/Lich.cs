@@ -4,23 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Assets.Model.ChessPiece;
+using Assets.Model.ChessSkill;
+using Assets.Support;
+
 namespace Assets.Model.SkillChessPiece
 {
-    public class Lich : SkillPiece
+    public class Lich : SkillQueen
     {
         public Lich(string color) : base(color)
         {
+            this.Power = 150;
+            this.Exp = 175;
 
-        }
+            this.MaxHp = 650;
+            this.MaxMp = 1000;
+            this.MaxExp = new int[] { 150, 275 };
 
-        public override void SetMoveStatus(List<Board[]> board, Location location)
-        {
-            throw new NotImplementedException();
-        }
+            this.ClassCode = Support.ClassCode.LICH;
+            this.Element = Element.POISON;
 
-        public override void ShowMoveScope(List<Board[]> board, Location location)
-        {
+            this.Skill = new Skill[]
+            {
+                // TODO
+            };
 
+            Init();
         }
     }
 }

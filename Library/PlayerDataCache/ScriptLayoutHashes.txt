@@ -174,4 +174,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Service.PageParameterDispatcher
 17e611729f09f5e58e369bc37df97fac Assembly-CSharp.dll:.WaitingPage
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Service.ObjectMoveManager
-5184b3f85ec1d00deeedafa2053f0d9d Assembly-CSharp.dll:Assets.View.SkillBattlePage
+a31eb58aa82a21abc875c542e5c3b8fb Assembly-CSharp.dll:Assets.View.SkillBattlePage

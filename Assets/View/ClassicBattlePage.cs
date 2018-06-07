@@ -465,33 +465,6 @@ namespace Assets.View
             });
         }
 
-        protected void OnResultBattle(object sender, ResultForm resultForm)
-        {
-            Invoke(() =>
-            {
-                var param = new ResultPageParameter
-                {
-                    WhiteDashBoard = _whiteDashBoard,
-                    BlackDashBoard = _blackDashBoard
-                };
-
-                // 정상적인 게임 종료
-                if (resultForm.Pattern == Pattern.FINISH)
-                {
-                    // TODO
-                    PageParameterDispatcher.Instance().SetPageParameter(param);
-                    NextPage("ResultPage");
-                }
-                // 항복을 통한 게임 종료
-                else if (resultForm.Pattern == Pattern.SURRENDER)
-                {
-                    // TODO
-                    PageParameterDispatcher.Instance().SetPageParameter(param);
-                    NextPage("ResultPage");
-                }
-            });
-        }
-
         private void OnClickPromotion(string pieceType)
         {
             _networkManager.Relay(new RelayForm

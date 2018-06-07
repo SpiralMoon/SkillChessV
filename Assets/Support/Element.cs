@@ -5,7 +5,7 @@
     /// </summary>
     public enum Element
     {
-        NONE,
+        NORMAL,
         ICE,
         FIRE,
         HOLY,

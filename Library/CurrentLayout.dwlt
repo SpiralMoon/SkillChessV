@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 3}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 0
     width: 1435
     height: 705
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 14}
@@ -131,10 +131,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 987
-  m_MinSize: {x: 813, y: 492}
-  m_MaxSize: {x: 22008, y: 14042}
+  m_MinSize: {x: 807, y: 471}
+  m_MaxSize: {x: 22002, y: 14021}
   vertical: 1
-  controlID: 155
+  controlID: 138
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -156,10 +156,10 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 987
-  m_MinSize: {x: 813, y: 492}
-  m_MaxSize: {x: 22008, y: 14042}
+  m_MinSize: {x: 807, y: 471}
+  m_MaxSize: {x: 22002, y: 14021}
   vertical: 0
-  controlID: 156
+  controlID: 139
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -180,10 +180,10 @@ MonoBehaviour:
     y: 0
     width: 1435
     height: 987
-  m_MinSize: {x: 336, y: 492}
-  m_MaxSize: {x: 14006, y: 14042}
+  m_MinSize: {x: 332, y: 471}
+  m_MaxSize: {x: 14002, y: 14021}
   vertical: 1
-  controlID: 28
+  controlID: 104
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -204,10 +204,10 @@ MonoBehaviour:
     y: 705
     width: 1435
     height: 282
-  m_MinSize: {x: 336, y: 271}
-  m_MaxSize: {x: 14006, y: 10021}
+  m_MinSize: {x: 332, y: 271}
+  m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
-  controlID: 54
+  controlID: 105
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,8 +251,8 @@ MonoBehaviour:
     y: 0
     width: 310
     height: 282
-  m_MinSize: {x: 104, y: 121}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -301,8 +301,8 @@ MonoBehaviour:
     y: 0
     width: 279
     height: 987
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -371,9 +371,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.008689985, y: -0.0029949343, z: -0.00002586593, w: -0.9999577}
   m_Size:
-    m_Target: 1032.9067
+    m_Target: 899.64514
     speed: 2
-    m_Value: 1032.9067
+    m_Value: 899.64514
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -510,10 +510,10 @@ MonoBehaviour:
   m_LastProjectPath: C:\Users\Moon\Desktop\SkillChessV
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 284}
-    m_SelectedIDs: 28350000
-    m_LastClickedID: 13608
-    m_ExpandedIDs: 00000000202800003a280000422d00001e330000283500003e3500002e3600004e360000ffffff7f
+    scrollPos: {x: 0, y: 332}
+    m_SelectedIDs: d6350000
+    m_LastClickedID: 13782
+    m_ExpandedIDs: 000000003228000050280000a0280000902d0000a8330000d6350000f0350000ee3600000e370000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -541,7 +541,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000202800003a280000422d00001e330000283500003e3500002e3600004e360000
+    m_ExpandedIDs: 000000003228000050280000a0280000902d0000a8330000d6350000f0350000ee3600000e370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -654,7 +654,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: c674ffff487dffff4685ffff3a94ffffd094ffffda95ffff6c97ffff7697ffff8097ffff9697ffffa497ffffa897ffffb697ffffca97ffff4a9fffff2ca5ffffc2a5ffffcca6ffff5ea8ffff68a8ffff72a8ffff88a8ffff96a8ffff9aa8ffffa8a8ffffbca8ffff62aaffff9efbfffff4ffffff000000009c38000088e700008a440100a2700100
+    m_ExpandedIDs: 348bffffce8bffffd88cffff6a8effff748effff7e8effff948effffa28effffa68effffb48effffc88effff22a3ffffa8a8ffff42a9ffff4caaffffdeabffffe8abfffff2abffff08acffff16acffff1aacffff28acffff3cacffff7ac2ffff92c7ffff2cc8ffff36c9ffffc8caffffd2caffffdccafffff2caffff00cbffff04cbffff12cbffff26cbffffb8ccffff9efbffff00000000ea3b0000d4490000224a0000824f0000005300007a55000018300100dc3d0100648c0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -673,7 +673,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 12}
     m_SearchString: 
   m_ExpandedScenes:
-  - BattlePage
+  - LoginPage
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting

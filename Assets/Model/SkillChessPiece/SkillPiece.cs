@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Assets.Model.ChessPiece;
+using Assets.Model.ChessSkill;
 using Assets.Support;
 using Assets.Support.Language;
 
@@ -40,9 +41,17 @@ namespace Assets.Model.SkillChessPiece
 
         public Element Element;
 
+        /// <summary>
+        /// 직업 이름
+        /// </summary>
         public string ClassName;
 
+        /// <summary>
+        /// 직업 설명
+        /// </summary>
         public string ClassDescription;
+
+        public Skill[] Skill;
 
         public SkillPiece(string color) : base(color)
         {
