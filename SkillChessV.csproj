@@ -281,6 +281,7 @@
     <Compile Include="Assets\Model\ChessPiece\Piece.cs" />
     <Compile Include="Assets\Model\ChessPiece\Queen.cs" />
     <Compile Include="Assets\Model\ChessPiece\Rook.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Attack.cs" />
     <Compile Include="Assets\Model\ChessSkill\Skill.cs" />
     <Compile Include="Assets\Model\DashBoard.cs" />
     <Compile Include="Assets\Model\Impl\IPage.cs" />

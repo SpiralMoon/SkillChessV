@@ -51,6 +51,8 @@ namespace Assets.Model.SkillChessPiece
         /// </summary>
         public string ClassDescription;
 
+        public Attack Attack;
+
         public Skill[] Skill;
 
         public SkillPiece(string color) : base(color)

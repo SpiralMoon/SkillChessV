@@ -53,6 +53,30 @@ namespace Assets.View
 
         public Text TxtSelectedMp;
 
+        public GameObject SkillExplain;
+
+        public GameObject SkillElement;
+
+        public Text TxtSkillExplain;
+
+        public Text TxtSkillName;
+
+        public Button BtnSkill1;
+
+        public Button BtnSkill2;
+
+        public Button BtnSkill3;
+
+        /// <summary>
+        /// Attack을 선택한 상태일 때
+        /// </summary>
+        private bool _onAttack;
+
+        /// <summary>
+        /// Skill을 선택한 상태일 때
+        /// </summary>
+        private bool _onSkill;
+
         private void Awake()
         {
             var param = PageParameterDispatcher.Instance().GetPageParameter() as BattlePageParameter;
@@ -69,6 +93,8 @@ namespace Assets.View
             _board = new List<Board[]>();
             _whiteDashBoard = new DashBoard();
             _blackDashBoard = new DashBoard();
+
+            SkillFrame.SetActive(true);
 
             SetBoard();
 
@@ -93,16 +119,18 @@ namespace Assets.View
 
             if (Input.GetMouseButtonDown(0))
             {
-                // 마커정리
-                
-                _selectedObject = Touch();
+                _effectManager.Clear();
+
+                if ((_selectedObject = Touch()) == null)
+                {
+                    return;
+                }
 
                 // 이전터치가 적 기물이거나 첫 터치인경우
                 if (!_selectedMyPiece)
                 {
                     _startLocation = GetLocation(_selectedObject);
-
-                    // 마커표시
+                    _effectManager.Select(_board, _startLocation, _myColor);
                 }
                 // 이전터치가 내 기물인 경우
                 else
@@ -110,29 +138,34 @@ namespace Assets.View
                     _endLocation = GetLocation(_selectedObject);
                 }
 
-                if(_isMyTurn)
+                if (_isMyTurn)
                 {
                     // 이전터치가 적 기물이거나 첫 터치인경우
                     if (!_selectedMyPiece)
                     {
-                        if (_board[_startLocation.X][_startLocation.Y].Piece.Color == _myColor)
+                        var piece = _board[_startLocation.X][_startLocation.Y].Piece as SkillPiece;
+
+                        if (piece?.Color == _myColor)
                         {
-                            // moveStatusClean
-                            // moveStatusReset
-                            // 이동범위 표시
+                            CleanMoveStatus();
+                            piece.SetMoveStatus(_board, _startLocation);
+                            _effectManager.MoveScope(_board, _startLocation);
                             _selectedMyPiece = true;
                         }
                     }
                     // 이전터치가 내 기물인 경우
                     else
                     {
+                        var piece = _board[_startLocation.X][_startLocation.Y].Piece as SkillPiece;
+                        var target = _board[_endLocation.X][_endLocation.Y].Piece as SkillPiece;
+
+                        SetSkillIcons(piece);
+
                         // 이번터치가 이동 가능한 곳인 경우
                         if (_board[_endLocation.X][_endLocation.Y].IsPossibleMove)
                         {
-                            var piece = _board[_startLocation.X][_startLocation.Y].Piece;
-
-                            // 프로모션이 가능한 턴
-                            if (piece is Pawn && (_endLocation.Y == 0 || _endLocation.Y == 7))
+                            // 프로모션이 가능한 턴 (King을 죽인 경우는 제외)
+                            if (piece is SkillPawn && (_endLocation.Y == 0 || _endLocation.Y == 7) && !(target is SkillKing))
                             {
                                 _networkManager.Relay(new RelayForm
                                 {
@@ -142,7 +175,8 @@ namespace Assets.View
                                     Color = _myColor,
                                     TurnFinished = false
                                 });
-                                // TODO : 프로모션 창 진입
+
+                                // 프로모션 대신 처음위치로 귀환시키는건 어떨까
                             }
                             // 캐슬링이 가능한 턴
                             else if (piece is King && piece.IsPossibleCastling)
@@ -162,13 +196,13 @@ namespace Assets.View
                                     tempStartX = 7;
                                     tempEndX = 5;
                                 }
-                                
+
                                 // 캐슬링 이동 턴
                                 if (tempStartX.HasValue && tempEndX.HasValue)
                                 {
                                     _networkManager.Relay(new RelayForm
                                     {
-                                        Pattern = Pattern.PROMOTION,
+                                        Pattern = Pattern.CASTLING,
                                         StartLocation = _startLocation,
                                         EndLocation = _endLocation,
                                         CastlingStartLocation = new Location(tempStartX.Value, _startLocation.Y),
@@ -202,23 +236,183 @@ namespace Assets.View
                                     TurnFinished = true
                                 });
                             }
+
+                            _selectedMyPiece = false;
                         }
                         // 이번터치가 내 기물인 경우
-                        else if (_board[_endLocation.X][_endLocation.Y].Piece.Color == _myColor)
+                        else if (target?.Color == _myColor)
                         {
-                            // moveStatusClean
-                            // moveStatusReset
-                            // 이동범위 표시
                             _startLocation = _endLocation;
+
+                            _effectManager.Select(_board, _endLocation, _myColor);
+                            CleanMoveStatus();
+                            target.SetMoveStatus(_board, _endLocation);
+                            target.ShowMoveScope(_board, _endLocation);
+                            // 이동범위 표시
                         }
                         // 이번터치가 이동 불가능한 곳인 경우
                         else
                         {
-                            // moveStatusClean
+                            _effectManager.Select(_board, _endLocation, _myColor);
+                            CleanMoveStatus();
                             _selectedMyPiece = false;
                         }
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Piece의 정보를 화면 우측에 표현
+        /// </summary>
+        /// <param name="piece"></param>
+        private void OnGUI()
+        {
+            if (_startLocation == null)
+            {
+                return;
+            }
+
+            var piece = _board[_startLocation.X][_startLocation.Y].Piece as SkillPiece;
+
+            if (piece != null)
+            {
+                SelectedPiece.SetActive(true);
+                SelectedClass.SetActive(true);
+                SelectedType.SetActive(true);
+
+                /*
+                 * HP, MP, EXP, Level 표시
+                 */
+
+                SldSelectedHp.maxValue = piece.MaxHp;
+                SldSelectedHp.value = piece.CurrentHp;
+                TxtSelectedHp.text = $"{piece.CurrentHp} / {piece.MaxHp}";
+
+                TxtSelectedLevel.text = piece.Level + "";
+
+                if (piece.Color == _myColor)
+                {
+                    SldSelectedMp.maxValue = piece.MaxMp;
+                    SldSelectedMp.value = piece.CurrentMp;
+
+                    // 레벨이 1, 2이면 정상적으로 출력
+                    if (piece.Level == 1 || piece.Level == 2)
+                    {
+                        SldSelectedExp.maxValue = piece.MaxExp[piece.Level - 1];
+                        SldSelectedExp.value = piece.CurrentExp;
+                    }
+                    // 레벨이 3이면 꽉 채워서 출력
+                    else
+                    {
+                        SldSelectedExp.maxValue = 1;
+                        SldSelectedExp.value = 1;
+                    }
+
+                    TxtSelectedMp.text = $"{piece.CurrentMp} / {piece.MaxMp}";
+                }
+                else
+                {
+                    SldSelectedMp.maxValue = 1;
+                    SldSelectedMp.value = 0;
+                    SldSelectedExp.maxValue = 1;
+                    SldSelectedExp.value = 0;
+
+                    TxtSelectedMp.text = "???";
+                }
+
+                /*
+                 * Piece, Class, Type, Status 표시
+                 */
+
+                string element = null;
+                switch (piece.Element)
+                {
+                    case Element.NORMAL:
+                        element = "Normal";
+                        break;
+                    case Element.ICE:
+                        element = "Ice";
+                        break;
+                    case Element.FIRE:
+                        element = "Fire";
+                        break;
+                    case Element.HOLY:
+                        element = "Holy";
+                        break;
+                    case Element.DARK:
+                        element = "Dark";
+                        break;
+                    case Element.LIGHNING:
+                        element = "Lightning";
+                        break;
+                    case Element.POISON:
+                        element = "Poison";
+                        break;
+                    case Element.WATER:
+                        element = "Water";
+                        break;
+                }
+
+                SelectedPiece.GetComponent<Image>().sprite = PieceSprites.transform.Find(piece.PieceName).GetComponent<Image>().sprite;
+                SelectedClass.GetComponent<Image>().sprite = ClassSprites.transform.Find(piece.GetType().Name).GetComponent<Image>().sprite;
+                SelectedType.GetComponent<Image>().sprite = TypeSprites.transform.Find(element).GetComponent<Image>().sprite;
+
+                string status = null;
+                switch (piece.Status)
+                {
+                    case Status.NONE:
+                        status = "(Status : Normal)";
+                        break;
+                    case Status.FREEZING:
+                        status = "<color=#00C6ED>(Status : Freezing)</color>";
+                        break;
+                    case Status.BURN:
+                        status = "<color=#ED4C00>(Status : Burn)</color>";
+                        break;
+                    case Status.INVINCIBLE:
+                        status = "<color=#FFFF6C>(Status : Invincible)</color>";
+                        break;
+                    case Status.STUN:
+                        status = "<color=#FFE400>(Status : Stun)</color>";
+                        break;
+                    case Status.POISONING:
+                        status = "<color=#47C83E>(Status : Poisoning)</color>";
+                        break;
+                }
+
+                TxtSelectedStatus.text = status;
+                if (piece.StatusCount > 0)
+                {
+                    TxtSelectedStatusTurn.text = (piece.Color == _myColor)
+                        ? $"{piece.StatusCount} turn remained"
+                        : "? turn remained";
+                }
+                else
+                {
+                    TxtSelectedStatusTurn.text = "";
+                }
+            }
+            else
+            {
+                SelectedPiece.SetActive(false);
+                SelectedClass.SetActive(false);
+                SelectedType.SetActive(false);
+
+                SldSelectedHp.maxValue = 1;
+                SldSelectedHp.value = 0;
+                SldSelectedMp.maxValue = 1;
+                SldSelectedMp.value = 0;
+                SldSelectedExp.maxValue = 1;
+                SldSelectedExp.value = 0;
+
+                TxtSelectedHp.text = "";
+                TxtSelectedMp.text = "";
+                TxtSelectedLevel.text = "";
+
+                TxtSelectedClassName.text = "";
+                TxtSelectedStatus.text = "";
+                TxtSelectedStatusTurn.text = "";
             }
         }
 
@@ -425,164 +619,84 @@ namespace Assets.View
             SetRankIcon(EnemyFrame.transform.Find("IMG_Rank").GetComponent<Image>(), _matchForm.Enemy.Score);
         }
 
+        /// <summary>
+        /// 모든 발판의 IsPossibleAttack 초기화.
+        /// </summary>
+        protected void CleanAttackStatus()
+        {
+            foreach (var line in _board)
+            {
+                foreach (var cell in line)
+                {
+                    cell.IsPossibleAttack = false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 모든 발판의 IsPossibleSkill 초기화.
+        /// </summary>
+        protected void CleanSkillStatus()
+        {
+            foreach (var line in _board)
+            {
+                foreach (var cell in line)
+                {
+                    cell.IsPossibleSkill = false;
+                }
+            }
+        }
+
         protected void OnRelayBattle(object sender, RelayForm relayForm)
         {
             throw new NotImplementedException("");
         }
 
         /// <summary>
-        /// Piece의 정보를 화면 우측에 표현
+        /// 화면 하단에 스킬 아이콘 설정.
         /// </summary>
         /// <param name="piece"></param>
-        //private void ShowPieceInfo(SkillPiece piece)
-        private void OnGUI()
+        private void SetSkillIcons(SkillPiece piece)
         {
-            if (_startLocation == null)
-            {
-                return;
-            }
+            
+        }
 
-            var piece = _board[_startLocation.X][_startLocation.Y].Piece as SkillPiece;
+        /// <summary>
+        /// 스킬 버튼을 눌렀을 때
+        /// </summary>
+        private void OnClickSkill(int level)
+        {
+            var i = level - 1;
 
-            if (piece != null)
-            {
-                SelectedPiece.SetActive(true);
-                SelectedClass.SetActive(true);
-                SelectedType.SetActive(true);
+            // TODO
+        }
 
-                /*
-                 * HP, MP, EXP, Level 표시
-                 */
+        /// <summary>
+        /// 공격/이동 버튼을 눌렀을 때
+        /// </summary>
+        private void OnClickAttack()
+        {
 
-                SldSelectedHp.maxValue = piece.MaxHp;
-                SldSelectedHp.value = piece.CurrentHp;
-                TxtSelectedHp.text = $"{piece.CurrentHp} / {piece.MaxHp}";
+        }
 
-                TxtSelectedLevel.text = piece.Level + "";
+        /// <summary>
+        /// 스킬 설명 열기
+        /// </summary>
+        private void OpenSkillExplain()
+        {
+            TxtSkillName.text = "";
+            TxtSkillExplain.text = "";
+            // TODO : 속성 아이콘 변경
 
-                if (piece.Color == _myColor)
-                {
-                    SldSelectedMp.maxValue = piece.MaxMp;
-                    SldSelectedMp.value = piece.CurrentMp;
-                    
-                    // 레벨이 1, 2이면 정상적으로 출력
-                    if (piece.Level == 1 || piece.Level == 2)
-                    {
-                        SldSelectedExp.maxValue = piece.MaxExp[piece.Level - 1];
-                        SldSelectedExp.value = piece.CurrentExp;
-                    }
-                    // 레벨이 3이면 꽉 채워서 출력
-                    else
-                    {
-                        SldSelectedExp.maxValue = 1;
-                        SldSelectedExp.value = 1;
-                    }
+            SkillExplain.SetActive(true);
+        }
 
-                    TxtSelectedMp.text = $"{piece.CurrentMp} / {piece.MaxMp}";
-                }
-                else
-                {
-                    SldSelectedMp.maxValue = 1;
-                    SldSelectedMp.value = 0;
-                    SldSelectedExp.maxValue = 1;
-                    SldSelectedExp.value = 0;
-
-                    TxtSelectedMp.text = "???";
-                }
-
-                /*
-                 * Piece, Class, Type, Status 표시
-                 */
-
-                string element = null;
-                switch (piece.Element)
-                {
-                    case Element.NORMAL:
-                        element = "Normal";
-                        break;
-                    case Element.ICE:
-                        element = "Ice";
-                        break;
-                    case Element.FIRE:
-                        element = "Fire";
-                        break;
-                    case Element.HOLY:
-                        element = "Holy";
-                        break;
-                    case Element.DARK:
-                        element = "Dark";
-                        break;
-                    case Element.LIGHNING:
-                        element = "Lightning";
-                        break;
-                    case Element.POISON:
-                        element = "Poison";
-                        break;
-                    case Element.WATER:
-                        element = "Water";
-                        break;
-                }
-
-                SelectedPiece.GetComponent<Image>().sprite = PieceSprites.transform.Find(piece.PieceName).GetComponent<Image>().sprite;
-                SelectedClass.GetComponent<Image>().sprite = ClassSprites.transform.Find(piece.GetType().Name).GetComponent<Image>().sprite;
-                SelectedType.GetComponent<Image>().sprite = TypeSprites.transform.Find(element).GetComponent<Image>().sprite;
-
-                string status = null;
-                switch (piece.Status)
-                {
-                    case Status.NONE:
-                        status = "(Status : Normal)";
-                        break;
-                    case Status.FREEZING:
-                        status = "<color=#00C6ED>(Status : Freezing)</color>";
-                        break;
-                    case Status.BURN:
-                        status = "<color=#ED4C00>(Status : Burn)</color>";
-                        break;
-                    case Status.INVINCIBLE:
-                        status = "<color=#FFFF6C>(Status : Invincible)</color>";
-                        break;
-                    case Status.STUN:
-                        status = "<color=#FFE400>(Status : Stun)</color>";
-                        break;
-                    case Status.POISONING:
-                        status = "<color=#47C83E>(Status : Poisoning)</color>";
-                        break;
-                }
-
-                TxtSelectedStatus.text = status;
-                if (piece.StatusCount > 0)
-                {
-                    TxtSelectedStatusTurn.text = (piece.Color == _myColor)
-                        ? $"{piece.StatusCount} turn remained"
-                        : "? turn remained";
-                }
-                else
-                {
-                    TxtSelectedStatusTurn.text = "";
-                }
-            }
-            else
-            {
-                SelectedPiece.SetActive(false);
-                SelectedClass.SetActive(false);
-                SelectedType.SetActive(false);
-
-                SldSelectedHp.maxValue = 1;
-                SldSelectedHp.value = 0;
-                SldSelectedMp.maxValue = 1;
-                SldSelectedMp.value = 0;
-                SldSelectedExp.maxValue = 1;
-                SldSelectedExp.value = 0;
-
-                TxtSelectedHp.text = "";
-                TxtSelectedMp.text = "";
-                TxtSelectedLevel.text = "";
-
-                TxtSelectedClassName.text = "";
-                TxtSelectedStatus.text = "";
-                TxtSelectedStatusTurn.text = "";
-            }
+        /// <summary>
+        /// 스킬 설명 닫기
+        /// </summary>
+        private void CloseSkillExplain()
+        {
+            SkillExplain.SetActive(false);
         }
     }
 }

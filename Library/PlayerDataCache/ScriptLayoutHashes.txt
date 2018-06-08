@@ -120,6 +120,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Service.EffectManager
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Model.ChessSkill.Skill
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Service.UnityMainThreadDispatcher
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
@@ -174,4 +175,5 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Service.PageParameterDispatcher
 17e611729f09f5e58e369bc37df97fac Assembly-CSharp.dll:.WaitingPage
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Service.ObjectMoveManager
-a31eb58aa82a21abc875c542e5c3b8fb Assembly-CSharp.dll:Assets.View.SkillBattlePage
+3b75c6c8d14e1c6b09d3e89236f40b7d Assembly-CSharp.dll:Assets.View.SkillBattlePage
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Model.ChessSkill.Attack

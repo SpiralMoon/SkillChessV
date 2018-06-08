@@ -126,6 +126,11 @@ namespace Assets.View
                 rankIcon.sprite = Resources.Load<Sprite>("UI/Icon/IMG_Pawn");
         }
 
+        protected void SetMap()
+        {
+            // TODO
+        }
+
         /// <summary>
         /// 객체 터치 인식.
         /// </summary>
@@ -179,7 +184,7 @@ namespace Assets.View
             }
         }
 
-       /// <summary>
+        /// <summary>
        /// 기물의 데이터를 이동.
        /// </summary>
        /// <param name="startLocation"></param>
