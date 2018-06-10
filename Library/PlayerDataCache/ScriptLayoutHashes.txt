@@ -152,6 +152,7 @@ d757248800e0d6fdc5b6bb68cd1c2c03 Assembly-CSharp.dll:.TitlePage
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 96d0fbde9fd209878a0a291f82c9bcdd UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Model.ChessSkill.Attack
 64c31733d17370836e224297f535ffcc Assembly-CSharp.dll:.SettingPage
 9e0ef5bf862444b5dc48b5a99554ce7c UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
@@ -175,5 +176,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Service.PageParameterDispatcher
 17e611729f09f5e58e369bc37df97fac Assembly-CSharp.dll:.WaitingPage
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Service.ObjectMoveManager
-3b75c6c8d14e1c6b09d3e89236f40b7d Assembly-CSharp.dll:Assets.View.SkillBattlePage
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Model.ChessSkill.Attack
+6fa3f9807c42efbb1bb65e5cc2f8b1e9 Assembly-CSharp.dll:Assets.View.SkillBattlePage

@@ -61,6 +61,8 @@ namespace Assets.View
 
         public Text TxtSkillName;
 
+        public Button BtnAttack;
+
         public Button BtnSkill1;
 
         public Button BtnSkill2;
@@ -95,6 +97,11 @@ namespace Assets.View
             _blackDashBoard = new DashBoard();
 
             SkillFrame.SetActive(true);
+
+            BtnAttack.onClick.AddListener(OnClickAttack);
+            BtnSkill1.onClick.AddListener(delegate { OnClickSkill(1); });
+            BtnSkill2.onClick.AddListener(delegate { OnClickSkill(2); });
+            BtnSkill3.onClick.AddListener(delegate { OnClickSkill(3); });
 
             SetBoard();
 
@@ -138,125 +145,46 @@ namespace Assets.View
                     _endLocation = GetLocation(_selectedObject);
                 }
 
+                // 화면 하단에 스킬 아이콘 업데이트
+                var piece = _board[_startLocation.X][_startLocation.Y].Piece as SkillPiece;
+                if (piece?.Color == _myColor)
+                {
+                    SetSkillIcons(piece);
+                }
+                else
+                {
+                    CleanSkillIcons();
+                }
+
                 if (_isMyTurn)
                 {
-                    // 이전터치가 적 기물이거나 첫 터치인경우
-                    if (!_selectedMyPiece)
+                    var targetCell = _board[_endLocation.X][_endLocation.Y];
+
+                    // 공격 & 무빙
+                    if (_onAttack)
                     {
-                        var piece = _board[_startLocation.X][_startLocation.Y].Piece as SkillPiece;
-
-                        if (piece?.Color == _myColor)
+                        if (targetCell.IsPossibleAttack)
                         {
-                            CleanMoveStatus();
-                            piece.SetMoveStatus(_board, _startLocation);
-                            _effectManager.MoveScope(_board, _startLocation);
-                            _selectedMyPiece = true;
+
                         }
-                    }
-                    // 이전터치가 내 기물인 경우
-                    else
-                    {
-                        var piece = _board[_startLocation.X][_startLocation.Y].Piece as SkillPiece;
-                        var target = _board[_endLocation.X][_endLocation.Y].Piece as SkillPiece;
-
-                        SetSkillIcons(piece);
-
-                        // 이번터치가 이동 가능한 곳인 경우
-                        if (_board[_endLocation.X][_endLocation.Y].IsPossibleMove)
+                        else if (targetCell.IsPossibleMove)
                         {
-                            // 프로모션이 가능한 턴 (King을 죽인 경우는 제외)
-                            if (piece is SkillPawn && (_endLocation.Y == 0 || _endLocation.Y == 7) && !(target is SkillKing))
-                            {
-                                _networkManager.Relay(new RelayForm
-                                {
-                                    Pattern = Pattern.MOVE,
-                                    StartLocation = _startLocation,
-                                    EndLocation = _endLocation,
-                                    Color = _myColor,
-                                    TurnFinished = false
-                                });
 
-                                // 프로모션 대신 처음위치로 귀환시키는건 어떨까
-                            }
-                            // 캐슬링이 가능한 턴
-                            else if (piece is King && piece.IsPossibleCastling)
-                            {
-                                int? tempStartX = null;
-                                int? tempEndX = null;
-
-                                // 왼쪽 캐슬링을 선택한 경우
-                                if (_endLocation.X == 2)
-                                {
-                                    tempStartX = 0;
-                                    tempEndX = 3;
-                                }
-                                // 오른쪽 캐슬링을 선택한 경우
-                                if (_endLocation.X == 6)
-                                {
-                                    tempStartX = 7;
-                                    tempEndX = 5;
-                                }
-
-                                // 캐슬링 이동 턴
-                                if (tempStartX.HasValue && tempEndX.HasValue)
-                                {
-                                    _networkManager.Relay(new RelayForm
-                                    {
-                                        Pattern = Pattern.CASTLING,
-                                        StartLocation = _startLocation,
-                                        EndLocation = _endLocation,
-                                        CastlingStartLocation = new Location(tempStartX.Value, _startLocation.Y),
-                                        CastlingEndLocation = new Location(tempEndX.Value, _endLocation.Y),
-                                        Color = _myColor,
-                                        TurnFinished = true
-                                    });
-                                }
-                                // 평범한 이동 턴
-                                else
-                                {
-                                    _networkManager.Relay(new RelayForm
-                                    {
-                                        Pattern = Pattern.MOVE,
-                                        StartLocation = _startLocation,
-                                        EndLocation = _endLocation,
-                                        Color = _myColor,
-                                        TurnFinished = true
-                                    });
-                                }
-                            }
-                            // 평범한 이동 턴
-                            else
-                            {
-                                _networkManager.Relay(new RelayForm
-                                {
-                                    Pattern = Pattern.MOVE,
-                                    StartLocation = _startLocation,
-                                    EndLocation = _endLocation,
-                                    Color = _myColor,
-                                    TurnFinished = true
-                                });
-                            }
-
-                            _selectedMyPiece = false;
                         }
-                        // 이번터치가 내 기물인 경우
-                        else if (target?.Color == _myColor)
+                        else if (targetCell.Piece?.Color == _myColor)
                         {
-                            _startLocation = _endLocation;
 
-                            _effectManager.Select(_board, _endLocation, _myColor);
-                            CleanMoveStatus();
-                            target.SetMoveStatus(_board, _endLocation);
-                            target.ShowMoveScope(_board, _endLocation);
-                            // 이동범위 표시
                         }
-                        // 이번터치가 이동 불가능한 곳인 경우
                         else
                         {
-                            _effectManager.Select(_board, _endLocation, _myColor);
-                            CleanMoveStatus();
-                            _selectedMyPiece = false;
+
                         }
+                    }
+
+                    // 스킬
+                    if (_onSkill)
+                    {
+
                     }
                 }
             }
@@ -658,7 +586,19 @@ namespace Assets.View
         /// <param name="piece"></param>
         private void SetSkillIcons(SkillPiece piece)
         {
-            
+            BtnSkill1.transform.Find("IMG_Icon").GetComponent<Image>().sprite = Instantiate(Resources.Load<Sprite>($"UI/Icon/Skill/{piece.Skill[0].GetType().Name}"));
+            BtnSkill2.transform.Find("IMG_Icon").GetComponent<Image>().sprite = Instantiate(Resources.Load<Sprite>($"UI/Icon/Skill/{piece.Skill[1].GetType().Name}"));
+            BtnSkill3.transform.Find("IMG_Icon").GetComponent<Image>().sprite = Instantiate(Resources.Load<Sprite>($"UI/Icon/Skill/{piece.Skill[2].GetType().Name}"));
+        }
+
+        /// <summary>
+        /// 화면 하단에 스킬 아이콘 삭제.
+        /// </summary>
+        private void CleanSkillIcons()
+        {
+            BtnSkill1.transform.Find("IMG_Icon").GetComponent<Image>().sprite = null;
+            BtnSkill2.transform.Find("IMG_Icon").GetComponent<Image>().sprite = null;
+            BtnSkill3.transform.Find("IMG_Icon").GetComponent<Image>().sprite = null;
         }
 
         /// <summary>
@@ -666,9 +606,16 @@ namespace Assets.View
         /// </summary>
         private void OnClickSkill(int level)
         {
-            var i = level - 1;
+            if (_isMyTurn)
+            {
+                _onAttack = false;
+                _onSkill = true;
 
-            // TODO
+                var i = level - 1;
+
+                // TODO
+            }
+
         }
 
         /// <summary>
@@ -676,7 +623,12 @@ namespace Assets.View
         /// </summary>
         private void OnClickAttack()
         {
-
+            if (_isMyTurn)
+            {
+                _onSkill = false;
+                _onAttack = true;
+            }
+            
         }
 
         /// <summary>

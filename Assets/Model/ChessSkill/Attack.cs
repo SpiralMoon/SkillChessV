@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 using Assets.Service;
 using Assets.Support;
@@ -20,5 +21,25 @@ namespace Assets.Model.ChessSkill
         /// 기본 데미지
         /// </summary>
         protected int Power;
+
+        /// <summary>
+        /// 기물이 공격할 수 있는 발판의 IsPossibleAttack를 true로 변경
+        /// </summary>
+        /// <param name="board"></param>
+        /// /// <param name="location"></param>
+        public void SetAttackStatus(List<Board> board, Location location)
+        {
+
+        }
+
+        /// <summary>
+        /// 기물이 공격할 수 있는 발판과 공격할 수 없는 발판 표시
+        /// </summary>
+        /// <param name="board"></param>
+        /// /// <param name="location"></param>
+        public void ShowAttackScope(List<Board> board, Location location)
+        {
+
+        }
     }
 }

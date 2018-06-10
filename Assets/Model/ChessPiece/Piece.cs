@@ -33,6 +33,7 @@ namespace Assets.Model.ChessPiece
         /// 기물이 이동할 수 있는 발판의 IsPossibleMove를 true로 변경
         /// </summary>
         /// <param name="board"></param>
+        /// <param name="location"></param>
         public abstract void SetMoveStatus(List<Board[]> board, Location location);
 
         /// <summary>

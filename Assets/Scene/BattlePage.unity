@@ -2382,7 +2382,7 @@ MonoBehaviour:
   SelectedClass: {fileID: 494954065}
   SelectedType: {fileID: 176089656}
   SelectedPiece: {fileID: 535291036}
-  TxtSelectedClassName: {fileID: 0}
+  TxtSelectedClassName: {fileID: 221708637}
   TxtSelectedLevel: {fileID: 1626312926}
   TxtSelectedStatus: {fileID: 1127907564}
   TxtSelectedStatusTurn: {fileID: 360183668}
@@ -2395,6 +2395,7 @@ MonoBehaviour:
   SkillElement: {fileID: 2005110407}
   TxtSkillExplain: {fileID: 275721664}
   TxtSkillName: {fileID: 2090430867}
+  BtnAttack: {fileID: 1972079864}
   BtnSkill1: {fileID: 1280621199}
   BtnSkill2: {fileID: 1511582774}
   BtnSkill3: {fileID: 1821833367}

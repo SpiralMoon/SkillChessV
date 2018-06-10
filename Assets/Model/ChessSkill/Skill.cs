@@ -11,7 +11,7 @@ using Assets.Support.Language;
 
 namespace Assets.Model.ChessSkill
 {
-    public class Skill : MonoBehaviour
+    public abstract class Skill : MonoBehaviour
     {
         protected GameObject Obj;
 
@@ -43,5 +43,19 @@ namespace Assets.Model.ChessSkill
         /// 기술 사용 마나량
         /// </summary>
         protected int Mp;
+
+        /// <summary>
+        /// 기물이 스킬을 사용할 수 있는 발판의 IsPossibleSkill를 true로 변경
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="location"></param>
+        public abstract void SetSkillStatus(List<Board[]> board, Location location);
+
+        /// <summary>
+        /// 기물이 스킬을 사용할 수 있는 발판과 사용할 수 없는 발판 표시
+        /// </summary>
+        /// <param name="board"></param>
+        /// /// <param name="location"></param>
+        public abstract void ShowSkillScope(List<Board[]> board, Location location);
     }
 }

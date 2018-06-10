@@ -11,6 +11,7 @@
         ENPASSANT,
         SKILL,
         SURRENDER,
-        FINISH
+        FINISH,
+        ATTACK
     }
 }
