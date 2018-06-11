@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <code name="1110">
+    <string name="name">
+      <en>Elemental Knight</en>
+      <kr>엘리멘탈 나이트</kr>
+      <jp>エルリメンタル ナイト</jp>
+    </string>
+    <skill-array>
+      <skill name="1111">
+        <string name="name">
+          <en>Rain Tempo</en>
+          <kr>레인 템포</kr>
+          <jp>レーン テンポ</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>물의 원소를 응집시켜 인공적으로 비를 내린다.
+맞은 기물은 화상을 회복한다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1112">
+        <string name="name">
+          <en>Electric Field</en>
+          <kr>일렉트릭 필드</kr>
+          <jp>電界</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>일렉트릭 코어를 설치하여 전류를 방출한다.
+감전당한 모든 기물은 1턴간 기절한다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1113">
+        <string name="name">
+          <en>Blust Burn</en>
+          <kr>블러스트 번</kr>
+          <jp>ブラスト バーン</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>불의 정령의 힘을 개방하여 주변 기물을 공격한다.
+힘을 개방한 대가로 자신은 3턴간 화상 상태가 된다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+    </skill-array>
+  </code>
+  <code name="1120">
+    <string name="name">
+      <en>Bomber</en>
+      <kr>테러리스트</kr>
+      <jp>テロリスト</jp>
+    </string>
+    <skill-array>
+      <skill name="1121">
+        <string name="name">
+          <en>Steam</en>
+          <kr>증기 방출</kr>
+          <jp>スチーム</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>전방에 위치한 3명에게 뜨거운 증기를 뿜어 데미지를 입히고 2턴 동안 화상을 입힌다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1122">
+        <string name="name">
+          <en>Terror</en>
+          <kr>자폭</kr>
+          <jp>自爆</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>자폭하여 주변 모든 기물에게 매우 큰 데미지를 입힌다.
+단, 자신이 무적 상태이면 자폭을 해도 죽지 않는다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1123">
+        <string name="name">
+          <en>Remote Explosion</en>
+          <kr>원격폭파</kr>
+          <jp>えんかく ばくは</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>폭탄을 원격 조작하여 떨어진 거리에 있는 적 기물을 폭파한다.
+적 기물이 아군과 떨어져 있을 경우에만 공격할 수 있다.
+적 주변 기물은 원래 데미지의 1/4 만큼 데미지를 받는다.
+          </kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+    </skill-array>
+  </code>
+  <code name="1130">
+    <string name="name">
+      <en>Fighter</en>
+      <kr>파이터</kr>
+      <jp>ファイター</jp>
+    </string>
+    <skill-array>
+      <skill name="1131">
+        <string name="name">
+          <en>Knock Back</en>
+          <kr>넉 백</kr>
+          <jp>ノック バック</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>강력한 파워로 적을 3칸 뒤로 밀쳐낸다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1132">
+        <string name="name">
+          <en>Fire Punch</en>
+          <kr>화권</kr>
+          <jp>火拳</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>화염을 두르고 주먹을 휘두른다.
+맞은 기물은 1턴 동안 화상을 입는다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1133">
+        <string name="name">
+          <en>Megaton Punch</en>
+          <kr>메가톤 펀치</kr>
+          <jp>メガトン パンチ</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>메가톤급의 펀치로 적을 친다.
+적은 맵 가장 끝으로 튕겨나가며,1턴간 스턴 상태가 된다.
+다른 기물과 충돌 시 추가로 데미지를 입는다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+    </skill-array>
+  </code>
+  <code name="1140">
+    <string name="name">
+      <en>Launcher</en>
+      <kr>런처</kr>
+      <jp>ランチャー</jp>
+    </string>
+    <skill-array>
+      <skill name="1141">
+        <string name="name">
+          <en>Aqua Burst</en>
+          <kr>아쿠아 버스트</kr>
+          <jp>アクア バースト</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>응축한 물을 전방으로 파열하여 공격한다.
+전방에 위치한 모든 기물에게 데미지를 입힌다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1142">
+        <string name="name">
+          <en>Bio Chemistry Missile</en>
+          <kr>생화학 미사일</kr>
+          <jp>バイオ ケミストリー ミサイル</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>생화학 미사일을 한 기물의 위에서 분사시킨다.
+공격에 맞은 기물은 3턴간 독 상태에 빠진다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1143">
+        <string name="name">
+          <en>Aqua Cannon</en>
+          <kr>아쿠아 캐논</kr>
+          <jp>アクア キャノン</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>원거리에 있는 적 한명에게 집중적으로 강력한 물대포를 발사한다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+    </skill-array>
+  </code>
+  <code name="1210">
+    <string name="name">
+      <en>Assassin</en>
+      <kr>어쌔신</kr>
+      <jp>忍者</jp>
+    </string>
+    <skill-array>
+      <skill name="1211">
+        <string name="name">
+          <en>Assaulter</en>
+          <kr>어썰터</kr>
+          <jp>閃光</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>전방에 위치한 기물들을 관통하며 이동공격한다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1212">
+        <string name="name">
+          <en>Slash</en>
+          <kr>회전베기</kr>
+          <jp>回転斬り</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>빠른 속도로 칼날을 휘둘러 주변 모든 기물들을 벤다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1213">
+        <string name="name">
+          <en>Shuriken</en>
+          <kr>나선 수리검</kr>
+          <jp>螺旋 手裏剣</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>바람처럼 회전하는 나선 수리검으로 적을 공격한다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+    </skill-array>
+  </code>
+  <code name="1220">
+    <string name="name">
+      <en>Fire Bat</en>
+      <kr>파이어 뱃</kr>
+      <jp>ファイア ベッ</jp>
+    </string>
+    <skill-array>
+      <skill name="1221">
+        <string name="name">
+          <en>Fire Wall</en>
+          <kr>화벽</kr>
+          <jp>火壁</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>불의 고리를 이용하여 장막을 설치한다.
+장막에 닿은 모든 기물은 3턴 동안 화상을 입는다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1222">
+        <string name="name">
+          <en>Explosion</en>
+          <kr>익스플로젼</kr>
+          <jp>エクスプロージョン</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>화염을 전신개방하여 공격한다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1223">
+        <string name="name">
+          <en>Flame Radiation</en>
+          <kr>화염방사</kr>
+          <jp>火炎放射</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>전방의 모든 기물을 공격하는 화염을 방사한다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+    </skill-array>
+  </code>
+  <code name="1310">
+    <string name="name">
+      <en>Archmage</en>
+      <kr>아크메이지</kr>
+      <jp>アーチメージ</jp>
+    </string>
+    <skill-array>
+      <skill name="1311">
+        <string name="name">
+          <en>Ice Field</en>
+          <kr>아이스 필드</kr>
+          <jp>アイス フィールド</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>한 기물을 4턴 동안 빙결시키고 그 기물을 기준으로 십자열의 모든 기물에게 데미지를 준다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1312">
+        <string name="name">
+          <en>Thunder Bolt</en>
+          <kr>썬더볼트</kr>
+          <jp>らいげき</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>범위 내의 적 한 명에게 낙뢰를 떨어뜨린다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1313">
+        <string name="name">
+          <en>Snow Age</en>
+          <kr>눈의 결정</kr>
+          <jp>氷波</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>거대한 눈의 결정을 발사하여 그 기물을 기준으로 십자열의 모든 기물들을 2턴 동안 빙결시키고 데미지를 입힌다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+    </skill-array>
+  </code>
+  <code name="1320">
+    <string name="name">
+      <en>Priest</en>
+      <kr>프리스트</kr>
+      <jp>司祭</jp>
+    </string>
+    <skill-array>
+      <skill name="1321">
+        <string name="name">
+          <en>Heal</en>
+          <kr>회복</kr>
+          <jp>回復</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>자신 주변의 아군 한 명의 체력을 일정량 회복시킨다.
+어둠 속성의 적을 공격할 수도 있다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1322">
+        <string name="name">
+          <en>Healing Zone</en>
+          <kr>회복 구역</kr>
+          <jp>治癒 はどう</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>자신 주변의 여러 아군의 체력을 소량 회복시킨다.
+어둠 속성의 적을 공격할 수도 있다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1323">
+        <string name="name">
+          <en>Sacrifice</en>
+          <kr>희생</kr>
+          <jp>犧牲</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>자신이 죽는 대가로 아군 모두의 체력을 일정량 회복시킨다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+    </skill-array>
+  </code>
+  <code name="1410">
+    <string name="name">
+      <en>Archer</en>
+      <kr>사수</kr>
+      <jp>射手</jp>
+    </string>
+    <skill-array>
+      <skill name="1411">
+        <string name="name">
+          <en>Shot</en>
+          <kr>관통살</kr>
+          <jp>ショット</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>최대 4마리의 기물을 관통하는 화살을 발사한다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1412">
+        <string name="name">
+          <en>Boom Shot</en>
+          <kr>붐샷</kr>
+          <jp>ブーム ショット</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>원거리의 적 한 명에게 기폭 화살을 발사하고 그 주변 기물들에게 폭발 데미지를 입힌다.
+폭발 데미지는 원래 데미지의 2/3로 적용된다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1413">
+        <string name="name">
+          <en>Rapid Shot</en>
+          <kr>폭풍의 시</kr>
+          <jp>ラピッド ショット</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>적 한 명에게 집중적으로 수십발의 화살을 발사한다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+    </skill-array>
+  </code>
+  <code name="1420">
+    <string name="name">
+      <en>Paladin</en>
+      <kr>팔라딘</kr>
+      <jp>パラディン</jp>
+    </string>
+    <skill-array>
+      <skill name="1421">
+        <string name="name">
+          <en>Strike</en>
+          <kr>스트라이크</kr>
+          <jp>ストライク</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>빛과 같은 속도로 적을 세게 친다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1422">
+        <string name="name">
+          <en>Shield</en>
+          <kr>실드</kr>
+          <jp>シールド</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>자신을 포함한 가로열의 모든 아군에게 방어막을 생성한다.
+방어막의 효과로 인해 2턴 동안 무적 상태가 된다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1423">
+        <string name="name">
+          <en>Iron Body</en>
+          <kr>철괴</kr>
+          <jp>鉄怪</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>철의 기운을 몸에 둘러 4턴 동안 무적 상태가 된다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+    </skill-array>
+  </code>
+  <code name="1510">
+    <string name="name">
+      <en>Black Magician</en>
+      <kr>검은마법사</kr>
+      <jp>ブラック マジシャン</jp>
+    </string>
+    <skill-array>
+      <skill name="1511">
+        <string name="name">
+          <en>Dark Hole</en>
+          <kr>다크 홀</kr>
+          <jp>ダーク ホール</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>악몽세계의 입구를 열어 십자열에 위치한 모든 기물을 3턴 동안 기절시킨다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1512">
+        <string name="name">
+          <en>Death Penalty</en>
+          <kr>사형선고</kr>
+          <jp>死刑宣告</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>금술을 이용해 자신 주변의 적 하나를 즉사시킨다.
+무적인 상대나 King에게 통하지 않는다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1513">
+        <string name="name">
+          <en>Meteor Strike</en>
+          <kr>메테오 스트라이크</kr>
+          <jp>メテオ ストライク</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>운석을 투하하여 그 일대의 모든 기물에게 데미지를 준다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+    </skill-array>
+  </code>
+  <code name="1520">
+    <string name="name">
+      <en>Lich</en>
+      <kr>리치</kr>
+      <jp>リッチ</jp>
+    </string>
+    <skill-array>
+      <skill name="1521">
+        <string name="name">
+          <en>Curse</en>
+          <kr>저주</kr>
+          <jp>呪い</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>적 한 명에게 저주를 걸어 데미지를 입히고 5턴 동안 독 상태로 만든다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1522">
+        <string name="name">
+          <en>Drain</en>
+          <kr>드레인</kr>
+          <jp>ドレイン</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>적 기물 한 명의 HP와 MP를 일정량 흡수한다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1523">
+        <string name="name">
+          <en>Dark Fog</en>
+          <kr>다크 포그</kr>
+          <jp>かみなり</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>흑운을 불러 천둥을 내려친다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+    </skill-array>
+  </code>
+  <code name="1610">
+    <string name="name">
+      <en>Angel</en>
+      <kr>천사</kr>
+      <jp>天使</jp>
+    </string>
+    <skill-array>
+      <skill name="1611">
+        <string name="name">
+          <en>Holy Arrow</en>
+          <kr>성스러운 화살</kr>
+          <jp>聖なる アロー</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>성스러운 천사의 화살로 공격한다.
+적은 1턴 동안 기절한다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1612">
+        <string name="name">
+          <en>Dispel</en>
+          <kr>상태회복</kr>
+          <jp>ディスペル</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>신의 가호를 받아 주변 적 기물의 무적 상태를 해제하거나, 아군의 상태이상을 회복한다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1613">
+        <string name="name">
+          <en>Genesis</en>
+          <kr>제네시스</kr>
+          <jp>ジェネシス</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>빛의 기둥을 내리쳐 모든 적 기물에게 데미지를 준다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+    </skill-array>
+  </code>
+  <code name="1620">
+    <string name="name">
+      <en>Iuppiter</en>
+      <kr>제우스</kr>
+      <jp>ゼウス</jp>
+    </string>
+    <skill-array>
+      <skill name="1621">
+        <string name="name">
+          <en>Aura Sphere</en>
+          <kr>파동탄</kr>
+          <jp>波動弾</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>한 방향으로 파동탄을 발사한다."</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1622">
+        <string name="name">
+          <en>Electric Sphere</en>
+          <kr>뇌광탄</kr>
+          <jp>雷光弾</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>뇌광탄을 내리꽂아 그 근방의 모든 기물에게 데미지를 준다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+      <skill name="1623">
+        <string name="name">
+          <en>Judgement</en>
+          <kr>저지먼트</kr>
+          <jp>ジャッジメント</jp>
+        </string>
+        <string name="explain">
+          <en>...</en>
+          <kr>뇌신의 힘으로 필드를 4개의 구역으로 가르는 X 모양의 뇌창을 소환한다.
+필드 중앙에 위치한 기물은 심판에 의해 2턴 동안 기절한다.</kr>
+          <jp>...</jp>
+        </string>
+      </skill>
+    </skill-array>
+  </code>
+</resources>
+
+<!-- 줄 정렬 금지!!! -->

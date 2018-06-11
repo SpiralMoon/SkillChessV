@@ -44,6 +44,11 @@ namespace Assets.Model.ChessSkill
         /// </summary>
         protected int Mp;
 
+        public Skill()
+        {
+
+        }
+
         /// <summary>
         /// 기물이 스킬을 사용할 수 있는 발판의 IsPossibleSkill를 true로 변경
         /// </summary>
