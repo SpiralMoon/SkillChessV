@@ -54,6 +54,11 @@ namespace Assets.Model.SkillChessPiece
         /// </summary>
         public string ClassExplain;
 
+        /// <summary>
+        /// 마지막으로 이 기물에게 데미지를 준 기물
+        /// </summary>
+        public SkillPiece LastHit;
+
         public Attack Attack;
 
         public Skill[] Skill;

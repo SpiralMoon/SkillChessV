@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Assets.Model.ChessPiece;
 using Assets.Model.ChessSkill;
+using Assets.Model.ChessSkill.Bomber;
 using Assets.Support;
 
 namespace Assets.Model.SkillChessPiece
@@ -26,7 +27,9 @@ namespace Assets.Model.SkillChessPiece
 
             this.Skill = new Skill[]
             {
-                // TODO
+                new Steam(this),
+                new Terror(this),
+                new RemoteExplosion(this)
             };
 
             Init();

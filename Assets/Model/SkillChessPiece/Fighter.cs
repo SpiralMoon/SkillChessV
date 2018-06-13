@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Assets.Model.ChessPiece;
 using Assets.Model.ChessSkill;
+using Assets.Model.ChessSkill.Fighter;
 using Assets.Support;
 
 namespace Assets.Model.SkillChessPiece
@@ -26,7 +27,9 @@ namespace Assets.Model.SkillChessPiece
 
             this.Skill = new Skill[]
             {
-                // TODO
+                new KnockBack(this),
+                new FirePunch(this),
+                new MegatonPunch(this)
             };
 
             Init();

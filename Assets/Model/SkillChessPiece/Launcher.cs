@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Assets.Model.ChessPiece;
 using Assets.Model.ChessSkill;
+using Assets.Model.ChessSkill.Launcher;
 using Assets.Support;
 
 namespace Assets.Model.SkillChessPiece
@@ -26,7 +27,9 @@ namespace Assets.Model.SkillChessPiece
 
             this.Skill = new Skill[]
             {
-                // TODO
+                new AquaBurst(this),
+                new BioChemistryMissile(this),
+                new AquaCannon(this)
             };
 
             Init();

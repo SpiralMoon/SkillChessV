@@ -21,6 +21,11 @@ namespace Assets.Model.ChessSkill
         protected TextResource _textResource;
 
         /// <summary>
+        /// 이 기술의 주인 기물
+        /// </summary>
+        protected SkillPiece _owner;
+
+        /// <summary>
         /// Display name
         /// </summary>
         public string Name;
@@ -50,10 +55,12 @@ namespace Assets.Model.ChessSkill
         /// </summary>
         public int Mp;
 
-        public Skill()
+        public Skill(SkillPiece owner)
         {
             _effectManager = EffectManager.GetInstance();
             _textResource = TextResource.GetInstance();
+
+            _owner = owner;
         }
 
         protected void Init()
@@ -63,33 +70,35 @@ namespace Assets.Model.ChessSkill
             this.Name = nameAndExplain["Name"];
             this.Explain = nameAndExplain["Explain"];
         }
-
-        /// <summary>
-        /// 기술 사용.
-        /// </summary>
-        /// <param name="board"></param>
-        /// <param name="startLocation"></param>
-        /// <param name="endLocation"></param>
-        /// <returns></returns>
-        public abstract Task Trigger(List<Board[]> board, Location startLocation, Location endLocation);
-
+        
         /// <summary>
         /// 잔여 MP 검사. 다른 조건으로 기술을 사용하는 경우 오버라이딩.
         /// </summary>
         /// <param name="owner">기술을 보유한 기물</param>
         /// <returns>기술 발동 가능 여부</returns>
-        public bool CheckCondition(SkillPiece owner)
+        public bool CheckCondition()
         {
-            return owner.CurrentMp >= Mp;
+            return _owner.CurrentMp >= Mp;
         }
 
         /// <summary>
         /// 기술 사용 후 상태변화. MP 감소 등.
         /// </summary>
         /// <param name="owner"></param>
-        public void Cost(SkillPiece owner)
+        public void Cost()
         {
-            owner.CurrentMp -= this.Mp;
+            _owner.CurrentMp -= this.Mp;
+        }
+
+        /// <summary>
+        /// 데미지를 입히는 함수.
+        /// 단일 타겟 기준이지만 오버라이딩하여 사용 가능.
+        /// </summary>
+        /// <param name="piece"></param>
+        /// <param name="target"></param>
+        public void Damage(SkillPiece target)
+        {
+
         }
 
         /// <summary>
@@ -105,5 +114,14 @@ namespace Assets.Model.ChessSkill
         /// <param name="board"></param>
         /// /// <param name="location"></param>
         public abstract void ShowSkillScope(List<Board[]> board, Location location);
+
+        /// <summary>
+        /// 기술 사용.
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="startLocation"></param>
+        /// <param name="endLocation"></param>
+        /// <returns></returns>
+        public abstract Task Trigger(List<Board[]> board, Location startLocation, Location endLocation);
     }
 }

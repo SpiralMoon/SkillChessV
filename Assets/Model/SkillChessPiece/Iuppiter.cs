@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Assets.Model.ChessPiece;
 using Assets.Model.ChessSkill;
+using Assets.Model.ChessSkill.Iuppiter;
 using Assets.Support;
 
 namespace Assets.Model.SkillChessPiece
@@ -22,11 +23,13 @@ namespace Assets.Model.SkillChessPiece
             this.MaxExp = new int[] { 200, 300 };
 
             this.ClassCode = ClassCode.Iuppiter;
-            this.Element = Element.LIGHNING;
+            this.Element = Element.LIGHTNING;
 
             this.Skill = new Skill[]
             {
-                // TODO
+                new AuraSphere(this),
+                new ElectricSphere(this),
+                new Judgment(this)
             };
 
             Init();

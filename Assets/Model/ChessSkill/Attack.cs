@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 using Assets.Service;
@@ -21,6 +22,18 @@ namespace Assets.Model.ChessSkill
         /// 기본 데미지
         /// </summary>
         protected int Power;
+
+        /// <summary>
+        /// 공격.
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="startLocation"></param>
+        /// <param name="endLocation"></param>
+        /// <returns></returns>
+        public Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)
+        {
+            return null;
+        }
 
         /// <summary>
         /// 기물이 공격할 수 있는 발판의 IsPossibleAttack를 true로 변경

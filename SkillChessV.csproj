@@ -12,12 +12,15 @@
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <TargetFrameworkProfile></TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.4.2f2</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
@@ -278,7 +281,49 @@
     <Compile Include="Assets\Model\ChessPiece\Piece.cs" />
     <Compile Include="Assets\Model\ChessPiece\Queen.cs" />
     <Compile Include="Assets\Model\ChessPiece\Rook.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Angel\Dispel.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Angel\Genesis.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Angel\HolyArrow.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Archer\BoomShot.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Archer\RapidShot.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Archer\Shot.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Archmage\IceField.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Archmage\SnowAge.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Archmage\ThunderBolt.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Assassin\Assaulter.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Assassin\Shuriken.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Assassin\Slash.cs" />
     <Compile Include="Assets\Model\ChessSkill\Attack.cs" />
+    <Compile Include="Assets\Model\ChessSkill\BlackMagician\DarkHole.cs" />
+    <Compile Include="Assets\Model\ChessSkill\BlackMagician\DeathPenalty.cs" />
+    <Compile Include="Assets\Model\ChessSkill\BlackMagician\MeteorStrike.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Bomber\RemoteExplosion.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Bomber\Steam.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Bomber\Terror.cs" />
+    <Compile Include="Assets\Model\ChessSkill\ElementalKnight\BlustBurn.cs" />
+    <Compile Include="Assets\Model\ChessSkill\ElementalKnight\ElectricField.cs" />
+    <Compile Include="Assets\Model\ChessSkill\ElementalKnight\RainTempo.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Fighter\FirePunch.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Fighter\KnockBack.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Fighter\MegatonPunch.cs" />
+    <Compile Include="Assets\Model\ChessSkill\FireBat\Explosion.cs" />
+    <Compile Include="Assets\Model\ChessSkill\FireBat\FireWall.cs" />
+    <Compile Include="Assets\Model\ChessSkill\FireBat\FlameRadiation.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Iuppiter\AuraSphere.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Iuppiter\ElectricSphere.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Iuppiter\Judgment.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Launcher\AquaBurst.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Launcher\AquaCannon.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Launcher\BioChemistryMissile.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Lich\Curse.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Lich\DarkFog.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Lich\Drain.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Paladin\IronBody.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Paladin\Shield.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Paladin\Strike.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Priest\Heal.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Priest\HealingZone.cs" />
+    <Compile Include="Assets\Model\ChessSkill\Priest\Sacrifice.cs" />
     <Compile Include="Assets\Model\ChessSkill\Skill.cs" />
     <Compile Include="Assets\Model\DashBoard.cs" />
     <Compile Include="Assets\Model\Impl\IPage.cs" />
@@ -349,6 +394,7 @@
     <None Include="Assets\Resources\Class.xml" />
     <None Include="Assets\Resources\Text.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>

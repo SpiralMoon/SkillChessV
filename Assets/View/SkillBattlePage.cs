@@ -274,7 +274,7 @@ namespace Assets.View
                     case Element.DARK:
                         element = "Dark";
                         break;
-                    case Element.LIGHNING:
+                    case Element.LIGHTNING:
                         element = "Lightning";
                         break;
                     case Element.POISON:

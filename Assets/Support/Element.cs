@@ -10,7 +10,7 @@
         FIRE,
         HOLY,
         DARK,
-        LIGHNING,
+        LIGHTNING,
         POISON,
         WATER
     }
