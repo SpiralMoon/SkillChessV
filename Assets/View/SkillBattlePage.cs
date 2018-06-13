@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 
 using Assets.Model;
 using Assets.Model.ChessPiece;
+using Assets.Model.ChessSkill;
 using Assets.Model.SkillChessPiece;
 using Assets.Model.Impl;
 using Assets.Model.Bean;
@@ -253,6 +254,8 @@ namespace Assets.View
                  * Piece, Class, Type, Status 표시
                  */
 
+                TxtSelectedClassName.text = piece.ClassName;
+
                 string element = null;
                 switch (piece.Element)
                 {
@@ -456,59 +459,59 @@ namespace Assets.View
             SkillPiece piece = null;
 
             // 직업코드에 맞게 기물 생성.
-            switch (classCode)
+            switch ((ClassCode)classCode)
             {
                 // Pawn
-                case ClassCode.ELEMENTALKNIGHT:
+                case ClassCode.ElementalKnight:
                     piece = new ElementalKnight(color);
                     break;
-                case ClassCode.BOMBER:
+                case ClassCode.Bomber:
                     piece = new Bomber(color);
                     break;
-                case ClassCode.FIGHTER:
+                case ClassCode.Fighter:
                     piece = new Fighter(color);
                     break;
-                case ClassCode.LAUNCHER:
+                case ClassCode.Launcher:
                     piece = new Launcher(color);
                     break;
                 
                 // Rook
-                case ClassCode.ASSASSIN:
+                case ClassCode.Assassin:
                     piece = new Assassin(color);
                     break;
-                case ClassCode.FIREBAT:
+                case ClassCode.FireBat:
                     piece = new FireBat(color);
                     break;
 
                 // Bishop
-                case ClassCode.ARCHMAGE:
+                case ClassCode.Archmage:
                     piece = new Archmage(color);
                     break;
-                case ClassCode.PRIEST:
+                case ClassCode.Priest:
                     piece = new Priest(color);
                     break;
 
                 // Knight
-                case ClassCode.ARCHER:
+                case ClassCode.Archer:
                     piece = new Archer(color);
                     break;
-                case ClassCode.PALADIN:
+                case ClassCode.Paladin:
                     piece = new Paladin(color);
                     break;
 
                 // Queen
-                case ClassCode.BLACKMAGICIAN:
+                case ClassCode.BlackMagician:
                     piece = new BlackMagician(color);
                     break;
-                case ClassCode.LICH:
+                case ClassCode.Lich:
                     piece = new Lich(color);
                     break;
 
                 // King
-                case ClassCode.ANGEL:
+                case ClassCode.Angel:
                     piece = new Angel(color);
                     break;
-                case ClassCode.IUPPITER:
+                case ClassCode.Iuppiter:
                     piece = new Iuppiter(color);
                     break;
 

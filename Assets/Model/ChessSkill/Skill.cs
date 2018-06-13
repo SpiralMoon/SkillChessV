@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
+using Assets.Model.SkillChessPiece;
 using Assets.Service;
 using Assets.Support;
 using Assets.Support.Language;
@@ -22,31 +23,73 @@ namespace Assets.Model.ChessSkill
         /// <summary>
         /// Display name
         /// </summary>
-        protected string Name;
+        public string Name;
 
         /// <summary>
         /// Display explain
         /// </summary>
-        protected string Explain;
+        public string Explain;
 
         /// <summary>
         /// 속성
         /// </summary>
-        protected Element Element;
+        public Element Element;
+
+        /// <summary>
+        /// 기술 번호
+        /// </summary>
+        public int Code;
 
         /// <summary>
         /// 기본 데미지
         /// </summary>
-        protected int Power;
+        public int Power;
 
         /// <summary>
         /// 기술 사용 마나량
         /// </summary>
-        protected int Mp;
+        public int Mp;
 
         public Skill()
         {
+            _effectManager = EffectManager.GetInstance();
+            _textResource = TextResource.GetInstance();
+        }
 
+        protected void Init()
+        {
+            var nameAndExplain = _textResource.GetSkillInfo(this);
+
+            this.Name = nameAndExplain["Name"];
+            this.Explain = nameAndExplain["Explain"];
+        }
+
+        /// <summary>
+        /// 기술 사용.
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="startLocation"></param>
+        /// <param name="endLocation"></param>
+        /// <returns></returns>
+        public abstract Task Trigger(List<Board[]> board, Location startLocation, Location endLocation);
+
+        /// <summary>
+        /// 잔여 MP 검사. 다른 조건으로 기술을 사용하는 경우 오버라이딩.
+        /// </summary>
+        /// <param name="owner">기술을 보유한 기물</param>
+        /// <returns>기술 발동 가능 여부</returns>
+        public bool CheckCondition(SkillPiece owner)
+        {
+            return owner.CurrentMp >= Mp;
+        }
+
+        /// <summary>
+        /// 기술 사용 후 상태변화. MP 감소 등.
+        /// </summary>
+        /// <param name="owner"></param>
+        public void Cost(SkillPiece owner)
+        {
+            owner.CurrentMp -= this.Mp;
         }
 
         /// <summary>

@@ -21,7 +21,7 @@ namespace Assets.Model.SkillChessPiece
             this.MaxMp = 750;
             this.MaxExp = new int[] { 200, 300 };
 
-            this.ClassCode = Support.ClassCode.PRIEST;
+            this.ClassCode = ClassCode.Priest;
             this.Element = Element.HOLY;
 
             this.Skill = new Skill[]

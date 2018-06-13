@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 using Assets.Model.ChessPiece;
 using Assets.Model.ChessSkill;
@@ -14,6 +15,8 @@ namespace Assets.Model.SkillChessPiece
     public abstract class SkillPiece : Piece
     {
         private TextResource _textResource;
+
+        public GameObject StatusObj;
 
         public int Power;
 
@@ -37,7 +40,7 @@ namespace Assets.Model.SkillChessPiece
 
         public int StatusCount;
 
-        public int ClassCode;
+        public ClassCode ClassCode;
 
         public Element Element;
 
@@ -49,7 +52,7 @@ namespace Assets.Model.SkillChessPiece
         /// <summary>
         /// 직업 설명
         /// </summary>
-        public string ClassDescription;
+        public string ClassExplain;
 
         public Attack Attack;
 
@@ -74,7 +77,7 @@ namespace Assets.Model.SkillChessPiece
             this.CurrentExp = 0;
 
             // TODO
-            // this.ClassName;
+            this.ClassName = _textResource.GetClassName(this);
             // this.ClassDescription;
         }
     }

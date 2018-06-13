@@ -21,7 +21,7 @@ namespace Assets.Model.SkillChessPiece
             this.MaxMp = 1000;
             this.MaxExp = new int[] { 200, 300 };
 
-            this.ClassCode = Support.ClassCode.IUPPITER;
+            this.ClassCode = ClassCode.Iuppiter;
             this.Element = Element.LIGHNING;
 
             this.Skill = new Skill[]
