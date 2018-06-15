@@ -113,7 +113,7 @@ namespace Assets.Service
         }
 
         /// <summary>
-        /// 
+        /// Piece 클래스의 ShowMoveScope 에서만 호출.
         /// </summary>
         /// <param name="board"></param>
         /// <param name="x"></param>
@@ -129,7 +129,6 @@ namespace Assets.Service
             else
             {
                 scope = Instantiate(Resources.Load<GameObject>("Effect/DisabledMove"));
-
             }
 
             scope.SetPosition(board, new Location(x, y));
@@ -152,7 +151,48 @@ namespace Assets.Service
             piece.ShowMoveScope(board, location);
         }
 
+        /// <summary>
+        /// SkillPiece 클래스의 ShowSkillScope 에서만 호출.
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        public void SkillScope(List<Board[]> board, int x, int y)
+        {
+            GameObject scope = null;
 
+            if (board[x][y].IsPossibleSkill)
+            {
+                scope = Instantiate(Resources.Load<GameObject>("Effect/EnabledSkill"));
+            }
+            else
+            {
+                scope = Instantiate(Resources.Load<GameObject>("Effect/DisabledMove"));
+            }
+
+            scope.SetPosition(board, new Location(x, y));
+            _moveScopes.Add(scope);
+        }
+
+        /// <summary>
+        /// 자기 자신에게 기술을 사용할 때 호출.
+        /// SkillPiece 클래스의 ShowSkillScope 에서만 호출.
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        public void SkillScopeSelf(List<Board[]> board, int x, int y)
+        {
+            GameObject scope = null;
+
+            if (board[x][y].IsPossibleSkill)
+            {
+                scope = Instantiate(Resources.Load<GameObject>("Effect/EnabledSkillSelf"));
+            }
+
+            scope.SetPosition(board, new Location(x, y));
+            _moveScopes.Add(scope);
+        }
 
         public static EffectManager GetInstance()
         {

@@ -72,13 +72,13 @@ namespace Assets.Model.ChessSkill
         }
         
         /// <summary>
-        /// 잔여 MP 검사. 다른 조건으로 기술을 사용하는 경우 오버라이딩.
+        /// 잔여 MP와 Stun 검사. 다른 조건으로 기술을 사용하는 경우 오버라이딩.
         /// </summary>
         /// <param name="owner">기술을 보유한 기물</param>
         /// <returns>기술 발동 가능 여부</returns>
         public bool CheckCondition()
         {
-            return _owner.CurrentMp >= Mp;
+            return _owner.CurrentMp >= Mp && _owner.Status != Status.STUN ;
         }
 
         /// <summary>

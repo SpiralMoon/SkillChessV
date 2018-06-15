@@ -49,6 +49,12 @@ public class RelayForm
     public string PromotionType;
 
     /// <summary>
+    /// 사용한 스킬의 레벨
+    /// </summary>
+    [JsonProperty("skillLevel")]
+    public int SkillLevel;
+
+    /// <summary>
     /// 턴이 종료되었는가?
     /// </summary>
     [JsonProperty("turnFinished")]

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Assets.Model.SkillChessPiece;
+using Assets.Service;
 using Assets.Support;
 
 namespace Assets.Model.ChessSkill.Angel
@@ -23,12 +24,18 @@ namespace Assets.Model.ChessSkill.Angel
 
         public override void SetSkillStatus(List<Board[]> board, Location location)
         {
-            throw new NotImplementedException();
+            var x = location.X;
+            var y = location.Y;
+
+            board[x][y].IsPossibleSkill = true;
         }
 
         public override void ShowSkillScope(List<Board[]> board, Location location)
         {
-            throw new NotImplementedException();
+            var x = location.X;
+            var y = location.Y;
+
+            _effectManager.SkillScopeSelf(board, x, y);
         }
 
         public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)

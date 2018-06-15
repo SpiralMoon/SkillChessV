@@ -80,6 +80,11 @@ namespace Assets.View
         /// </summary>
         private bool _onSkill;
 
+        /// <summary>
+        /// 선택한 스킬 레벨
+        /// </summary>
+        private int _selectedSkillLevel;
+
         private void Awake()
         {
             var param = PageParameterDispatcher.Instance().GetPageParameter() as BattlePageParameter;
@@ -159,6 +164,11 @@ namespace Assets.View
 
                 if (_isMyTurn)
                 {
+                    if (_endLocation == null)
+                    {
+                        return;
+                    }
+
                     var targetCell = _board[_endLocation.X][_endLocation.Y];
 
                     // 공격 & 무빙
@@ -185,7 +195,34 @@ namespace Assets.View
                     // 스킬
                     if (_onSkill)
                     {
+                        // 스킬을 사용할 수 있는 경우
+                        if (targetCell.IsPossibleSkill)
+                        {
+                            _networkManager.Relay(new RelayForm
+                            {
+                                Pattern = Pattern.SKILL,
+                                StartLocation = _startLocation,
+                                EndLocation = _endLocation,
+                                SkillLevel = _selectedSkillLevel,
+                                Color = _myColor,
+                                TurnFinished = true
+                            });
+                            _onSkill = false;
+                            _selectedMyPiece = false;
+                        }
+                        // 스킬을 사용할 수 없고 내 기물을 재선택한 경우
+                        else if (targetCell.Piece?.Color == _myColor)
+                        {
+                            _startLocation = _endLocation;
+                            _effectManager.Select(_board, _endLocation, _myColor);
+                        }
+                        // 스킬을 사용할 수 없는 경우
+                        else
+                        {
+                            _effectManager.Select(_board, _endLocation, _myColor);
+                        }
 
+                        CleanSkillStatus();
                     }
                 }
             }
@@ -580,7 +617,83 @@ namespace Assets.View
 
         protected void OnRelayBattle(object sender, RelayForm relayForm)
         {
-            throw new NotImplementedException("");
+            Invoke(() =>
+            {
+                if (relayForm.Pattern == Pattern.MOVE)
+                {
+                    var pieceLocation = relayForm.StartLocation;
+                    var boardLocation = relayForm.EndLocation;
+
+                    _objectMoveManager.Move(
+                        _board[pieceLocation.X][pieceLocation.Y].PieceObj,
+                        _board[boardLocation.X][boardLocation.Y].BoardObj);
+
+                    // move counting
+                    if (relayForm.Color == Support.Color.WHITE)
+                    {
+                        _whiteDashBoard.MovingCount++;
+                    }
+                    else
+                    {
+                        _blackDashBoard.MovingCount++;
+                    }
+
+                    // 기물 모델이 있으면 제거
+                    if (_board[boardLocation.X][boardLocation.Y].Piece != null)
+                    {
+                        Destroy(_board[boardLocation.X][boardLocation.Y].PieceObj);
+                        _effectManager.Kill(_board, boardLocation);
+
+                        // Kill and Death counting
+                        if (relayForm.Color == Support.Color.WHITE)
+                        {
+                            _whiteDashBoard.KillCount++;
+                            _blackDashBoard.DeathCount++;
+                        }
+                        else
+                        {
+                            _blackDashBoard.KillCount++;
+                            _whiteDashBoard.DeathCount++;
+                        }
+                    }
+
+                    MovePieceData(pieceLocation, boardLocation);
+
+                    CleanMoveStatus();
+                }
+                else if (relayForm.Pattern == Pattern.CASTLING)
+                {
+                    var pieceLocation = relayForm.StartLocation;
+                    var boardLocation = relayForm.EndLocation;
+                    var castlingPieceLocation = relayForm.CastlingStartLocation;
+                    var castlingBoardLocation = relayForm.CastlingEndLocation;
+
+                    _objectMoveManager.Move(
+                        _board[pieceLocation.X][pieceLocation.Y].PieceObj,
+                        _board[boardLocation.X][boardLocation.Y].BoardObj);
+
+                    _objectMoveManager.Move(
+                        _board[castlingPieceLocation.X][castlingPieceLocation.Y].PieceObj,
+                        _board[castlingBoardLocation.X][castlingBoardLocation.Y].BoardObj);
+
+                    MovePieceData(pieceLocation, boardLocation);
+                    MovePieceData(castlingPieceLocation, castlingBoardLocation);
+
+                    CleanMoveStatus();
+                }
+                else if (relayForm.Pattern == Pattern.SKILL)
+                {
+                    var i = relayForm.SkillLevel - 1;
+                    var piece = _board[_startLocation.X][_startLocation.Y].Piece as SkillPiece;
+
+                    piece.Skill[i].Trigger(_board, _startLocation, _endLocation);
+                }
+
+                if (relayForm.TurnFinished)
+                {
+                    _isMyTurn = !_isMyTurn;
+                }
+            });
         }
 
         /// <summary>
@@ -609,16 +722,28 @@ namespace Assets.View
         /// </summary>
         private void OnClickSkill(int level)
         {
-            if (_isMyTurn)
+            if (!_isMyTurn)
             {
-                _onAttack = false;
-                _onSkill = true;
-
-                var i = level - 1;
-
-                // TODO
+                return;
             }
 
+            var i = level - 1;
+            var piece = _board[_startLocation.X][_startLocation.Y].Piece as SkillPiece;
+            
+            if (!piece.Skill[i].CheckCondition())
+            {
+                return;
+            }
+
+            _onAttack = false;
+            _onSkill = true;
+            
+            CleanSkillStatus();
+            _selectedMyPiece = true;
+            _selectedSkillLevel = level;
+
+            piece.Skill[i].SetSkillStatus(_board, _startLocation);
+            piece.Skill[i].ShowSkillScope(_board, _startLocation);
         }
 
         /// <summary>
@@ -626,12 +751,13 @@ namespace Assets.View
         /// </summary>
         private void OnClickAttack()
         {
-            if (_isMyTurn)
+            if (!_isMyTurn)
             {
-                _onSkill = false;
-                _onAttack = true;
+                return;
             }
-            
+
+            _onSkill = false;
+            _onAttack = true;
         }
 
         /// <summary>
