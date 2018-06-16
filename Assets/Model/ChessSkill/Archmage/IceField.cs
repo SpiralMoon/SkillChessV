@@ -23,12 +23,62 @@ namespace Assets.Model.ChessSkill.Archmage
 
         public override void SetSkillStatus(List<Board[]> board, Location location)
         {
-            throw new NotImplementedException();
+            var x = location.X;
+            var y = location.Y;
+
+            // 상
+            if (y > 1)
+            {
+                board[x][y - 2].IsPossibleSkill = true;
+            }
+        
+            // 하
+            if (y < 6)
+            {
+                board[x][y + 2].IsPossibleSkill = true;
+            }
+            
+            // 좌
+            if (x > 1)
+            {
+                board[x - 2][y].IsPossibleSkill = true;
+            }
+
+            // 우
+            if (x < 6)
+            {
+                board[x + 2][y].IsPossibleSkill = true;
+            }
         }
 
         public override void ShowSkillScope(List<Board[]> board, Location location)
         {
-            throw new NotImplementedException();
+            var x = location.X;
+            var y = location.Y;
+
+            // 상
+            if (y > 1)
+            {
+                _effectManager.SkillScope(board, x, y - 2);
+            }
+
+            // 하
+            if (y < 6)
+            {
+                _effectManager.SkillScope(board, x, y + 2);
+            }
+
+            // 좌
+            if (x > 1)
+            {
+                _effectManager.SkillScope(board, x - 2, y);
+            }
+
+            // 우
+            if (x < 6)
+            {
+                _effectManager.SkillScope(board, x + 2, y);
+            }
         }
 
         public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)

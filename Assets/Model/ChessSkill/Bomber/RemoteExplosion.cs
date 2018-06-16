@@ -23,12 +23,115 @@ namespace Assets.Model.ChessSkill.Bomber
 
         public override void SetSkillStatus(List<Board[]> board, Location location)
         {
-            throw new NotImplementedException();
+            var myColor = _owner.Color;
+            var enemyColor = (_owner.Color == Color.WHITE)
+                ? Color.BLACK
+                : Color.WHITE;
+
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (board[i][j].Piece?.Color == enemyColor)
+                    {
+                        // 내 기물과 근접해있는가?
+                        var isAdjoinMyPiece = false;
+
+                        //상
+                        if (j > 0)
+                        {
+                            if (board[i][j - 1].Piece?.Color == myColor)
+                            {
+                                isAdjoinMyPiece = true;
+                            }
+                        }
+
+                        // 하
+                        if (j < 7)
+                        {
+                            if (board[i][j + 1].Piece?.Color == myColor)
+                            {
+                                isAdjoinMyPiece = true;
+                            }
+                        }
+
+                        // 좌
+                        if (i > 0)
+                        {
+                            if (board[i - 1][j].Piece?.Color == myColor)
+                            {
+                                isAdjoinMyPiece = true;
+                            }
+                        }
+
+                        // 우
+                        if (i < 7)
+                        {
+                            if (board[i + 1][j].Piece?.Color == myColor)
+                            {
+                                isAdjoinMyPiece = true;
+                            }
+                        }
+
+                        //좌상
+                        if (i > 0 && j > 0)
+                        {
+                            if (board[i - 1][j - 1].Piece?.Color == myColor)
+                            {
+                                isAdjoinMyPiece = true;
+                            }
+                        }
+
+                        // 좌하
+                        if (i > 0 && j < 7)
+                        {
+                            if (board[i - 1][j + 1].Piece?.Color == myColor)
+                            {
+                                isAdjoinMyPiece = true;
+                            }
+                        }
+
+                        // 우상
+                        if (i < 7 && j > 0)
+                        {
+                            if (board[i + 1][j - 1].Piece?.Color == myColor)
+                            {
+                                isAdjoinMyPiece = true;
+                            }
+                        }
+
+                        // 우하
+                        if (i < 7 && j < 7)
+                        {
+                            if (board[i + 1][j + 1].Piece?.Color == myColor)
+                            {
+                                isAdjoinMyPiece = true;
+                            }
+                        }
+
+                        board[i][j].IsPossibleSkill = !isAdjoinMyPiece;
+                    }
+                }
+            }
         }
 
         public override void ShowSkillScope(List<Board[]> board, Location location)
         {
-            throw new NotImplementedException();
+            var myColor = _owner.Color;
+            var enemyColor = (_owner.Color == Color.WHITE)
+                ? Color.BLACK
+                : Color.WHITE;
+
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (board[i][j].Piece?.Color == enemyColor)
+                    {
+                        _effectManager.SkillScope(board, i, j);
+                    }
+                }
+            }
         }
 
         public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)

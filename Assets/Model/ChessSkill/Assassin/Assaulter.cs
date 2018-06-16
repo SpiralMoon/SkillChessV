@@ -23,12 +23,150 @@ namespace Assets.Model.ChessSkill.Assassin
 
         public override void SetSkillStatus(List<Board[]> board, Location location)
         {
-            throw new NotImplementedException();
+            var x = location.X;
+            var y = location.Y;
+            var lastDestination = 0; // 마지막 목적지 인덱스
+
+            // 좌
+            for (int i = x - 1, count = 0; i >= 0 && count < 4; i--, count++)
+            {
+                if (board[i][y].Piece == null)
+                {
+                    lastDestination = count;
+                }
+            }
+            if (x > 0)
+            {
+                if (lastDestination > 1)
+                {
+                    board[x - 1][y].IsPossibleSkill = true;
+                }
+            }
+
+            // 우
+            lastDestination = 0;
+            for (int i = x + 1, count = 0; i < 8 && count < 4; i++, count++)
+            {
+                if (board[i][y].Piece == null)
+                {
+                    lastDestination = count;
+                }
+            }
+            if (x < 7)
+            {
+                if (lastDestination > 1)
+                {
+                    board[x + 1][y].IsPossibleSkill = true;
+                }
+            }
+            
+            // 위
+            lastDestination = 0;
+            for (int i = y - 1, count = 0; i >= 0 && count < 4; i--, count++)
+            {
+                if (board[x][i].Piece == null)
+                {
+                    lastDestination = count;
+                }
+            }
+            if (y > 0)
+            {
+                if (lastDestination > 1)
+                {
+                    board[x][y - 1].IsPossibleSkill = true;
+                }
+            }
+
+            // 아래
+            lastDestination = 0;
+            for (int i = y + 1, count = 0; i < 8 && count < 4; i++, count++)
+            {
+                if (board[x][i].Piece == null)
+                {
+                    lastDestination = count;
+                }
+            }
+            if (y < 7)
+            {
+                if (lastDestination > 1)
+                {
+                    board[x][y + 1].IsPossibleSkill = true;
+                }
+            }
         }
 
         public override void ShowSkillScope(List<Board[]> board, Location location)
         {
-            throw new NotImplementedException();
+            var x = location.X;
+            var y = location.Y;
+            var lastDestination = 0; // 마지막 목적지 인덱스
+
+            // 좌
+            for (int i = x - 1, count = 0; i >= 0 && count < 4; i--, count++)
+            {
+                if (board[i][y].Piece == null)
+                {
+                    lastDestination = count;
+                }
+            }
+            if (x > 0)
+            {
+                if (lastDestination > 1)
+                {
+                    _effectManager.SkillScope(board, x - 1, y);
+                }
+            }
+
+            // 우
+            lastDestination = 0;
+            for (int i = x + 1, count = 0; i < 8 && count < 4; i++, count++)
+            {
+                if (board[i][y].Piece == null)
+                {
+                    lastDestination = count;
+                }
+            }
+            if (x < 7)
+            {
+                if (lastDestination > 1)
+                {
+                    _effectManager.SkillScope(board, x + 1, y);
+                }
+            }
+
+            // 상
+            lastDestination = 0;
+            for (int i = y - 1, count = 0; i >= 0 && count < 4; i--, count++)
+            {
+                if (board[x][i].Piece == null)
+                {
+                    lastDestination = count;
+                }
+            }
+            if (y > 0)
+            {
+                if (lastDestination > 1)
+                {
+                    _effectManager.SkillScope(board, x, y - 1);
+                }
+            }
+
+            // 하
+            lastDestination = 0;
+            for (int i = y + 1, count = 0; i < 8 && count < 4; i++, count++)
+            {
+                if (board[x][i].Piece == null)
+                {
+                    lastDestination = count;
+                }
+            }
+            if (y < 7)
+            {
+                if (lastDestination > 1)
+                {
+                    _effectManager.SkillScope(board, x, y + 1);
+                }
+            }
         }
 
         public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)

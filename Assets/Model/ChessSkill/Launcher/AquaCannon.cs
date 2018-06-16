@@ -23,12 +23,42 @@ namespace Assets.Model.ChessSkill.Launcher
 
         public override void SetSkillStatus(List<Board[]> board, Location location)
         {
-            throw new NotImplementedException();
+            var x = location.X;
+            var y = location.Y;
+            var enemyColor = (_owner.Color == Color.WHITE)
+                ? Color.BLACK
+                : Color.WHITE;
+
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if ((x > i + 2 || x < i - 2) || (y > j + 2 || y < j - 2))
+                    {
+                        if (board[i][j].Piece?.Color == enemyColor)
+                        {
+                            board[i][j].IsPossibleSkill = true;
+                        }
+                    }
+                }
+            }
         }
 
         public override void ShowSkillScope(List<Board[]> board, Location location)
         {
-            throw new NotImplementedException();
+            var x = location.X;
+            var y = location.Y;
+
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if ((x > i + 2 || x < i - 2) || (y > j + 2 || y < j - 2))
+                    {
+                        _effectManager.SkillScope(board, i, j);
+                    }
+                }
+            }
         }
 
         public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)
