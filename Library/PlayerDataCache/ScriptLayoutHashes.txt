@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Moon/Desktop/SkillChessV/SkillChessV.exe
+C:/Users/Moon/Desktop/SkillChessV.exe
 SceneListBegin?
 Assets/Scene/IntroPage.unity
 Assets/Scene/TitlePage.unity
@@ -13,6 +13,7 @@ Assets/Scene/BattlePage.unity
 Assets/Scene/ResultPage.unity
 SceneListEnd?
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Archmage.SnowAge
+e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Launcher.AquaBurst
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Archer.RapidShot
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 4b12dd839b2293f8457cd67cc3610b85 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -29,6 +30,8 @@ df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.T
 7e837d6edee93f70e438996a4981e251 Assembly-CSharp.dll:.LoginPage
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Archer.Shot
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Iuppiter.ElectricSphere
+e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Priest.Sacrifice
+e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Lich.Curse
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Bomber.RemoteExplosion
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -98,6 +101,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 96dc5737f35d533dbfa0a19e91e32361 Assembly-CSharp.dll:Assets.Service.CameraManager
+e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Launcher.AquaCannon
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Fighter.MegatonPunch
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 4b12dd839b2293f8457cd67cc3610b85 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -112,6 +116,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 92d7a83ea3c7404e484f3b2eed421855 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Archmage.ThunderBolt
+e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Priest.Heal
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -127,7 +132,9 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Paladin.Shield
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Service.EffectManager
+e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Lich.Drain
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Archmage.IceField
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Service.UnityMainThreadDispatcher
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
@@ -144,12 +151,14 @@ e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Ang
 7e645aad084ea2089ea3bafc4a6848aa Assembly-CSharp.dll:Assets.View.ClassicBattlePage
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.BlackMagician.MeteorStrike
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.BlackMagician.DarkHole
+e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Lich.DarkFog
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Angel.HolyArrow
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Iuppiter.AuraSphere
 85477b1d549c3f477496a9380b1a8d50 Assembly-CSharp.dll:Assets.View.ResultPage
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Fighter.FirePunch
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.csLegacyEffectChanger
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Fighter.KnockBack
+e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Paladin.IronBody
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -172,6 +181,7 @@ e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Ass
 96d0fbde9fd209878a0a291f82c9bcdd UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Model.ChessSkill.Attack
+e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Priest.HealingZone
 64c31733d17370836e224297f535ffcc Assembly-CSharp.dll:.SettingPage
 9e0ef5bf862444b5dc48b5a99554ce7c UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
@@ -202,19 +212,9 @@ e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Ass
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.FireBat.Explosion
 17e611729f09f5e58e369bc37df97fac Assembly-CSharp.dll:.WaitingPage
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Service.ObjectMoveManager
+e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Paladin.Strike
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.FireBat.FireWall
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.ElementalKnight.BlustBurn
+e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Launcher.BioChemistryMissile
 e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Angel.Dispel
 6fa3f9807c42efbb1bb65e5cc2f8b1e9 Assembly-CSharp.dll:Assets.View.SkillBattlePage
-e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Launcher.AquaBurst
-e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Lich.DarkFog
-e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Paladin.Shield
-e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Paladin.Strike
-e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Priest.Heal
-e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Priest.HealingZone
-e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Priest.Sacrifice
-e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Launcher.BioChemistryMissile
-e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Launcher.AquaCannon
-e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Lich.Curse
-e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Paladin.IronBody
-e42b2a1ce70bf755c9f9c41415801d5f Assembly-CSharp.dll:Assets.Model.ChessSkill.Lich.Drain

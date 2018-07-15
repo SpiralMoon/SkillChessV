@@ -1,8 +1,6 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Assets.Model.SkillChessPiece;
 using Assets.Support;
@@ -11,12 +9,15 @@ namespace Assets.Model.ChessSkill.Archmage
 {
     public class SnowAge : Skill
     {
+        private readonly string _hitPath;
+
         public SnowAge(SkillPiece owner) : base(owner)
         {
             this.Code = 1313;
             this.Element = Element.ICE;
             this.Power = 300;
             this.Mp = 400;
+            this._hitPath = $"Effect/Skill/{Owner.GetType().Name}/{GetType().Name}Hit";
 
             Init();
         }
@@ -25,16 +26,20 @@ namespace Assets.Model.ChessSkill.Archmage
         {
             var x = location.X;
             var y = location.Y;
-            var enemyColor = (_owner.Color == Color.WHITE)
+            var enemyColor = (Owner.Color == Color.WHITE)
                 ? Color.BLACK
                 : Color.WHITE;
 
             // 좌
             for (int i = x - 1; i >= 0; i--)
             {
-                if (board[i][y].Piece?.Color == enemyColor)
+                if (board[i][y].Piece != null)
                 {
-                    board[i][y].IsPossibleSkill = true;
+                    if (board[i][y].Piece.Color == enemyColor)
+                    {
+                        board[i][y].IsPossibleSkill = true;
+                    }
+
                     break;
                 }
             }
@@ -42,9 +47,13 @@ namespace Assets.Model.ChessSkill.Archmage
             // 우
             for (int i = x + 1; i < 8; i++)
             {
-                if (board[i][y].Piece?.Color == enemyColor)
+                if (board[i][y].Piece != null)
                 {
-                    board[i][y].IsPossibleSkill = true;
+                    if (board[i][y].Piece.Color == enemyColor)
+                    {
+                        board[i][y].IsPossibleSkill = true;
+                    }
+
                     break;
                 }
             }
@@ -52,9 +61,13 @@ namespace Assets.Model.ChessSkill.Archmage
             // 상
             for (int i = y - 1; i >= 0; i--)
             {
-                if (board[x][i].Piece?.Color == enemyColor)
+                if (board[x][i].Piece != null)
                 {
-                    board[x][i].IsPossibleSkill = true;
+                    if (board[x][i].Piece.Color == enemyColor)
+                    {
+                        board[x][i].IsPossibleSkill = true;
+                    }
+
                     break;
                 }
             }
@@ -62,9 +75,13 @@ namespace Assets.Model.ChessSkill.Archmage
             // 하
             for (int i = y + 1; i < 8; i++)
             {
-                if (board[x][i].Piece?.Color == enemyColor)
+                if (board[x][i].Piece != null)
                 {
-                    board[x][i].IsPossibleSkill = true;
+                    if (board[x][i].Piece.Color == enemyColor)
+                    {
+                        board[x][i].IsPossibleSkill = true;
+                    }
+
                     break;
                 }
             }
@@ -74,14 +91,14 @@ namespace Assets.Model.ChessSkill.Archmage
         {
             var x = location.X;
             var y = location.Y;
-            var enemyColor = (_owner.Color == Color.WHITE)
+            var enemyColor = (Owner.Color == Color.WHITE)
                 ? Color.BLACK
                 : Color.WHITE;
 
             // 좌
             for (int i = x - 1; i >= 0; i--)
             {
-                if (board[i][y].Piece?.Color == enemyColor)
+                if (board[i][y].Piece != null)
                 {
                     _effectManager.SkillScope(board, i, y);
                     break;
@@ -91,7 +108,7 @@ namespace Assets.Model.ChessSkill.Archmage
             // 우
             for (int i = x + 1; i < 8; i++)
             {
-                if (board[i][y].Piece?.Color == enemyColor)
+                if (board[i][y].Piece != null)
                 {
                     _effectManager.SkillScope(board, i, y);
                     break;
@@ -101,7 +118,7 @@ namespace Assets.Model.ChessSkill.Archmage
             // 상
             for (int i = y - 1; i >= 0; i--)
             {
-                if (board[x][i].Piece?.Color == enemyColor)
+                if (board[x][i].Piece != null)
                 {
                     _effectManager.SkillScope(board, x, i);
                     break;
@@ -111,7 +128,7 @@ namespace Assets.Model.ChessSkill.Archmage
             // 하
             for (int i = y + 1; i < 8; i++)
             {
-                if (board[x][i].Piece?.Color == enemyColor)
+                if (board[x][i].Piece != null)
                 {
                     _effectManager.SkillScope(board, x, i);
                     break;
@@ -119,7 +136,7 @@ namespace Assets.Model.ChessSkill.Archmage
             }
         }
 
-        public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)
+        protected override IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
         {
             throw new NotImplementedException();
         }

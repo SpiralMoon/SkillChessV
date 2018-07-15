@@ -1,8 +1,6 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Assets.Model.SkillChessPiece;
 using Assets.Support;
@@ -11,12 +9,15 @@ namespace Assets.Model.ChessSkill.Paladin
 {
     public class Shield : Skill
     {
+        private readonly string _barrierPath;
+
         public Shield(SkillPiece owner) : base(owner)
         {
             this.Code = 1422;
             this.Element = Element.HOLY;
             this.Power = 0;
             this.Mp = 60;
+            this._barrierPath = $"Effect/Skill/{Owner.GetType().Name}/Barrier";
 
             Init();
         }
@@ -37,7 +38,7 @@ namespace Assets.Model.ChessSkill.Paladin
             _effectManager.SkillScopeSelf(board, x, y);
         }
 
-        public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)
+        protected override IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
         {
             throw new NotImplementedException();
         }

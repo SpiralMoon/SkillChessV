@@ -1,8 +1,6 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Assets.Model.SkillChessPiece;
 using Assets.Support;
@@ -11,12 +9,15 @@ namespace Assets.Model.ChessSkill.Launcher
 {
     public class BioChemistryMissile : Skill
     {
+        private readonly string _aimPath;
+
         public BioChemistryMissile(SkillPiece owner) : base(owner)
         {
             this.Code = 1142;
             this.Element = Element.POISON;
             this.Power = 110;
             this.Mp = 85;
+            this._aimPath = $"Effect/Skill/{Owner.GetType().Name}/{GetType().Name}Aim";
 
             Init();
         }
@@ -25,7 +26,7 @@ namespace Assets.Model.ChessSkill.Launcher
         {
             var x = location.X;
             var y = location.Y;
-            var enemyColor = (_owner.Color == Color.WHITE)
+            var enemyColor = (Owner.Color == Color.WHITE)
                 ? Color.BLACK
                 : Color.WHITE;
 
@@ -61,7 +62,7 @@ namespace Assets.Model.ChessSkill.Launcher
             }
         }
 
-        public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)
+        protected override IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
         {
             throw new NotImplementedException();
         }

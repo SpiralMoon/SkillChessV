@@ -1,11 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Assets.Model.SkillChessPiece;
-using Assets.Service;
 using Assets.Support;
 
 namespace Assets.Model.ChessSkill.Angel
@@ -26,7 +23,7 @@ namespace Assets.Model.ChessSkill.Angel
         {
             var x = location.X;
             var y = location.Y;
-            var enemyColor = (_owner.Color == Color.WHITE)
+            var enemyColor = (Owner.Color == Color.WHITE)
                 ? Color.BLACK
                 : Color.WHITE;
 
@@ -157,7 +154,7 @@ namespace Assets.Model.ChessSkill.Angel
             }
         }
 
-        public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)
+        protected override IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
         {
             throw new NotImplementedException();
         }

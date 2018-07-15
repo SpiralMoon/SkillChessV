@@ -1,8 +1,6 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Assets.Model.SkillChessPiece;
 using Assets.Support;
@@ -25,7 +23,7 @@ namespace Assets.Model.ChessSkill.Priest
         {
             var x = location.X;
             var y = location.Y;
-            var myColor = _owner.Color;
+            var myColor = Owner.Color;
             Board targetCell = null;
             SkillPiece target = null;
 
@@ -236,9 +234,11 @@ namespace Assets.Model.ChessSkill.Priest
             }
         }
 
-        public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)
+        protected override IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
         {
             throw new NotImplementedException();
+
+            finishCallback?.Invoke();
         }
     }
 }

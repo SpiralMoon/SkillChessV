@@ -9,6 +9,7 @@ using Assets.Model.SkillChessPiece;
 using Assets.Service;
 using Assets.Support;
 using Assets.Support.Language;
+using System.Collections;
 
 namespace Assets.Model.ChessSkill
 {
@@ -21,9 +22,14 @@ namespace Assets.Model.ChessSkill
         protected TextResource _textResource;
 
         /// <summary>
+        /// 이 기술의 기본 이펙트
+        /// </summary>
+        protected string _path;
+
+        /// <summary>
         /// 이 기술의 주인 기물
         /// </summary>
-        protected SkillPiece _owner;
+        protected SkillPiece Owner;
 
         /// <summary>
         /// Display name
@@ -60,7 +66,7 @@ namespace Assets.Model.ChessSkill
             _effectManager = EffectManager.GetInstance();
             _textResource = TextResource.GetInstance();
 
-            _owner = owner;
+            Owner = owner;
         }
 
         protected void Init()
@@ -69,6 +75,7 @@ namespace Assets.Model.ChessSkill
 
             this.Name = nameAndExplain["Name"];
             this.Explain = nameAndExplain["Explain"];
+            this._path = $"Effect/Skill/{Owner.GetType().Name}/{GetType().Name}";
         }
         
         /// <summary>
@@ -78,7 +85,7 @@ namespace Assets.Model.ChessSkill
         /// <returns>기술 발동 가능 여부</returns>
         public bool CheckCondition()
         {
-            return _owner.CurrentMp >= Mp && _owner.Status != Status.STUN ;
+            return Owner.CurrentMp >= Mp && Owner.Status != Status.STUN ;
         }
 
         /// <summary>
@@ -87,7 +94,7 @@ namespace Assets.Model.ChessSkill
         /// <param name="owner"></param>
         public void Cost()
         {
-            _owner.CurrentMp -= this.Mp;
+            Owner.CurrentMp -= this.Mp;
         }
 
         /// <summary>
@@ -104,7 +111,7 @@ namespace Assets.Model.ChessSkill
         /// <summary>
         /// 기물이 스킬을 사용할 수 있는 발판의 IsPossibleSkill를 true로 변경
         /// </summary>
-        /// <param name="board"></param>
+        /// <param name="board"></param> 
         /// <param name="location"></param>
         public abstract void SetSkillStatus(List<Board[]> board, Location location);
 
@@ -121,7 +128,31 @@ namespace Assets.Model.ChessSkill
         /// <param name="board"></param>
         /// <param name="startLocation"></param>
         /// <param name="endLocation"></param>
+        /// <param name="finishCallback"></param>
         /// <returns></returns>
-        public abstract Task Trigger(List<Board[]> board, Location startLocation, Location endLocation);
+        public void Trigger(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
+        {
+            StartCoroutine(Active(board, startLocation, endLocation, finishCallback));
+        }
+
+        /// <summary>
+        /// 기술의 상세 로직. Override
+        /// 기술이 끝나면 finish callback을 실행함.
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="startLocation"></param>
+        /// <param name="endLocation"></param>
+        /// <returns></returns>
+        protected abstract IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback);
+
+        /// <summary>
+        /// 기술 오브젝트를 path로부터 불러옴
+        /// </summary>
+        /// <param name="path">불러올 오브젝트의 경로</param>
+        /// <returns></returns>
+        protected GameObject Load(string path)
+        {
+            return Instantiate(Resources.Load<GameObject>(path));
+        }
     }
 }

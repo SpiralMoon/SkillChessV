@@ -1,8 +1,6 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Assets.Model.SkillChessPiece;
 using Assets.Support;
@@ -11,12 +9,15 @@ namespace Assets.Model.ChessSkill.Iuppiter
 {
     public class ElectricSphere : Skill
     {
+        private readonly string _hitPath;
+
         public ElectricSphere(SkillPiece owner) : base(owner)
         {
             this.Code = 1622;
             this.Element = Element.LIGHTNING;
             this.Power = 150;
             this.Mp = 300;
+            this._hitPath = $"Effect/Skill/{Owner.GetType().Name}/{GetType().Name}Hit";
 
             Init();
         }
@@ -25,7 +26,7 @@ namespace Assets.Model.ChessSkill.Iuppiter
         {
             var x = location.X;
             var y = location.Y;
-            var enemyColor = (_owner.Color == Color.WHITE)
+            var enemyColor = (Owner.Color == Color.WHITE)
                 ? Color.BLACK
                 : Color.WHITE;
 
@@ -156,7 +157,7 @@ namespace Assets.Model.ChessSkill.Iuppiter
             }
         }
 
-        public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)
+        protected override IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
         {
             throw new NotImplementedException();
         }

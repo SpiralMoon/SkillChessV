@@ -1,8 +1,6 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Assets.Model.SkillChessPiece;
 using Assets.Support;
@@ -11,12 +9,15 @@ namespace Assets.Model.ChessSkill.Bomber
 {
     public class Terror : Skill
     {
+        private readonly string _hitPath;
+
         public Terror(SkillPiece owner) : base(owner)
         {
             this.Code = 1122;
             this.Element = Element.FIRE;
             this.Power = 300;
             this.Mp = 200;
+            this._hitPath = $"Effect/Skill/{Owner.GetType().Name}/{GetType().Name}Hit";
 
             Init();
         }
@@ -37,7 +38,7 @@ namespace Assets.Model.ChessSkill.Bomber
             _effectManager.SkillScopeSelf(board, x, y);
         }
 
-        public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)
+        protected override IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
         {
             throw new NotImplementedException();
         }

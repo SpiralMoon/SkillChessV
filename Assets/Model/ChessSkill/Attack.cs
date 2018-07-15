@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 
+using Assets.Model.SkillChessPiece;
 using Assets.Service;
 using Assets.Support;
 
@@ -14,14 +15,21 @@ namespace Assets.Model.ChessSkill
         protected EffectManager _effectManager;
 
         /// <summary>
+        /// 이 공격의 주인 기물
+        /// </summary>
+        protected SkillPiece Owner;
+
+        /// <summary>
         /// 속성
         /// </summary>
         protected Element Element;
 
-        /// <summary>
-        /// 기본 데미지
-        /// </summary>
-        protected int Power;
+        public Attack(SkillPiece owner)
+        {
+            _effectManager = EffectManager.GetInstance();
+
+            Owner = owner;
+        }
 
         /// <summary>
         /// 공격.
@@ -36,23 +44,28 @@ namespace Assets.Model.ChessSkill
         }
 
         /// <summary>
-        /// 기물이 공격할 수 있는 발판의 IsPossibleAttack를 true로 변경
+        /// 이번 시도가 일반공격이 아니라 확정킬로 판정되는지 검사.
         /// </summary>
         /// <param name="board"></param>
-        /// /// <param name="location"></param>
-        public void SetAttackStatus(List<Board> board, Location location)
+        /// <param name="targetLocation">적 기물의 위치</param>
+        /// <returns>확정킬 여부</returns>
+        public bool CheckFinalizeAttack(List<Board[]> board, Location targetLocation)
         {
-
+            // 체력이 남으면 확정킬이 아니므로 false
+            // 체력이 남지 않으면 확정킬이므로 true
+            var target = board[targetLocation.X][targetLocation.Y].Piece as SkillPiece;
+            return target.CurrentHp <= Owner.Power;
         }
 
         /// <summary>
-        /// 기물이 공격할 수 있는 발판과 공격할 수 없는 발판 표시
+        /// 적이 공격범위에 있는지 검사.
         /// </summary>
         /// <param name="board"></param>
-        /// /// <param name="location"></param>
-        public void ShowAttackScope(List<Board> board, Location location)
+        /// <param name="targetLocation">적 기물의 위치</param>
+        /// <returns></returns>
+        public bool CheckAdjoinEnemy(List<Board[]> board, Location targetLocation)
         {
-
+            return false;
         }
     }
 }

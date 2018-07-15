@@ -1,8 +1,6 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Assets.Model.SkillChessPiece;
 using Assets.Support;
@@ -25,7 +23,7 @@ namespace Assets.Model.ChessSkill.Paladin
         {
             var x = location.X;
             var y = location.Y;
-            var enemyColor = (_owner.Color == Color.WHITE)
+            var enemyColor = (Owner.Color == Color.WHITE)
                 ? Color.BLACK
                 : Color.WHITE;
 
@@ -70,7 +68,7 @@ namespace Assets.Model.ChessSkill.Paladin
         {
             var x = location.X;
             var y = location.Y;
-            var myColor = _owner.Color;
+            var myColor = Owner.Color;
 
             // 좌상
             if (y > 0 && x > 0)
@@ -97,7 +95,7 @@ namespace Assets.Model.ChessSkill.Paladin
             }
         }
 
-        public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)
+        protected override IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
         {
             throw new NotImplementedException();
         }

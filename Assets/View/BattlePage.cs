@@ -247,7 +247,7 @@ namespace Assets.View
         }
 
         /// <summary>
-        /// 게임오버를 검사하는 함수.
+        /// 실시간으로 게임오버를 검사하는 함수.
         /// </summary>
         /// <returns></returns>
         protected IEnumerator CheckGameOver()

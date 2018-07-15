@@ -13,7 +13,17 @@ namespace Assets.Model.SkillChessPiece
             this.IsPossibleFirstChance = false;
         }
 
+        public override void SetAttackStatus(List<Board[]> board, Location location)
+        {
+            
+        }
+
         public override void SetMoveStatus(List<Board[]> board, Location location)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ShowAttackScope(List<Board[]> board, Location location)
         {
             throw new NotImplementedException();
         }

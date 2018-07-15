@@ -81,6 +81,11 @@ namespace Assets.View
         private bool _onSkill;
 
         /// <summary>
+        /// 스킬 동작 함수의 실행 상태
+        /// </summary>
+        private bool _isSkillRunning;
+
+        /// <summary>
         /// 선택한 스킬 레벨
         /// </summary>
         private int _selectedSkillLevel;
@@ -152,7 +157,7 @@ namespace Assets.View
                 }
 
                 // 화면 하단에 스킬 아이콘 업데이트
-                var piece = _board[_startLocation.X][_startLocation.Y].Piece as SkillPiece;
+                var piece = _board[GetLocation(_selectedObject).X][GetLocation(_selectedObject).Y].Piece as SkillPiece;
                 if (piece?.Color == _myColor)
                 {
                     SetSkillIcons(piece);
@@ -162,7 +167,8 @@ namespace Assets.View
                     CleanSkillIcons();
                 }
 
-                if (_isMyTurn)
+                // 이번 턴이 내 턴이고 실행중인 스킬이 완전히 끝난 경우
+                if (_isMyTurn && !_isSkillRunning)
                 {
                     if (_endLocation == null)
                     {
@@ -683,10 +689,13 @@ namespace Assets.View
                 }
                 else if (relayForm.Pattern == Pattern.SKILL)
                 {
+                    var pieceLocation = relayForm.StartLocation;
+                    var boardLocation = relayForm.EndLocation;
                     var i = relayForm.SkillLevel - 1;
-                    var piece = _board[_startLocation.X][_startLocation.Y].Piece as SkillPiece;
+                    var piece = _board[pieceLocation.X][pieceLocation.Y].Piece as SkillPiece;
 
-                    piece.Skill[i].Trigger(_board, _startLocation, _endLocation);
+                    _isSkillRunning = true;
+                    piece.Skill[i].Trigger(_board, pieceLocation, boardLocation, OnSkillFinished);
                 }
 
                 if (relayForm.TurnFinished)
@@ -778,6 +787,64 @@ namespace Assets.View
         private void CloseSkillExplain()
         {
             SkillExplain.SetActive(false);
+        }
+
+        /// <summary>
+        /// 스킬 실행이 모두 완료되었을 때 호출되는 이벤트
+        /// </summary>
+        private void OnSkillFinished()
+        {
+            _isSkillRunning = false;
+        }
+
+        /// <summary>
+        /// 체력을 검사하고 기물을 파괴하는 함수.
+        /// </summary>
+        /// <returns></returns>
+        private void CheckHp()
+        {
+            for(int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    var piece = _board[i][j].Piece as SkillPiece;
+
+                    if (piece == null)
+                    {
+                        continue;
+                    }
+
+                    // 이번 회차에 체력이 0인가?
+                    if (piece.CurrentHp <= 0)
+                    {
+                        // TODO : 경험치 계산
+                        _effectManager.Kill(_board, new Location(i, j));
+                        _board[i][j].Piece = null;
+                        Destroy(_board[i][j].PieceObj);
+
+                        // Kill and Death counting
+                        if (piece.Color == Support.Color.WHITE)
+                        {
+                            _blackDashBoard.KillCount++;
+                            _whiteDashBoard.DeathCount++;
+                        }
+                        else
+                        {
+                            _whiteDashBoard.KillCount++;
+                            _blackDashBoard.DeathCount++;
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 상태이상을 검사하고 데미지를 주는 함수.
+        /// </summary>
+        /// <returns></returns>
+        private void CheckStatus()
+        {
+
         }
     }
 }

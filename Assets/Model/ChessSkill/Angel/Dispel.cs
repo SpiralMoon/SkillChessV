@@ -1,11 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Assets.Model.SkillChessPiece;
-using Assets.Service;
 using Assets.Support;
 
 namespace Assets.Model.ChessSkill.Angel
@@ -38,7 +35,7 @@ namespace Assets.Model.ChessSkill.Angel
             _effectManager.SkillScopeSelf(board, x, y);
         }
 
-        public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)
+        protected override IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
         {
             throw new NotImplementedException();
         }

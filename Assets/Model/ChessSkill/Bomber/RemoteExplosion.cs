@@ -1,8 +1,6 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Assets.Model.SkillChessPiece;
 using Assets.Support;
@@ -23,8 +21,8 @@ namespace Assets.Model.ChessSkill.Bomber
 
         public override void SetSkillStatus(List<Board[]> board, Location location)
         {
-            var myColor = _owner.Color;
-            var enemyColor = (_owner.Color == Color.WHITE)
+            var myColor = Owner.Color;
+            var enemyColor = (Owner.Color == Color.WHITE)
                 ? Color.BLACK
                 : Color.WHITE;
 
@@ -117,8 +115,8 @@ namespace Assets.Model.ChessSkill.Bomber
 
         public override void ShowSkillScope(List<Board[]> board, Location location)
         {
-            var myColor = _owner.Color;
-            var enemyColor = (_owner.Color == Color.WHITE)
+            var myColor = Owner.Color;
+            var enemyColor = (Owner.Color == Color.WHITE)
                 ? Color.BLACK
                 : Color.WHITE;
 
@@ -134,7 +132,7 @@ namespace Assets.Model.ChessSkill.Bomber
             }
         }
 
-        public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)
+        protected override IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
         {
             throw new NotImplementedException();
         }

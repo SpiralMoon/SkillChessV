@@ -1,8 +1,6 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Assets.Model.SkillChessPiece;
 using Assets.Support;
@@ -11,12 +9,15 @@ namespace Assets.Model.ChessSkill.Archer
 {
     public class Shot : Skill
     {
+        private readonly string _hitPath;
+
         public Shot(SkillPiece owner) : base(owner)
         {
             this.Code = 1411;
             this.Element = Element.NORMAL;
             this.Power = 100;
             this.Mp = 80;
+            this._hitPath = $"Effect/Skill/{Owner.GetType().Name}/{GetType().Name}Hit";
 
             Init();
         }
@@ -25,7 +26,7 @@ namespace Assets.Model.ChessSkill.Archer
         {
             var x = location.X;
             var y = location.Y;
-            var myColor = _owner.Color;
+            var myColor = Owner.Color;
 
             // 상
             if (y > 0)
@@ -154,7 +155,7 @@ namespace Assets.Model.ChessSkill.Archer
             }
         }
 
-        public override Task Trigger(List<Board[]> board, Location startLocation, Location endLocation)
+        protected override IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
         {
             throw new NotImplementedException();
         }
