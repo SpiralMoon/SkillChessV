@@ -354,6 +354,15 @@
     <Compile Include="Assets\Model\SkillChessPiece\SkillRook.cs" />
     <Compile Include="Assets\Resources\Origin\Effect1\EffectEditor\Legacy Effect Editor\csLegacyEffectChanger.cs" />
     <Compile Include="Assets\Resources\Origin\Effect1\EffectEditor\Legacy Effect Editor\csLegacyEffectEditor.cs" />
+    <Compile Include="Assets\Resources\Origin\Effect4\Script\FTEM_AnimationScrollTexture.cs" />
+    <Compile Include="Assets\Resources\Origin\Effect4\Script\FTEM_AnimationSpriteSheet.cs" />
+    <Compile Include="Assets\Resources\Origin\Effect4\Script\FTEM_DeadTime.cs" />
+    <Compile Include="Assets\Resources\Origin\Effect5\Scripts\ReverseNormals.cs" />
+    <Compile Include="Assets\Resources\Origin\ETC\100 Best Effect Pack\Script\csAnimationPlay.cs" />
+    <Compile Include="Assets\Resources\Origin\ETC\100 Best Effect Pack\Script\csLightIntancityControl.cs" />
+    <Compile Include="Assets\Resources\Origin\ETC\100 Best Effect Pack\Script\csPrefebMake.cs" />
+    <Compile Include="Assets\Resources\Origin\ETC\100 Best Effect Pack\ShurikenEffectEditor\csShurikenEffectChanger.cs" />
+    <Compile Include="Assets\Resources\Origin\ETC\100 Best Effect Pack\ShurikenEffectEditor\csShurikenEffectEditor.cs" />
     <Compile Include="Assets\Service\CameraManager.cs" />
     <Compile Include="Assets\Service\EffectManager.cs" />
     <Compile Include="Assets\Service\NetworkManager.cs" />
@@ -389,6 +398,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Class.xml" />
+    <None Include="Assets\Resources\Origin\ETC\100 Best Effect Pack\ParticleEffect_Shader\Additive\Shader_AdvancedAdditive.shader" />
+    <None Include="Assets\Resources\Origin\ETC\100 Best Effect Pack\ParticleEffect_Shader\Additive\Shader_NormalAdditive.shader" />
+    <None Include="Assets\Resources\Origin\ETC\100 Best Effect Pack\ParticleEffect_Shader\Alpha Blended\Shader_AdvancedAlphaBlended.shader" />
+    <None Include="Assets\Resources\Origin\ETC\100 Best Effect Pack\ParticleEffect_Shader\Alpha Blended\Shader_NormalAlphaBlended.shader" />
     <None Include="Assets\Resources\Text.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
