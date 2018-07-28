@@ -9,12 +9,15 @@ namespace Assets.Model.ChessSkill.Priest
 {
     public class Sacrifice : Skill
     {
+        private readonly string _blessPath;
+
         public Sacrifice(SkillPiece owner) : base(owner)
         {
             this.Code = 1323;
             this.Element = Element.HOLY;
             this.Power = 100;
             this.Mp = 600;
+            this._blessPath = $"Effect/Skill/{Owner.GetType().Name}/{GetType().Name}Bless";
 
             Init();
         }

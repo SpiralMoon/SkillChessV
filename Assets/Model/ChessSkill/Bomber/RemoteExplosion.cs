@@ -9,12 +9,15 @@ namespace Assets.Model.ChessSkill.Bomber
 {
     public class RemoteExplosion : Skill
     {
+        private readonly string _hitPath;
+
         public RemoteExplosion(SkillPiece owner) : base(owner)
         {
             this.Code = 1121;
             this.Element = Element.FIRE;
             this.Power = 100;
             this.Mp = 50;
+            this._hitPath = $"Effect/Skill/{Owner.GetType().Name}/{GetType().Name}Hit";
 
             Init();
         }
