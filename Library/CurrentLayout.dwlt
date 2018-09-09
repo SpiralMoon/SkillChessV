@@ -134,7 +134,7 @@ MonoBehaviour:
   m_MinSize: {x: 817, y: 492}
   m_MaxSize: {x: 22012, y: 14042}
   vertical: 1
-  controlID: 169
+  controlID: 26
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_MinSize: {x: 817, y: 492}
   m_MaxSize: {x: 22012, y: 14042}
   vertical: 0
-  controlID: 170
+  controlID: 27
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_MinSize: {x: 336, y: 271}
   m_MaxSize: {x: 14006, y: 10021}
   vertical: 0
-  controlID: 105
+  controlID: 103
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -341,9 +341,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 349.3452, y: 194.9563, z: -61.398987}
+    m_Target: {x: 465.46057, y: 191.41924, z: -8.128662}
     speed: 2
-    m_Value: {x: 349.3452, y: 194.9563, z: -61.398987}
+    m_Value: {x: 465.46057, y: 191.41924, z: -8.128662}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -367,13 +367,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.18758748, y: 0.07800225, z: -0.014945492, w: -0.9790318}
+    m_Target: {x: -0.078140564, y: 0.047839463, z: -0.0037538772, w: -0.99578685}
     speed: 2
-    m_Value: {x: -0.18758747, y: 0.07800225, z: -0.014945491, w: -0.9790318}
+    m_Value: {x: -0.078140564, y: 0.047839463, z: -0.0037538772, w: -0.99578685}
   m_Size:
-    m_Target: 977.7871
+    m_Target: 1102.3287
     speed: 2
-    m_Value: 977.7871
+    m_Value: 1102.3287
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -501,18 +501,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Resources/Effect/Skill
+    - Assets/Resources/Effect/Status
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources/Effect/Skill
+  - Assets/Resources/Effect/Status
   m_LastFoldersGridSize: 64
   m_LastProjectPath: C:\Users\Moon\Desktop\SkillChessV
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 220}
-    m_SelectedIDs: 76310000
-    m_LastClickedID: 12662
+    scrollPos: {x: 0, y: 300}
+    m_SelectedIDs: de460000
+    m_LastClickedID: 18142
     m_ExpandedIDs: 00000000ac280000ca280000763100004e3400000a4300002c480000dc480000844b0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -568,7 +568,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 0805000004050000060500009a4c00001a0500001c050000520500007c1c0000685dfeffac1c0000f02e0000aa1d00008c1d00007a1d00007c1d00007e1d0000801d0000fa1b0000dc1b00000a410000e21b0000de1b0000ee1b0000e01b0000bc2400008a2400009e2400009a240000a4240000a2240000a6240000b4240000c8240000ca240000ce240000d224000056250000662500009a260000322600005a39000036260000bc4dfffff23700003c26000042260000402600003e2600002c2700004a260000382700004426000046260000c61bffff8c2d00008830000000000000b24800001cbd0000ead2daffbec60100c4b900002ebf0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -654,7 +654,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 9efbffff000000008c5f0000
+    m_ExpandedIDs: 9efbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

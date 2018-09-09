@@ -126,13 +126,12 @@ namespace Assets.Model.ChessSkill
         /// 기술 사용.
         /// </summary>
         /// <param name="board"></param>
-        /// <param name="startLocation"></param>
-        /// <param name="endLocation"></param>
+        /// <param name="targetLocation"></param> 
         /// <param name="finishCallback"></param>
         /// <returns></returns>
-        public void Trigger(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
+        public void Trigger(List<Board[]> board, Location targetLocation, Action finishCallback)
         {
-            StartCoroutine(Active(board, startLocation, endLocation, finishCallback));
+            StartCoroutine(Active(board, targetLocation, finishCallback));
         }
 
         /// <summary>
@@ -140,10 +139,9 @@ namespace Assets.Model.ChessSkill
         /// 기술이 끝나면 finish callback을 실행함.
         /// </summary>
         /// <param name="board"></param>
-        /// <param name="startLocation"></param>
-        /// <param name="endLocation"></param>
+        /// <param name="targetLocation"></param>
         /// <returns></returns>
-        protected abstract IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback);
+        protected abstract IEnumerator Active(List<Board[]> board, Location targetLocation, Action finishCallback);
 
         /// <summary>
         /// 기술 오브젝트를 path로부터 불러옴
@@ -153,6 +151,13 @@ namespace Assets.Model.ChessSkill
         protected GameObject Load(string path)
         {
             return Instantiate(Resources.Load<GameObject>(path));
+        }
+
+        protected GameObject Load(string path, Vector3 position)
+        {
+            var obj = Load(path);
+            obj.transform.position = position;
+            return obj;
         }
     }
 }

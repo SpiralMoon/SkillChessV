@@ -690,12 +690,12 @@ namespace Assets.View
                 else if (relayForm.Pattern == Pattern.SKILL)
                 {
                     var pieceLocation = relayForm.StartLocation;
-                    var boardLocation = relayForm.EndLocation;
+                    var targetLocation = relayForm.EndLocation;
                     var i = relayForm.SkillLevel - 1;
                     var piece = _board[pieceLocation.X][pieceLocation.Y].Piece as SkillPiece;
 
                     _isSkillRunning = true;
-                    piece.Skill[i].Trigger(_board, pieceLocation, boardLocation, OnSkillFinished);
+                    piece.Skill[i].Trigger(_board, targetLocation, OnSkillFinished);
                 }
 
                 if (relayForm.TurnFinished)
@@ -795,6 +795,9 @@ namespace Assets.View
         private void OnSkillFinished()
         {
             _isSkillRunning = false;
+
+            // TODO
+            // CheckStatus();
         }
 
         /// <summary>

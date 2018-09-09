@@ -94,6 +94,46 @@ namespace Assets.Model.SkillChessPiece
         }
 
         /// <summary>
+        /// 기물의 상태이상 설정.
+        /// </summary>
+        /// <param name="status"></param>
+        /// <param name="count"></param>
+        public void SetStatus(Status status, int count)
+        {
+            GameObject obj = null;
+
+            // 무적상태이면 새로운 상태이상에 걸리지 않음
+            if (this.Status == Status.INVINCIBLE && this.StatusCount >= 1)
+            {
+                return;
+            }
+            
+            // 기존 상태이상과 동일한 경우 남은 턴 수를 증가시킴
+            if (this.Status == status)
+            {
+                this.StatusCount += count;
+            }
+
+            switch (this.Status)
+            {
+                case Status.NONE:
+                    break;
+                case Status.FREEZING:
+                    break;
+                case Status.BURN:
+                    break;
+                case Status.INVINCIBLE:
+                    break;
+                case Status.STUN:
+                    break;
+                case Status.POISONING:
+                    break;
+            }
+            // "Effect/Status/Burn"
+            this.Status = status;
+        }
+
+        /// <summary>
         /// 기물이 공격할 수 있는 발판의 IsPossibleAttack를 true로 변경
         /// </summary>
         /// <param name="board"></param>

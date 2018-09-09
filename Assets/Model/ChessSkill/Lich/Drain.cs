@@ -95,7 +95,7 @@ namespace Assets.Model.ChessSkill.Lich
             }
         }
 
-        protected override IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
+        protected override IEnumerator Active(List<Board[]> board, Location targetLocation, Action finishCallback)
         {
             throw new NotImplementedException();
         }

@@ -234,11 +234,9 @@ namespace Assets.Model.ChessSkill.Priest
             }
         }
 
-        protected override IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
+        protected override IEnumerator Active(List<Board[]> board, Location targetLocation, Action finishCallback)
         {
             throw new NotImplementedException();
-
-            finishCallback?.Invoke();
         }
     }
 }

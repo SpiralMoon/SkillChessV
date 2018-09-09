@@ -35,7 +35,7 @@ namespace Assets.Model.ChessSkill.Assassin
             _effectManager.SkillScopeSelf(board, x, y);
         }
 
-        protected override IEnumerator Active(List<Board[]> board, Location startLocation, Location endLocation, Action finishCallback)
+        protected override IEnumerator Active(List<Board[]> board, Location targetLocation, Action finishCallback)
         {
             throw new NotImplementedException();
         }
